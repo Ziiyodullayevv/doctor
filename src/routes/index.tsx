@@ -20,7 +20,7 @@ export const routes = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: 'about', element: <AboutPage /> },
       { path: 'operations', element: <OperationsPage /> },
-      { path: 'genetal-surgery', element: <GenetalSurgeryPage /> },
+      { path: 'genetal-surgery', element: <GenetalSurgeryPage /> },  
       { path: 'urology', element: <UrologyPage /> },
       { path: 'plastic-surgery', element: <PlasticSurgery /> },
       { path: 'blog', element: <BlogPage /> },
