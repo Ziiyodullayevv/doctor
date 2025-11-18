@@ -146,12 +146,12 @@ export default function Navigation() {
 								</NavigationMenuItem>
 
 								<NavigationMenuItem>
-									<NavigationMenuLink
+									{/* <NavigationMenuLink
 										asChild
 										className={navigationMenuTriggerStyle()}
 									>
 										<Link to="/surgery-details">Хирургия в деталях</Link>
-									</NavigationMenuLink>
+									</NavigationMenuLink> */}
 								</NavigationMenuItem>
 
 								<NavigationMenuItem>
@@ -257,13 +257,13 @@ export default function Navigation() {
 
 							{/* Хирургия в деталях */}
 							<li>
-								<Link
+								{/* <Link
 									to="/surgery-details"
 									className="block py-3 px-4 rounded-md hover:bg-accent transition-colors font-medium"
 									onClick={() => setIsMobileMenuOpen(false)}
 								>
 									Хирургия в деталях
-								</Link>
+								</Link> */}
 							</li>
 
 							{/* Контакты */}
