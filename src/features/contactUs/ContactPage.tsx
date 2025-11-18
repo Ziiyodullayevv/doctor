@@ -20,22 +20,20 @@ export default function ContactPage() {
 				{/* --- Konsultatsiya bo‘limi --- */}
 				<div className="flex flex-col lg:flex-row items-start my-10 gap-10">
 					{/* Left */}
-					<div className="flex flex-col gap-5 text-gray-600 flex-1">
-						<h2 className="text-xl md:text-2xl text-black font-medium leading-snug">
+					<div className="flex flex-col gap-5 text-foreground/70 flex-1">
+						<h2 className="text-xl md:text-2xl font-medium leading-snug">
 							Консультация по записи через контакты (предпочтительно сообщением
 							в WhatsApp!!! +79686741261)
 						</h2>
 
 						<p>
 							Для записи через WhatsApp нажмите{" "}
-							<strong className="font-normal text-black">СЮДА!!!</strong>
+							<strong className="font-normal ">СЮДА!!!</strong>
 						</p>
 
 						<p>
-							<strong className="text-black font-normal">
-								Пластическая хирургия
-							</strong>{" "}
-							в Морозовской больнице, записаться просто! Нажмите сюда.
+							<strong className="font-normal">Пластическая хирургия</strong> в
+							Морозовской больнице, записаться просто! Нажмите сюда.
 						</p>
 
 						<p>
@@ -52,30 +50,32 @@ export default function ContactPage() {
 					</div>
 
 					{/* Right */}
-					<div className="text-gray-600 flex-1 w-full">
+					<div className="text-foreground/70 flex-1 w-full">
 						<ul className="list-disc flex flex-col gap-3">
-							<li>WhatsApp: +79686741261</li>
+							<li>
+								WhatsApp: <span className="text-foreground">+79686741261</span>
+							</li>
 							<li>
 								Telegram (пластическая хирургия):{" "}
-								<a className="text-black" href="https://t.me/SurovPlastic">
+								<a className="text-foreground" href="https://t.me/SurovPlastic">
 									https://t.me/SurovPlastic
 								</a>
 							</li>
 							<li>
 								Telegram (детская урология):{" "}
-								<a className="text-black" href="https://t.me/SurovPlastic">
+								<a className="text-foreground" href="https://t.me/SurovPlastic">
 									https://t.me/SurovPlastic
 								</a>
 							</li>
 							<li>
 								Инстаграм:{" "}
-								<a className="text-black" href="@doctor_surov">
+								<a className="text-foreground" href="@doctor_surov">
 									@doctor_surov
 								</a>
 							</li>
 							<li>
 								e-mail:{" "}
-								<a className="text-black" href="mailto:something@mail.ru">
+								<a className="text-foreground" href="mailto:something@mail.ru">
 									something@mail.ru
 								</a>
 							</li>
