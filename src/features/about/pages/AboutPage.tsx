@@ -270,8 +270,8 @@ export default function AboutPage() {
 								<div className="sticky top-24 space-y-6">
 									<div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
 										<img
-											className="w-full h-64 object-cover"
-											src="https://doctorsurov.ru/wp-content/uploads/2024/09/roman-surov-kopiya.jpg"
+											className="w-full h-80 object-cover"
+											src="https://globalnews.ca/wp-content/uploads/2019/06/operation.jpg?quality=65&strip=all"
 											alt="Доктор Абдуллаев Зафар Бобирович"
 										/>
 										<div className="p-4">
@@ -283,8 +283,8 @@ export default function AboutPage() {
 
 									<div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
 										<img
-											className="w-full h-64 object-cover"
-											src="https://doctorsurov.ru/wp-content/uploads/2024/09/roman-surov-kopiya.jpg"
+											className="w-full h-80 object-cover"
+											src="https://media.cnn.com/api/v1/images/stellar/prod/150202113458-surgeons-hospital-angers.jpg?q=w_4256,h_2832,x_0,y_0,c_fill"
 											alt="Доктор Абдуллаев Зафар Бобирович"
 										/>
 										<div className="p-4">

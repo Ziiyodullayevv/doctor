@@ -89,7 +89,7 @@ export default function Footer() {
 					<div className="flex flex-col md:flex-row justify-between items-center gap-4">
 						<p className="text-gray-400 text-sm">
 							Доктор{" "}
-							<span className="font-semibold">Суров Роман Викторович</span> ©{" "}
+							<span className="font-semibold">Абдуллаев Зафар Бобирович</span> ©{" "}
 							{currentYear}г.
 						</p>
 						<a

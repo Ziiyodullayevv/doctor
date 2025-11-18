@@ -17,16 +17,16 @@ export default function ExamplesPage() {
 			<div className=" py-10 md:py-15 lg:py-20 container px-3 mx-auto">
 				<Tabs defaultValue="a" className="mx-auto h-full">
 					{/* --- SCROLLABLE TABS WITH SHADOWS --- */}
-					<div className="relative md:mb-6">
+					<div className="relative ">
 						{/* Left shadow */}
-						<div className="pointer-events-none absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-white to-transparent z-10" />
+						<div className="pointer-events-none absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-background to-transparent z-10" />
 
 						{/* Right shadow */}
-						<div className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-white to-transparent z-10" />
+						<div className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-background to-transparent z-10" />
 
 						{/* Scrollable wrapper */}
 						<div className="overflow-x-auto no-scrollbar">
-							<TabsList className="flex whitespace-nowrap gap-2 px-2">
+							<TabsList className="flex whitespace-nowrap bg-transparent gap-2 px-2">
 								<TabsTrigger className="p-4 md:text-xl" value="a">
 									Гипоспадия
 								</TabsTrigger>
