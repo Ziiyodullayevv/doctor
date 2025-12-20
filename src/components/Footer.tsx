@@ -1,6 +1,7 @@
 import { Instagram, MessageCircle, Send } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
+import Logo from "./Logo";
 
 export default function Footer() {
 	const currentYear = new Date().getFullYear();
@@ -12,14 +13,7 @@ export default function Footer() {
 			<div className="container mx-auto px-4 md:px-10 py-12">
 				{/* Logo */}
 				<div className="flex justify-center mb-8">
-					<Link to="/" className="flex items-center z-50">
-						<span className="text-primary uppercase font-bold text-lg md:text-xl">
-							Абдуллаев
-						</span>
-						<span className="text-blue-500 font-bold text-lg md:text-xl ml-1">
-							З.Б.
-						</span>
-					</Link>
+					<Logo />
 				</div>
 
 				{/* Navigation */}
