@@ -1,0 +1,113 @@
+{
+	"header": {
+		"supTitle": "About Me",
+		"title": "Pediatric Urologist",
+		"fullName": "Abdullaev Zafar Bobirovich",
+		"aboutMe": "Candidate of Medical Sciences (PhD)"
+	},
+
+	"tabs": {
+		"experience": "years of experience",
+		"operations": "surgeries",
+		"internships": "internships",
+		"membership": "memberships"
+	},
+
+	"title": "Pediatric Urologist, Head of the Pediatric Urology Department at the National Children’s Medical Center",
+
+	"education": {
+		"university": "Graduated in 2014 from the Tashkent Pediatric Medical Institute with honors, majoring in Pediatrics. From 2014 to 2016, completed a clinical residency in Pediatric Surgery at the Department of Faculty Pediatric Surgery of TashPMI."
+	},
+
+	"memberships": {
+		"title": "Membership in Professional Associations",
+		"items": [
+			{
+				"period": "2019 — present",
+				"organization": "European Society for Paediatric Urology",
+				"abbreviation": "ESPU"
+			},
+			{
+				"period": "2019 — present",
+				"organization": "Korean Urological Association",
+				"abbreviation": "KUA"
+			},
+			{
+				"period": "2019 — present",
+				"organization": "Korean Society of Pediatric Urology",
+				"abbreviation": "KSPU"
+			},
+			{
+				"period": "2021 — present",
+				"organization": "Hypospadias International Society",
+				"abbreviation": "HIS"
+			},
+			{
+				"period": "2023 — present",
+				"organization": "Uzbekistan Society of Pediatric Urologists",
+				"abbreviation": "USPU",
+				"position": "member and secretary"
+			}
+		]
+	},
+
+	"internships": {
+		"title": "International Internships",
+		"data": [
+			{
+				"year": "2017",
+				"details": [
+					"Course in Pediatric Laparoscopic Urology at the Department of Pediatric Urology, City Hospital No. 7, Volgograd, Russia"
+				]
+			},
+			{
+				"year": "2018–2019",
+				"details": [
+					"One-year internship in Pediatric Urology at Yansan Hospital, Pusan National University, Busan, South Korea",
+					"Course in Pediatric Urology at Sinchon Severance Hospital, Yonsei University, Seoul, South Korea"
+				]
+			},
+			{
+				"year": "2023",
+				"details": [
+					"Course in Pediatric Urology at Seoul National University Hospital, Seoul, South Korea"
+				]
+			},
+			{
+				"year": "2024",
+				"details": [
+					"Participation in the “Live Surgery for Bladder Exstrophy in Children” course, Ahmedabad, India",
+					"Participation in a Pediatric Urology workshop, Porto, Portugal",
+					"Participation in a Pediatric Urology workshop, Salzburg, Austria",
+					"Successful defense of PhD dissertation on hypospadias",
+					"Internship in genital surgery at Sava Memorial Hospital, Belgrade, Serbia"
+				]
+			},
+			{
+				"year": "2025",
+				"details": [
+					"Participation in a Pediatric Urology workshop at Hacettepe University Hospital, Ankara, Turkey",
+					"Participation in a Pediatric Urology workshop at Cincinnati Children’s Hospital Medical Center, Cincinnati, USA"
+				]
+			}
+		]
+	},
+
+	"experience": {
+		"title": "Work Experience (10 years)",
+		"positions": [
+			{
+				"year": "2016–2019",
+				"description": "Urologist, Assistant Lecturer at the clinic of the Tashkent Pediatric Medical Institute."
+			},
+			{
+				"year": "2020 — present",
+				"description": "Head of the Pediatric Urology Department at the National Children's Medical Center."
+			},
+			{
+				"year": "2023 — present",
+				"description": "Reviewer for the «Journal of Pediatric Urologists»."
+			}
+		]
+	}
+}

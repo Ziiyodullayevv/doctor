@@ -1,32 +1,63 @@
 import Appointment from "@/components/Appointment";
 import SubHeader from "@/components/SubHeader";
 import { Award, GraduationCap, Stethoscope, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
+interface Memberships {
+	period: string;
+	organization: string;
+	abbreviation: string;
+}
+
+interface Internships {
+	year: string;
+	details: string[];
+}
+
+interface Experience {
+	year: string;
+	description: string;
+}
 
 export default function AboutPage() {
+	const { t } = useTranslation(["about", "navigation"]);
+
+	const memberships = t("memberships.items", {
+		returnObjects: true,
+	}) as Memberships[];
+
+	const internships = t("internships.data", {
+		returnObjects: true,
+	}) as Internships[];
+
+	const experience = t("experience.positions", {
+		returnObjects: true,
+	}) as Experience[];
+
 	return (
 		<>
 			<div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
 				{/* Hero Section */}
 				<SubHeader
 					data={[
-						{ label: "Главная", path: "/" },
-						{ label: "Обо мне", path: "/about" },
+						{ label: `${t("navigation:menu.home")}`, path: "/" },
+						{ label: `${t("header.supTitle")}`, path: "/about" },
 					]}
-					title={"Генитальная хирургия"}
+					title={`${t("header.title")}`}
 				/>
 				<section className="relative py-16 md:py-24 bg-gradient-to-br from-blue-600 to-cyan-600 dark:from-blue-800 dark:to-cyan-800">
 					<div className="absolute inset-0 bg-black/10"></div>
 					<div className="container mx-auto px-4 md:px-10 relative z-10">
 						<div className="max-w-4xl mx-auto text-center text-white">
 							<p className="text-sm md:text-base uppercase tracking-wider mb-3 opacity-90">
-								Доктор медицинских наук
+								{t("")}
 							</p>
 							<h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
-								Абдуллаев Зафар Бобирович
+								{t("header.fullName")}
 							</h1>
 							<div className="w-20 h-1 bg-white mx-auto mb-6"></div>
 							<p className="text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-								Провожу операции в Bolalar Miliy Tibbiyot Markazi г. Ташкент
+								{t("header.aboutMe")}
 							</p>
 						</div>
 					</div>
@@ -41,10 +72,10 @@ export default function AboutPage() {
 									<Award className="w-8 h-8 text-blue-600 dark:text-blue-400" />
 								</div>
 								<p className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
-									18+
+									10
 								</p>
-								<p className="text-sm text-gray-600 dark:text-gray-400">
-									лет опыта
+								<p className="text-sm capitalize text-gray-600 dark:text-gray-400">
+									{t("tabs.experience")}
 								</p>
 							</div>
 							<div className="text-center">
@@ -52,10 +83,10 @@ export default function AboutPage() {
 									<Stethoscope className="w-8 h-8 text-green-600 dark:text-green-400" />
 								</div>
 								<p className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
-									1000+
+									3000+
 								</p>
-								<p className="text-sm text-gray-600 dark:text-gray-400">
-									операций
+								<p className="text-sm capitalize text-gray-600 dark:text-gray-400">
+									{t("tabs.operations")}
 								</p>
 							</div>
 							<div className="text-center">
@@ -63,10 +94,10 @@ export default function AboutPage() {
 									<GraduationCap className="w-8 h-8 text-purple-600 dark:text-purple-400" />
 								</div>
 								<p className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
-									10+
+									20+
 								</p>
-								<p className="text-sm text-gray-600 dark:text-gray-400">
-									стажировок
+								<p className="text-sm capitalize text-gray-600 dark:text-gray-400">
+									{t("tabs.internships")}
 								</p>
 							</div>
 							<div className="text-center">
@@ -76,8 +107,8 @@ export default function AboutPage() {
 								<p className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
 									ESPU
 								</p>
-								<p className="text-sm text-gray-600 dark:text-gray-400">
-									член общества
+								<p className="text-sm capitalize text-gray-600 dark:text-gray-400">
+									{t("tabs.membership")}
 								</p>
 							</div>
 						</div>
@@ -91,177 +122,82 @@ export default function AboutPage() {
 							{/* Text Content */}
 							<div className="lg:col-span-2 space-y-6">
 								<div className="prose prose-lg dark:prose-invert max-w-none">
+									<h4 className="font-bold">{t("title")}</h4>
+									<br />
 									<p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-										Пластический хирург, детский уролог-андролог, специалист по
-										лечению гипоспадии. Реконструктивная и пластическая
-										хирургия. Врач высшей квалификационной категории. Кандидат
-										медицинских наук. Член Европейского общества детских
-										урологов (ESPU). Реконструктивная и пластическая хирургия у
-										взрослых и детей.
-									</p>
-
-									<div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 my-8">
-										<h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-											Образование
-										</h3>
-										<p className="text-gray-700 dark:text-gray-300">
-											В 2006 году с отличием окончил Кемеровскую государственную
-											медицинскую академию. Награжден стипендией правительства
-											РФ.
-										</p>
-									</div>
-
-									<p className="text-gray-700 dark:text-gray-300">
-										С 2006 по 2008 годы проходил клиническую ординатуру по
-										специальности «детская хирургия» на кафедре детских
-										хирургических болезней Кемеровской государственной
-										медицинской академии.
-									</p>
-
-									<p className="text-gray-700 dark:text-gray-300">
-										По окончании ординатуры принят на должность врача детского
-										хирурга в отделение детской урологии Областной детской
-										клинической больницы г. Кемерово.
-									</p>
-
-									<p className="text-gray-700 dark:text-gray-300">
-										В 2009 году прошел профессиональную переподготовку по
-										специальности – «детская урология-андрология», а также курс
-										повышения квалификации «лапароскопическая хирургия» на
-										кафедре детской хирургии РНИМУ имени Н.И. Пирогова.
+										{t("education.university")}
 									</p>
 
 									<div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 md:p-8 my-8">
 										<h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-											Международные стажировки
+											{t("memberships.title")}
 										</h3>
 										<ul className="space-y-4">
-											<li className="flex gap-4">
-												<span className="flex-shrink-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></span>
-												<div>
-													<p className="font-semibold text-gray-900 dark:text-white mb-1">
-														Shaare Zedek Medical Center, Израиль (2011)
-													</p>
-													<p className="text-sm text-gray-600 dark:text-gray-400">
-														Курс по взрослой и детской урологии. Руководитель –
-														профессор Boris Chertin
-													</p>
-												</div>
-											</li>
-											<li className="flex gap-4">
-												<span className="flex-shrink-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></span>
-												<div>
-													<p className="font-semibold text-gray-900 dark:text-white mb-1">
-														НИИ урологии, Москва (2012)
-													</p>
-													<p className="text-sm text-gray-600 dark:text-gray-400">
-														Курс по практической уродинамике и нейроурологии
-													</p>
-												</div>
-											</li>
-											<li className="flex gap-4">
-												<span className="flex-shrink-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></span>
-												<div>
-													<p className="font-semibold text-gray-900 dark:text-white mb-1">
-														Belmedic Clinic, Сербия (2012)
-													</p>
-													<p className="text-sm text-gray-600 dark:text-gray-400">
-														Генито-уретральная реконструктивная хирургия.
-														Руководитель – Rados Djinovic
-													</p>
-												</div>
-											</li>
-											<li className="flex gap-4">
-												<span className="flex-shrink-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></span>
-												<div>
-													<p className="font-semibold text-gray-900 dark:text-white mb-1">
-														Ospedale Maggiore Policlinico, Италия (2014)
-													</p>
-													<p className="text-sm text-gray-600 dark:text-gray-400">
-														Реконструктивная детская урология. Руководитель –
-														профессор Gianantonio Manzoni
-													</p>
-												</div>
-											</li>
-											<li className="flex gap-4">
-												<span className="flex-shrink-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></span>
-												<div>
-													<p className="font-semibold text-gray-900 dark:text-white mb-1">
-														Krankenhaus der Barmherzigen Schwestern, Австрия
-														(2014)
-													</p>
-													<p className="text-sm text-gray-600 dark:text-gray-400">
-														Реконструктивная детская урология. Руководитель –
-														профессор Josef Oswald
-													</p>
-												</div>
-											</li>
-											<li className="flex gap-4">
-												<span className="flex-shrink-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></span>
-												<div>
-													<p className="font-semibold text-gray-900 dark:text-white mb-1">
-														Great Ormond Street Hospital, Великобритания (2016)
-													</p>
-													<p className="text-sm text-gray-600 dark:text-gray-400">
-														Руководители – профессор Abraham Cherian и профессор
-														Peter Cuckow
-													</p>
-												</div>
-											</li>
-											<li className="flex gap-4">
-												<span className="flex-shrink-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></span>
-												<div>
-													<p className="font-semibold text-gray-900 dark:text-white mb-1">
-														Robert-Debre Hospital, Франция (2018)
-													</p>
-													<p className="text-sm text-gray-600 dark:text-gray-400">
-														Руководитель – профессор Alaa El-Ghoneimi
-													</p>
-												</div>
-											</li>
-											<li className="flex gap-4">
-												<span className="flex-shrink-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></span>
-												<div>
-													<p className="font-semibold text-gray-900 dark:text-white mb-1">
-														Sidra Medicine Hospital, Катар (2019)
-													</p>
-													<p className="text-sm text-gray-600 dark:text-gray-400">
-														Руководитель – профессор Joao Luiz Pippi Salle
-													</p>
-												</div>
-											</li>
-											<li className="flex gap-4">
-												<span className="flex-shrink-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></span>
-												<div>
-													<p className="font-semibold text-gray-900 dark:text-white mb-1">
-														First Affiliated Hospital, Китай (2025)
-													</p>
-													<p className="text-sm text-gray-600 dark:text-gray-400">
-														Малоинвазивное лечение мочекаменной болезни.
-														Руководитель – профессор Zeng Guohua
-													</p>
-												</div>
-											</li>
+											{memberships.map((item: Memberships) => (
+												<li className="flex gap-4">
+													<span className="flex-shrink-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></span>
+													<div>
+														<p className="font-semibold text-gray-900 dark:text-white mb-1">
+															{item.period}
+														</p>
+														<p className="text-sm text-gray-600 dark:text-gray-400">
+															{item.organization} ({item.abbreviation})
+														</p>
+													</div>
+												</li>
+											))}
 										</ul>
-									</div>
 
-									<div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl p-6 my-8">
-										<h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-											Награды и достижения
+										{/* ------------------- */}
+
+										<hr className="my-10" />
+
+										<h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+											{t("internships.title")}
 										</h3>
-										<p className="text-gray-700 dark:text-gray-300">
-											За достижения в работе награжден грамотой администрации г.
-											Кемерово, медалью «За служение Кузбассу», знаком отличия
-											«Золотой знак Кузбасс».
-										</p>
-									</div>
+										<ul className="space-y-4">
+											{internships.map(({ details, year }: Internships) => (
+												<li className="flex gap-4">
+													<span className="flex-shrink-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></span>
+													<div>
+														<p className="font-semibold text-gray-900 dark:text-white mb-1">
+															{year}
+														</p>
 
-									<p className="text-gray-700 dark:text-gray-300">
-										В 2020 г защитил диссертацию на соискание научной степени
-										кандидата медицинских наук на тему «Хирургическое лечение
-										срединных и проксимальных форм гипоспадии у детей с
-										сохранением уретральной площадки».
-									</p>
+														{details.map((text, idx) => (
+															<div key={idx}>
+																<p className="text-sm text-gray-600 dark:text-gray-400">
+																	{text} <br />
+																	<br />
+																</p>
+															</div>
+														))}
+													</div>
+												</li>
+											))}
+										</ul>
+
+										<hr className="my-10" />
+
+										<h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+											{t("internships.title")}
+										</h3>
+										<div className="space-y-4">
+											{experience.map(({ year, description }: Experience) => (
+												<li className="flex gap-4">
+													<span className="flex-shrink-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></span>
+													<div>
+														<h2 className="font-semibold text-gray-900 dark:text-white mb-1">
+															{year}
+														</h2>
+														<p className="text-sm text-gray-600 dark:text-gray-400">
+															{description}
+														</p>
+													</div>
+												</li>
+											))}
+										</div>
+									</div>
 								</div>
 							</div>
 

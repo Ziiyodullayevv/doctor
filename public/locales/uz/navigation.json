@@ -1,0 +1,28 @@
+{
+	"menu": {
+		"home": "Bosh sahifa",
+		"about": "Men haqimda",
+		"operations": "Operatsiyalar",
+		"operationsList": [
+			{
+				"title": "Genital jarrohlik",
+				"description": "Gipospadiya, epispadiya, uretra strikturasi, jinsiy olat egriligi"
+			},
+			{
+				"title": "Urologiya",
+				"description": "Siydik chiqarish tizimi kasalliklarini diagnostika qilish va davolash"
+			},
+			{
+				"title": "Plastik jarrohlik",
+				"description": "Rekonstruktiv va estetik plastik jarrohlik"
+			}
+		],
+		"cases": "Klinik misollar",
+		"contacts": "Aloqa",
+		"theme": "Mavzu",
+		"light": "Yorug‘",
+		"dark": "Qorong‘i",
+		"system": "Tizim bo‘yicha",
+		"doctor": "Doktor Abdullayev Zafar Bobirovich"
+	}
+}

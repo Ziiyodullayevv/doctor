@@ -4,12 +4,12 @@ export default function DocInfo() {
 	return (
 		<section className="py-16">
 			<div className="container mx-auto px-4 md:px-10">
-				<div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+				<div className="flex h-[600px] flex-col lg:flex-row gap-8 lg:gap-12 items-center">
 					{/* Left - Image */}
-					<div className="">
-						<div className="">
+					<div>
+						<div className="h-[380px] w-[380px] rounded-full overflow-hidden ">
 							<img
-								src="https://doctorsurov.ru/wp-content/uploads/2024/09/plasticheskij-hirurg-surov-roman.png"
+								src="/public/home/me.jpg"
 								alt="Доктор Суров Роман Викторович"
 								className="w-140 h-auto"
 							/>
@@ -17,7 +17,7 @@ export default function DocInfo() {
 					</div>
 
 					{/* Right - Content */}
-					<div className="w-full  space-y-5">
+					<div className="w-full space-y-5">
 						<div>
 							<h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
 								Доктор Суров Роман Викторович

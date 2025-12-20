@@ -1,0 +1,28 @@
+{
+	"menu": {
+		"home": "Home",
+		"about": "About Me",
+		"operations": "Surgeries",
+		"operationsList": [
+			{
+				"title": "Genital Surgery",
+				"description": "Hypospadias, epispadias, urethral stricture, penile curvature"
+			},
+			{
+				"title": "Urology",
+				"description": "Diagnosis and treatment of urinary tract diseases"
+			},
+			{
+				"title": "Plastic Surgery",
+				"description": "Reconstructive and aesthetic plastic surgery"
+			}
+		],
+		"cases": "Clinical Cases",
+		"contacts": "Contacts",
+		"theme": "Theme",
+		"light": "Light",
+		"dark": "Dark",
+		"system": "System",
+		"doctor":"Dr. Zafar Bobirovich Abdullaev"
+	}
+}

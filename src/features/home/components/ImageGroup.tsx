@@ -17,15 +17,33 @@ export default function ImageGroup() {
 
 	return (
 		<div className="container mx-auto py-10 px-3">
-			<ImageList sx={{ overflowY: "hidden" }} cols={getCols()}>
+			<ImageList sx={{ overflowY: "hidden" }} gap={10} cols={getCols()}>
 				{itemData.map((item) => (
 					<ImageListItem key={item.img}>
-						<img
-							srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-							src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-							alt={item.title}
-							loading="lazy"
-						/>
+						<div
+							style={{
+								position: "relative",
+								width: "100%",
+								paddingTop: "100%", // Bu eng muhim qator! 1:1 nisbat = kvadrat
+								overflow: "hidden",
+								borderRadius: 16, // ixtiyoriy: yumaloq burchak
+							}}
+						>
+							<img
+								src={item.img}
+								alt={item.title}
+								loading="lazy"
+								style={{
+									position: "absolute",
+									top: 0,
+									left: 0,
+									width: "100%",
+									height: "100%",
+									objectFit: "cover", // kesib chiroyli joylashtiradi
+									objectPosition: "center", // markazdan kesadi
+								}}
+							/>
+						</div>
 					</ImageListItem>
 				))}
 			</ImageList>
@@ -34,100 +52,91 @@ export default function ImageGroup() {
 }
 
 const itemData = [
+	{ img: "/home/1.jpg", title: "Tajribali shifokor – konsultatsiya" },
 	{
-		img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-		title: "Breakfast",
+		img: "/home/2.jpg",
+		title: "Tajribali shifokor – bemorni ko‘rikdan o‘tkazmoqda",
+	},
+	{ img: "/home/3.jpg", title: "Tajribali shifokor – USM tekshiruvi" },
+	{ img: "/home/4.jpg", title: "Tajribali shifokor – EKG o‘lchamoqda" },
+	{ img: "/home/5.jpg", title: "Tajribali shifokor – bolalar qabulida" },
+	{ img: "/home/6.jpg", title: "Tajribali shifokor – stetoskop bilan" },
+	{ img: "/home/7.jpg", title: "Tajribali shifokor – rentgen tahlili" },
+	{
+		img: "/home/8.jpg",
+		title: "Tajribali shifokor – operatsiya xonasida",
+	},
+	{ img: "/home/9.jpg", title: "Tajribali shifokor – bemorga maslahat" },
+	{ img: "/home/10.jpg", title: "Tajribali shifokor – ko‘z tekshiruvi" },
+	{ img: "/home/11.jpg", title: "Tajribali shifokor – tish davolashda" },
+	{
+		img: "/home/12.jpg",
+		title: "Tajribali shifokor – planshet bilan ishlayapti",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-		title: "Burger",
+		img: "/home/13.jpg",
+		title: "Tajribali shifokor – qon bosimi o‘lchamoqda",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-		title: "Camera",
+		img: "/home/14.jpg",
+		title: "Tajribali shifokor – jarrohlik kiyimida",
+	},
+	{ img: "/home/15.jpg", title: "Tajribali shifokor – laboratoriyada" },
+	{
+		img: "/home/16.jpg",
+		title: "Tajribali shifokor – bemor bilan suhbat",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-		title: "Coffee",
+		img: "/home/17.jpg",
+		title: "Tajribali shifokor – vaktsina qo‘ymoqda",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-		title: "Hats",
+		img: "/home/18.jpg",
+		title: "Tajribali shifokor – nevrologik tekshiruv",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-		title: "Honey",
+		img: "/home/19.jpg",
+		title: "Tajribali shifokor – dermatologik muolaja",
+	},
+	{ img: "/home/20.jpg", title: "Tajribali shifokor – gips qo‘ymoqda" },
+	{ img: "/home/21.jpg", title: "Tajribali shifokor – endoskopiya" },
+	{ img: "/home/22.jpg", title: "Tajribali shifokor – reanimatsiyada" },
+	{
+		img: "/home/23.jpg",
+		title: "Tajribali shifokor – oilaviy shifokor",
+	},
+	{ img: "/home/24.jpg", title: "Tajribali shifokor – kardiogrammada" },
+	{
+		img: "/home/25.jpg",
+		title: "Tajribali shifokor – bolalar stomatologi",
+	},
+	{ img: "/home/26.jpg", title: "Tajribali shifokor – lazer muolajasi" },
+	{
+		img: "/home/27.jpg",
+		title: "Tajribali shifokor – quloq tekshiruvi",
+	},
+	{ img: "/home/28.jpg", title: "Tajribali shifokor – fizioterapiya" },
+	{
+		img: "/home/29.jpg",
+		title: "Tajribali shifokor – onkologik konsultatsiya",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-		title: "Basketball",
+		img: "/home/30.jpg",
+		title: "Tajribali shifokor – urologik tekshiruv",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-		title: "Fern",
+		img: "/home/31.jpg",
+		title: "Tajribali shifokor – allergiya testlari",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-		title: "Mushrooms",
+		img: "/home/32.jpg",
+		title: "Tajribali shifokor – plastik jarrohlik",
 	},
+	{ img: "/home/33.jpg", title: "Tajribali shifokor – psixoterapiya" },
 	{
-		img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-		title: "Tomato basil",
+		img: "/home/34.jpg",
+		title: "Tajribali shifokor – dietolog maslahati",
 	},
-	{
-		img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-		title: "Sea star",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-		title: "Bike",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-		title: "Breakfast",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-		title: "Burger",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-		title: "Camera",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-		title: "Coffee",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-		title: "Hats",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-		title: "Honey",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-		title: "Basketball",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-		title: "Fern",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-		title: "Mushrooms",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-		title: "Tomato basil",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-		title: "Sea star",
-	},
-	{
-		img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-		title: "Bike",
-	},
+	{ img: "/home/35.jpg", title: "Tajribali shifokor – travmatologiya" },
+	{ img: "/home/36.jpg", title: "Tajribali shifokor – oilaviy klinika" },
 ];

@@ -20,27 +20,28 @@ import {
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { useEffect, useState } from "react";
 import { useTheme } from "@/context/theme/useTheme";
+import { LanguageToggle } from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
+import Logo from "./Logo";
 
-const operations = [
-	{
-		title: "Генитальная хирургия",
-		to: "/operations/genital",
-		description:
-			"Гипоспадия, эписпадия, стриктура уретры, искривление полового члена",
-	},
-	{
-		title: "Урология",
-		to: "/operations/urology",
-		description: "Диагностика и лечение заболеваний мочевыводящей системы",
-	},
-	{
-		title: "Пластическая хирургия",
-		to: "/operations/plastic",
-		description: "Реконструктивная и эстетическая пластическая хирургия",
-	},
+interface OperationsItem {
+	title: string;
+	description: string;
+}
+
+const links = [
+	"/operations/genital",
+	"/operations/urology",
+	"/operations/plastic",
 ];
 
 export default function Navigation() {
+	const { t } = useTranslation("navigation");
+
+	const operations = t("menu.operationsList", {
+		returnObjects: true,
+	}) as OperationsItem[];
+
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [openDropdowns, setOpenDropdowns] = useState<{
@@ -97,14 +98,7 @@ export default function Navigation() {
 			<div className="container mx-auto px-3">
 				<div className="flex justify-between items-center">
 					{/* Logo */}
-					<Link to="/" className="flex items-center z-50">
-						<span className="text-primary uppercase font-bold text-lg md:text-xl">
-							Абдуллаев
-						</span>
-						<span className="text-blue-500 font-bold text-lg md:text-xl ml-1">
-							З.Б.
-						</span>
-					</Link>
+					<Logo />
 
 					{/* Desktop Navigation */}
 					<div className="hidden lg:flex gap-8 items-center">
@@ -115,19 +109,30 @@ export default function Navigation() {
 										asChild
 										className={navigationMenuTriggerStyle()}
 									>
-										<Link to="/about">Обо мне</Link>
+										<Link to="/">{t("menu.home")}</Link>
 									</NavigationMenuLink>
 								</NavigationMenuItem>
 
 								<NavigationMenuItem>
-									<NavigationMenuTrigger>Операции</NavigationMenuTrigger>
+									<NavigationMenuLink
+										asChild
+										className={navigationMenuTriggerStyle()}
+									>
+										<Link to="/about">{t("menu.about")}</Link>
+									</NavigationMenuLink>
+								</NavigationMenuItem>
+
+								<NavigationMenuItem>
+									<NavigationMenuTrigger>
+										{t("menu.operations")}
+									</NavigationMenuTrigger>
 									<NavigationMenuContent>
 										<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
-											{operations.map((operation) => (
+											{operations.map((operation, index) => (
 												<ListItem
 													key={operation.title}
 													title={operation.title}
-													to={operation.to}
+													to={links[index]}
 												>
 													{operation.description}
 												</ListItem>
@@ -141,17 +146,8 @@ export default function Navigation() {
 										asChild
 										className={navigationMenuTriggerStyle()}
 									>
-										<Link to="/cases">Клинические примеры</Link>
+										<Link to="/cases">{t("menu.cases")}</Link>
 									</NavigationMenuLink>
-								</NavigationMenuItem>
-
-								<NavigationMenuItem>
-									{/* <NavigationMenuLink
-										asChild
-										className={navigationMenuTriggerStyle()}
-									>
-										<Link to="/surgery-details">Хирургия в деталях</Link>
-									</NavigationMenuLink> */}
 								</NavigationMenuItem>
 
 								<NavigationMenuItem>
@@ -159,7 +155,7 @@ export default function Navigation() {
 										asChild
 										className={navigationMenuTriggerStyle()}
 									>
-										<Link to="/contact">Контакты</Link>
+										<Link to="/contact">{t("menu.contacts")}</Link>
 									</NavigationMenuLink>
 								</NavigationMenuItem>
 							</NavigationMenuList>
@@ -169,14 +165,15 @@ export default function Navigation() {
 					{/* Right Side Actions */}
 					<div className="flex items-center gap-4">
 						<a
-							href="tel:+998995476202"
+							href="tel:+998950047777"
 							className="hidden md:flex items-center gap-2 hover:text-primary transition-colors"
 						>
 							<Smartphone className="h-4 w-4" />
-							<span className="text-sm font-medium">+998 (99) 547-62-02</span>
+							<span className="text-sm font-medium">+998 (95) 004-77-77</span>
 						</a>
-						<div className="hidden lg:block">
+						<div className="hidden lg:flex gap-3 items-center">
 							<ModeToggle />
+							<LanguageToggle />
 						</div>
 
 						{/* Mobile Menu Button */}
@@ -211,7 +208,7 @@ export default function Navigation() {
 									className="block py-3 px-4 rounded-md hover:bg-accent transition-colors font-medium"
 									onClick={() => setIsMobileMenuOpen(false)}
 								>
-									Обо мне
+									{t("menu.home")}
 								</Link>
 							</li>
 
@@ -222,7 +219,7 @@ export default function Navigation() {
 									onOpenChange={() => toggleDropdown("operations")}
 								>
 									<CollapsibleTrigger className="flex items-center justify-between w-full py-3 px-4 rounded-md hover:bg-accent transition-colors font-medium">
-										<span>Операции</span>
+										<span>{t("menu.operations")}</span>
 										<ChevronDown
 											className={`h-4 w-4 transition-transform ${
 												openDropdowns.operations ? "rotate-180" : ""
@@ -230,10 +227,10 @@ export default function Navigation() {
 										/>
 									</CollapsibleTrigger>
 									<CollapsibleContent className="ml-4 mt-2 space-y-2">
-										{operations.map((operation) => (
+										{operations.map((operation, index) => (
 											<Link
 												key={operation.title}
-												to={operation.to}
+												to={links[index]}
 												className="block py-2 px-4 rounded-md hover:bg-accent transition-colors text-sm"
 												onClick={() => setIsMobileMenuOpen(false)}
 											>
@@ -251,7 +248,7 @@ export default function Navigation() {
 									className="block py-3 px-4 rounded-md hover:bg-accent transition-colors font-medium"
 									onClick={() => setIsMobileMenuOpen(false)}
 								>
-									Клинические примеры
+									{t("menu.cases")}
 								</Link>
 							</li>
 
@@ -273,7 +270,7 @@ export default function Navigation() {
 									className="block py-3 px-4 rounded-md hover:bg-accent transition-colors font-medium"
 									onClick={() => setIsMobileMenuOpen(false)}
 								>
-									Контакты
+									{t("menu.contacts")}
 								</Link>
 							</li>
 						</ul>
@@ -281,12 +278,12 @@ export default function Navigation() {
 						{/* Phone and Theme Toggle */}
 						<div className="mt-6 pt-6 border-t space-y-4">
 							<a
-								href="tel:+998995476202"
+								href="tel:+998950047777"
 								className="flex items-center gap-3 py-3 px-4 rounded-md hover:bg-accent transition-colors"
 								onClick={() => setIsMobileMenuOpen(false)}
 							>
 								<Smartphone className="h-5 w-5" />
-								<span className="font-medium">+998 (99) 547-62-02</span>
+								<span className="font-medium">+998 (95) 004-77-77</span>
 							</a>
 
 							{/* Theme Dropdown */}
@@ -301,7 +298,7 @@ export default function Navigation() {
 										) : (
 											<Sun className="h-5 w-5" />
 										)}
-										<span>Тема</span>
+										<span>{t("menu.theme")}</span>
 									</div>
 									<ChevronDown
 										className={`h-4 w-4 transition-transform ${
@@ -318,7 +315,7 @@ export default function Navigation() {
 										className="flex items-center gap-2 w-full py-2 px-4 rounded-md hover:bg-accent transition-colors text-sm"
 									>
 										<Sun className="h-4 w-4" />
-										<span>Светлая</span>
+										<span>{t("menu.light")}</span>
 									</button>
 									<button
 										onClick={() => {
@@ -328,7 +325,7 @@ export default function Navigation() {
 										className="flex items-center gap-2 w-full py-2 px-4 rounded-md hover:bg-accent transition-colors text-sm"
 									>
 										<Moon className="h-4 w-4" />
-										<span>Темная</span>
+										<span>{t("menu.dark")}</span>
 									</button>
 									<button
 										onClick={() => {
@@ -350,7 +347,7 @@ export default function Navigation() {
 												d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
 											/>
 										</svg>
-										<span>Системная</span>
+										<span>{t("menu.system")}</span>
 									</button>
 								</CollapsibleContent>
 							</Collapsible>

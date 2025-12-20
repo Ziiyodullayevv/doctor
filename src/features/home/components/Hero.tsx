@@ -26,7 +26,7 @@ export default function Hero() {
 	}, [activeSlide]); // Reset timer when slide changes manually
 
 	return (
-		<div className="w-full md:container md:mx-auto md:mt-22 md:px-3">
+		<div className="w-full md:container md:mx-auto md:mt-25 md:px-3">
 			<div className="relative h-[100vh] md:h-[620px] md:rounded-2xl overflow-hidden">
 				{/* Slides */}
 				<div className="relative h-full">
@@ -45,19 +45,13 @@ export default function Hero() {
 							<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
 							{/* Content */}
-							<div className="absolute bottom-20 md:bottom-24 lg:bottom-28 left-0 right-0 p-4 md:p-8 lg:p-12 text-white">
+							<div className="absolute bottom-20 md:bottom-24 lg:bottom-28 left-0 right-0 p-4 md:p-8 lg:p-20 text-white">
 								<h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4">
 									{item.name}
 								</h1>
 								<p className="text-sm md:text-lg lg:text-xl max-w-xl my-3 md:my-6 lg:my-8 text-gray-200">
 									{item.description}
 								</p>
-
-								<div className="flex gap-4">
-									<button className="bg-blue-600 hover:bg-blue-700 text-white px-4 md:px-6 lg:px-8 py-2 md:py-3 text-sm md:text-base rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
-										{item.offer}
-									</button>
-								</div>
 							</div>
 						</div>
 					))}
@@ -106,16 +100,14 @@ const slides = [
 		description:
 			"Пластический хирург, детский уролог, детский хирург. Реконструктивная и пластическая хирургия для всей семьи.",
 		offer: "Бесплатная консультация",
-		imgUrl:
-			"https://cdn.pixabay.com/photo/2016/11/14/03/05/surgery-1822458_1280.jpg",
+		imgUrl: "public/home/hero1.webp",
 	},
 	{
 		name: "Суров Роман Викторович",
 		description:
 			"Пластический и реконструктивный хирург. Индивидуальный подход к лечению детей и взрослых.",
 		offer: "Первая консультация бесплатно",
-		imgUrl:
-			"https://cdn.pixabay.com/photo/2016/11/08/05/29/surgery-1807541_1280.jpg",
+		imgUrl: "public/home/hero2.webp",
 	},
 	{
 		name: "Суров Роман Викторович",
@@ -132,13 +124,5 @@ const slides = [
 		offer: "Приём без оплаты в будние дни",
 		imgUrl:
 			"https://www.pourquoidocteur.fr/media/article/COPY_istock-1248264356-1683799521.jpg",
-	},
-	{
-		name: "Суров Роман Викторович",
-		description:
-			"Пластический хирург и детский хирург. Комплексная помощь для всей семьи.",
-		offer: "Бесплатная консультация врача",
-		imgUrl:
-			"https://cdn.pixabay.com/photo/2016/11/08/05/29/operation-1807543_1280.jpg",
 	},
 ];
