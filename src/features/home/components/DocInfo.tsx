@@ -9,7 +9,7 @@ export default function DocInfo() {
 					<div>
 						<div className="h-[380px] w-[380px] rounded-full overflow-hidden ">
 							<img
-								src="/public/home/me.jpg"
+								src="/home/me.jpg"
 								alt="Доктор Суров Роман Викторович"
 								className="w-140 h-auto"
 							/>
@@ -20,7 +20,7 @@ export default function DocInfo() {
 					<div className="w-full space-y-5">
 						<div>
 							<h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
-								Доктор Суров Роман Викторович
+								Абдуллаев Зафар Бобирович
 							</h1>
 							<span className="w-[40px] inline-block h-[2px] bg-primary mb-3"></span>
 							<h2 className="text-xl md:text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
