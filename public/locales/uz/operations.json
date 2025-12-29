@@ -1,0 +1,91 @@
+{
+	"genetal": {
+		"header": "Genital jarrohlik",
+		"title": "Bolalarda tashqi jinsiy a’zolarning rekonstruktiv-plastik operatsiyalari",
+		"description": "Zamonaviy va ishonchli plastik jarrohlik usullarini qo‘llash",
+		"data": [
+			{
+				"title": "Gipospadiya",
+				"description": "Har qanday murakkablikdagi, jumladan muvaffaqiyatsiz operatsiyalardan keyingi holatlarda ham siydik yo‘li va jinsiy olat plastikasi uchun zamonaviy va ishonchli usullar qo‘llaniladi."
+			},
+			{
+				"title": "Siydik pufagi ekstrofiyasi",
+				"description": "Mutaxassislar jamoasining multidisiplinar yondashuvi. Ushbu nuqsonni to‘liq tuzatish hamda qov simfizi suyaklari bilan bog‘liq muammolarni hal etish."
+			},
+			{
+				"title": "Epispadiya",
+				"description": "Uretroplastika bilan jinsiy olatni rekonstruksiya qilish."
+			},
+			{
+				"title": "Yashirin jinsiy olat",
+				"description": "Yashirin jinsiy olatni tuzatishda zamonaviy va ishonchli usullarni qo‘llash."
+			},
+			{
+				"title": "Difaliya",
+				"description": "Jinsiy olatning ikki barobar bo‘lishini jarrohlik yo‘li bilan tuzatish."
+			},
+			{
+				"title": "Afaliya",
+				"description": "Falloplastika (bemorning o‘z to‘qimalaridan sun’iy jinsiy olat yaratish)."
+			},
+			{
+				"title": "Jinsiy olatning yatrogen shikastlanishlari",
+				"description": "Jinsiy olatning barcha turdagi shikastlanishlarini tuzatish."
+			}
+		]
+	},
+	"urology": {
+		"header": "Endoskopik jarrohlik",
+		"title": "Yuqori va pastki siydik chiqarish yo‘llarida kam invaziv jarrohlik",
+		"description": "",
+		"data": [
+			{
+				"title": "Piyeloureteral segment obstruksiyasi. Gidronefroz",
+				"description": "Laparoskopik pieloplastika (buyrakdan siydik chiqishini tiklash)."
+			},
+			{
+				"title": "Pufak–siydik nayi refluksi (PSR)",
+				"description": "Laparoskopik, ochiq (mini-kirish) reimplantatsiya va endoskopik tuzatish."
+			},
+			{
+				"title": "Obstruktiv megaureter",
+				"description": "Laparoskopik va ochiq (mini-kirish) reimplantatsiya."
+			},
+			{
+				"title": "Siydik-tosh kasalligi",
+				"description": "Lazer yordamida kesmasiz toshlarni olib tashlash."
+			},
+			{
+				"title": "Buyraklarning ikki martalik bo‘lishi",
+				"description": "Laparoskopik va ochiq (mini-kirish) reimplantatsiya yoki uretero-ureteral anastomoz."
+			}
+		]
+	},
+	"plastic": {
+		"header": "Rekonstruktiv jarrohlik",
+		"title": "Bolalarda jinsiy rivojlanish buzilishlari",
+		"description": "",
+		"data": [
+			{
+				"title": "Tug‘ma buyrak usti bezi disfunktsiyasi (UBBD) (urogenital sinus va klitor gipertrofiyasi)",
+				"description": "Qizlarda feminlashtiruvchi genitoplastika (tashqi jinsiy a’zolarni ayol tipida tiklash) va urogenital sinusni ajratish."
+			},
+			{
+				"title": "Gonada disgeneziyasi (tuxumdon yoki moyaklarning rivojlanmasligi)",
+				"description": "Diagnostika multidisiplinar jamoa tomonidan amalga oshiriladi (bolalar endokrinologi, urolog, genetik, psixolog) va shunga mos jarrohlik taktikasi tanlanadi."
+			},
+			{
+				"title": "Aralash gonadal disgeneziya",
+				"description": "Diagnostika multidisiplinar jamoa tomonidan amalga oshiriladi (bolalar endokrinologi, urolog, genetik, psixolog) va mos jarrohlik usullari tanlanadi."
+			},
+			{
+				"title": "Haqiqiy germafroditizm (tuxumdon va moyak to‘qimalarining bir vaqtda mavjudligi)",
+				"description": "Diagnostika multidisiplinar jamoa tomonidan amalga oshiriladi (bolalar endokrinologi, urolog, genetik, psixolog) va tegishli jarrohlik tuzatish usullari tanlanadi."
+			},
+			{
+				"title": "Androgenlarga sezuvchanlik sindromi",
+				"description": "Diagnostika multidisiplinar jamoa tomonidan amalga oshiriladi (bolalar endokrinologi, urolog, genetik, psixolog) va mos jarrohlik davolash usullari tanlanadi."
+			}
+		]
+	}
+}

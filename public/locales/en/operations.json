@@ -1,0 +1,91 @@
+{
+	"genetal": {
+		"header": "Genital Surgery",
+		"title": "Reconstructive and Plastic Surgery of the External Genitalia in Children",
+		"description": "Application of modern and reliable plastic surgery techniques",
+		"data": [
+			{
+				"title": "Hypospadias",
+				"description": "Use of modern and reliable techniques for urethral and penile reconstruction of any complexity, including cases after unsuccessful previous surgeries."
+			},
+			{
+				"title": "Bladder Exstrophy",
+				"description": "A multidisciplinary approach to treatment, including complete correction of the defect and management of pubic symphysis abnormalities."
+			},
+			{
+				"title": "Epispadias",
+				"description": "Penile reconstruction with urethroplasty."
+			},
+			{
+				"title": "Concealed Penis",
+				"description": "Application of modern and reliable methods for correction of concealed penis."
+			},
+			{
+				"title": "Diphallia",
+				"description": "Surgical correction of penile duplication."
+			},
+			{
+				"title": "Aphallia",
+				"description": "Phalloplasty (creation of an artificial penis using the patient’s own tissues)."
+			},
+			{
+				"title": "Iatrogenic Penile Injuries",
+				"description": "Correction of all types of penile injuries."
+			}
+		]
+	},
+	"urology": {
+		"header": "Endoscopic Surgery",
+		"title": "Minimally Invasive Surgery of the Upper and Lower Urinary Tract",
+		"description": "",
+		"data": [
+			{
+				"title": "Ureteropelvic Junction Obstruction. Hydronephrosis",
+				"description": "Laparoscopic pyeloplasty (restoration of urine outflow from the kidney)."
+			},
+			{
+				"title": "Vesicoureteral Reflux (VUR)",
+				"description": "Laparoscopic, open (mini-incision) reimplantation and endoscopic correction."
+			},
+			{
+				"title": "Obstructive Megaureter",
+				"description": "Laparoscopic and open (mini-incision) reimplantation."
+			},
+			{
+				"title": "Urolithiasis",
+				"description": "Stone removal without incision using laser technology."
+			},
+			{
+				"title": "Duplicated Kidney",
+				"description": "Laparoscopic and open (mini-incision) reimplantation or uretero-ureteral anastomosis."
+			}
+		]
+	},
+	"plastic": {
+		"header": "Reconstructive Surgery",
+		"title": "Disorders of Sex Development in Children",
+		"description": "",
+		"data": [
+			{
+				"title": "Congenital Adrenal Hyperplasia (CAH) (urogenital sinus and clitoral hypertrophy)",
+				"description": "Feminizing genitoplasty (reconstruction of external genitalia according to the female type) and separation of the urogenital sinus."
+			},
+			{
+				"title": "Gonadal Dysgenesis",
+				"description": "Diagnosis is carried out by a multidisciplinary team (pediatric endocrinologist, urologist, geneticist, psychologist) followed by selection of appropriate surgical correction."
+			},
+			{
+				"title": "Mixed Gonadal Dysgenesis",
+				"description": "Diagnosis is performed by a multidisciplinary team (pediatric endocrinologist, urologist, geneticist, psychologist) with subsequent selection of appropriate surgical treatment."
+			},
+			{
+				"title": "True Hermaphroditism (presence of both ovarian and testicular tissue)",
+				"description": "Diagnosis is carried out by a multidisciplinary team (pediatric endocrinologist, urologist, geneticist, psychologist) followed by appropriate surgical correction."
+			},
+			{
+				"title": "Androgen Insensitivity Syndrome",
+				"description": "Diagnosis is carried out by a multidisciplinary team (pediatric endocrinologist, urologist, geneticist, psychologist) with selection of appropriate surgical management."
+			}
+		]
+	}
+}

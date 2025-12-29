@@ -6,10 +6,10 @@ export default function DocInfo() {
 	return (
 		<section className="py-8">
 			<div className="container mx-auto px-4 md:px-10">
-				<div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+				<div className="flex flex-col text-center sm:text-left lg:flex-row gap-8 lg:gap-12 items-center">
 					{/* Left - Image */}
 					<div>
-						<div className="h-[380px] w-[380px] rounded-full overflow-hidden ">
+						<div className="h-[300px] w-[300px] sm:h-[380px] sm:w-[380px] rounded-full overflow-hidden ">
 							<img
 								src="/home/me.jpg"
 								alt="Доктор Суров Роман Викторович"

@@ -5,12 +5,10 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 interface Procedure {
-	condition: string;
-	treatment: string;
-	category?: string;
+	title: string;
+	description: string;
 }
 
 interface MedicalProceduresProps {
@@ -55,26 +53,17 @@ export default function MedicalProcedures({
 													<div className="flex items-start gap-2">
 														<div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-blue-500 mt-2" />
 														<p className="text-sm font-semibold text-slate-800 leading-relaxed">
-															{procedure.condition}
+															{procedure.title}
 														</p>
 													</div>
 												</div>
 
 												<div className="md:col-span-3">
 													<p className="text-sm text-slate-600 leading-relaxed pl-3.5 md:pl-0">
-														{procedure.treatment}
+														{procedure.description}
 													</p>
 												</div>
 											</div>
-
-											{procedure.category && (
-												<Badge
-													variant="outline"
-													className="mt-2 text-xs border-blue-200 text-blue-700 bg-blue-50"
-												>
-													{procedure.category}
-												</Badge>
-											)}
 										</div>
 									))}
 								</div>

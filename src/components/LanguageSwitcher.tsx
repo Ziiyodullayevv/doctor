@@ -35,7 +35,7 @@ export function LanguageToggle() {
 				<Button
 					variant="outline"
 					size="icon"
-					className="rounded-full w-9 h-9 p-0 border-1 transition-colors overflow-hidden"
+					className="rounded-full w-8.5 h-8.5 p-0 border-1 transition-colors overflow-hidden"
 				>
 					<img
 						src={currentLang.flag}
@@ -45,7 +45,7 @@ export function LanguageToggle() {
 				</Button>
 			</DropdownMenuTrigger>
 
-			<DropdownMenuContent align="end" className="w-48">
+			<DropdownMenuContent align="end" className="mt-2 w-48">
 				{languages.map((lang) => (
 					<DropdownMenuItem
 						key={lang.code}
