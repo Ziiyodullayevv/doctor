@@ -23,6 +23,7 @@ import { useTheme } from "@/context/theme/useTheme";
 import { LanguageToggle } from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import Logo from "./Logo";
+import { Button } from "./ui/button";
 
 interface OperationsItem {
 	title: string;
@@ -163,14 +164,18 @@ export default function Navigation() {
 					</div>
 
 					{/* Right Side Actions */}
-					<div className="flex items-center gap-4">
-						<a
-							href="tel:+998950047777"
-							className="hidden md:flex items-center gap-2 hover:text-primary transition-colors"
+					<div className="flex items-center gap-3">
+						<Button
+							variant={"outline"}
+							className="hidden group bg-transparent md:flex h-9 hover:bg-blue-500/10 px-4 border-2 rounded-full items-center gap-2  transition-colors"
 						>
-							<Smartphone className="h-4 w-4" />
-							<span className="text-sm font-medium">+998 (95) 004-77-77</span>
-						</a>
+							<a href="tel:+998950047777" className="flex items-center gap-2">
+								<Smartphone className="h-4 w-4 group-hover:text-primary text-foreground" />
+								<span className="text-sm group-hover:text-primary text-foreground font-medium">
+									+998 (95) 004-77-77
+								</span>
+							</a>
+						</Button>
 						<div className="hidden lg:flex gap-3 items-center">
 							<ModeToggle />
 							<LanguageToggle />

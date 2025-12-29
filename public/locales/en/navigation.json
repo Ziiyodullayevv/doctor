@@ -23,6 +23,7 @@
 		"light": "Light",
 		"dark": "Dark",
 		"system": "System",
-		"doctor":"Dr. Zafar Bobirovich Abdullaev"
+		"doctor":"Dr. Zafar Bobirovich Abdullaev",
+		"loading":"Loading..."
 	}
 }
