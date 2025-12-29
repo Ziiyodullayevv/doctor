@@ -52,11 +52,12 @@ export default function ImageGroup() {
 }
 
 const itemData = [
-	{ img: "/home/1.jpg", title: "Tajribali shifokor – konsultatsiya" },
 	{
 		img: "/home/2.jpg",
 		title: "Tajribali shifokor – bemorni ko‘rikdan o‘tkazmoqda",
 	},
+	{ img: "/home/1.jpg", title: "Tajribali shifokor – konsultatsiya" },
+
 	{ img: "/home/3.jpg", title: "Tajribali shifokor – USM tekshiruvi" },
 	{ img: "/home/4.jpg", title: "Tajribali shifokor – EKG o‘lchamoqda" },
 	{ img: "/home/5.jpg", title: "Tajribali shifokor – bolalar qabulida" },
