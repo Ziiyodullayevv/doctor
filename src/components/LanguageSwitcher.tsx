@@ -35,7 +35,7 @@ export function LanguageToggle() {
 				<Button
 					variant="outline"
 					size="icon"
-					className="rounded-full w-9 h-9 p-0 border-2 transition-colors overflow-hidden"
+					className="rounded-full w-9 h-9 p-0 border-1 transition-colors overflow-hidden"
 				>
 					<img
 						src={currentLang.flag}

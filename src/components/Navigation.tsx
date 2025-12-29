@@ -92,7 +92,7 @@ export default function Navigation() {
 		<header
 			className={`fixed top-0 left-0 text-lg right-0 z-50 transition-all duration-300 ${
 				isScrolled
-					? "bg-background backdrop-blur-md shadow-md py-5 md:py-7"
+					? "bg-background backdrop-blur-md border-b border-border shadow-md py-5 md:py-7"
 					: "bg-background py-4 md:py-6"
 			}`}
 		>
@@ -167,7 +167,7 @@ export default function Navigation() {
 					<div className="flex items-center gap-3">
 						<Button
 							variant={"outline"}
-							className="hidden group bg-transparent md:flex h-9 hover:bg-blue-500/10 px-4 border-2 rounded-full items-center gap-2  transition-colors"
+							className="hidden group bg-transparent md:flex h-9 hover:bg-blue-500/10 px-4 border-1 rounded-full items-center gap-2  transition-colors"
 						>
 							<a href="tel:+998950047777" className="flex items-center gap-2">
 								<Smartphone className="h-4 w-4 group-hover:text-primary text-foreground" />
