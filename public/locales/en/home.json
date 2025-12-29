@@ -1,0 +1,80 @@
+{
+	"hero": {
+		"carusel": [
+			{
+				"name": "Abdullaev Zafar Bobirovich",
+				"description": "A healthy future starts here",
+				"imgUrl": "/home/hero1.webp"
+			},
+			{
+				"name": "Abdullaev Zafar Bobirovich",
+				"description": "Pediatric urology where every step toward health matters",
+				"imgUrl": "/home/hero2.webp"
+			},
+			{
+				"name": "Abdullaev Zafar Bobirovich",
+				"description": "A reliable solution for delicate pediatric health concerns",
+				"imgUrl": "https://47lokb.ru/upload/medialibrary/85a/l5v1qk60igxr3tpjzxqsx8iek4yr7ja8/hirurg_1.jpg"
+			}
+		]
+	},
+	"ekspert": {
+		"title": "Experts",
+		"description": "Professional expertise in every field",
+		"data": [
+			{
+				"title": "Genital Surgery",
+				"description": "Highly effective treatment of disorders and conditions of the genital organs.",
+				"buttonText": "Learn more"
+			},
+			{
+				"title": "Endoscopic Surgery",
+				"description": "Minimally invasive procedures for the upper and lower urinary tract.",
+				"buttonText": "Learn more"
+			},
+			{
+				"title": "Reconstructive Surgery",
+				"description": "Correction of congenital and acquired deformities.",
+				"buttonText": "Learn more"
+			}
+		]
+	},
+
+	"docInfo": {
+		"fullName": "Abdullaev Zafar Bobirovich",
+		"job": "Urologist and Andrologist",
+		"description": "I provide consultations and perform surgical procedures at the National Children's Medical Center in Tashkent.",
+		"btn1": "About me",
+		"btn2": "Ask a question"
+	},
+	"reviews": {
+		"title": "Reviews",
+		"data": [
+			{
+				"fullName": "Maria Petrova",
+				"date": "September 2022",
+				"description": "Abdullaev Zafar Bobirovich is a true professional in his field! The surgery went successfully, everything went smoothly. The doctor devoted enough time to consultations, explained everything in detail, and answered all questions. Recovery was quick and without complications. Huge thanks for the care and attention to patients!"
+			},
+			{
+				"fullName": "Olga Smirnova",
+				"date": "October 2024",
+				"description": "Very grateful to Roman Viktorovich for his work! The surgery was performed at the highest level, everything went perfectly. The doctor is always in touch, answers all questions, and provides moral support. This is exactly the doctor you can trust with the most precious thing — the health of your loved ones. Thank you for your professionalism!"
+			},
+			{
+				"fullName": "Irina Kuznetsova",
+				"date": "November 2023",
+				"description": "Sincerely grateful for the attentive care and professionalism! The entire surgery went smoothly, and recovery was fast. Very satisfied with the result."
+			},
+			{
+				"fullName": "Ekaterina Volkova",
+				"date": "December 2023",
+				"description": "The doctor spent a lot of time with me, explained all stages of the surgery in detail. Very satisfied with the quality of service and attention to patients."
+			},
+			{
+				"fullName": "Anna Smirnova",
+				"date": "January 2024",
+				"description": "Excellent clinic and professional doctor! The surgery went smoothly, recovery was quick and comfortable. I recommend it to everyone!"
+			}
+		]
+	}
+}

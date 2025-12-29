@@ -1,0 +1,82 @@
+{
+	"hero": {
+		"carusel": [
+			{
+				"name": "Abdullaev Zafar Bobirovich",
+				"description": "Sog‘lom kelajak shu yerdan boshlanadi",
+				"imgUrl": "/home/hero1.webp"
+			},
+			{
+				"name": "Abdullaev Zafar Bobirovich",
+				"description": "Bolalar urologiyasi — sog‘liq sari har bir qadam muhim",
+				"imgUrl": "/home/hero2.webp"
+			},
+			{
+				"name": "Abdullaev Zafar Bobirovich",
+				"description": "Bolalar salomatligiga oid nozik masalalar uchun ishonchli yechim",
+				"imgUrl": "https://47lokb.ru/upload/medialibrary/85a/l5v1qk60igxr3tpjzxqsx8iek4yr7ja8/hirurg_1.jpg"
+			}
+		]
+	},
+
+	"ekspert": {
+		"title": "Mutaxassislar",
+		"description": "Har bir yo‘nalishda professional yondashuv",
+		"data": [
+			{
+				"title": "Genital jarrohlik",
+				"description": "Jinsiy a’zolardagi kasallik va buzilishlarni yuqori aniqlikda davolash.",
+				"buttonText": "Batafsil"
+			},
+			{
+				"title": "Endoskopik jarrohlik",
+				"description": "Yuqori va pastki siydik yo‘llarida kam invaziv jarrohlik amaliyotlari.",
+				"buttonText": "Batafsil"
+			},
+			{
+				"title": "Rekonstruktiv jarrohlik",
+				"description": "Tug‘ma va orttirilgan nuqsonlarni tiklash va tuzatish.",
+				"buttonText": "Batafsil"
+			}
+		]
+	},
+
+	"docInfo": {
+		"fullName": "Abdullaev Zafar Bobirovich",
+		"job": "Urolog-androlog",
+		"description": "Milliy bolalar tibbiyot markazida maslahat va jarrohlik amaliyotlarini olib boraman, Toshkent shahri.",
+		"btn1": "Men haqimda",
+		"btn2": "Savol berish"
+	},
+
+	"reviews": {
+		"title": "Sharhlar",
+		"data": [
+			{
+				"fullName": "Maria Petrova",
+				"date": "Sentyabr 2022",
+				"description": "Abdullaev Zafar Bobirovich o‘z ishining haqiqiy mutaxassisi! Operatsiya muvaffaqiyatli o‘tdi, hammasi silliq bo‘ldi. Shifokor maslahatlarda yetarlicha vaqt ajratdi, hammasini batafsil tushuntirdi va barcha savollarga javob berdi. Reabilitatsiya tez va muammosiz o‘tdi. Bemorlarga ko‘rsatilgan g‘amxo‘rlik va e’tibor uchun katta rahmat!"
+			},
+			{
+				"fullName": "Olga Smirnova",
+				"date": "Oktyabr 2024",
+				"description": "Roman Viktorovichga ish faoliyati uchun juda minnatdorman! Operatsiya eng yuqori darajada o‘tkazildi, hammasi a’lo darajada bo‘ldi. Shifokor har doim bog‘lanib turadi, barcha savollarga javob beradi va ruhiy yordam ko‘rsatadi. Aynan shu shifokorga eng qimmatli narsani — yaqinlaringizning sog‘ligini ishonib topshirishingiz mumkin. Sizning professionalligingiz uchun rahmat!"
+			},
+			{
+				"fullName": "Irina Kuznetsova",
+				"date": "Noyabr 2023",
+				"description": "Diqqatli yondashuv va professionallik uchun chin dildan minnatdorman! Operatsiya muammosiz o‘tdi, tiklanish tez bo‘ldi. Natijadan juda mamnunman."
+			},
+			{
+				"fullName": "Ekaterina Volkova",
+				"date": "Dekabr 2023",
+				"description": "Shifokor menga ko‘p vaqt ajratdi, operatsiyaning barcha bosqichlarini batafsil tushuntirdi. Xizmat sifati va bemorlarga e’tibordan juda mamnunman."
+			},
+			{
+				"fullName": "Anna Smirnova",
+				"date": "Yanvar 2024",
+				"description": "Ajoyib klinika va professionallik shifokor! Operatsiya silliq o‘tdi, tiklanish tez va qulay bo‘ldi. Hammaga tavsiya qilaman!"
+			}
+		]
+	}
+}

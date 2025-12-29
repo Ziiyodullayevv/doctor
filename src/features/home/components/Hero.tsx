@@ -1,8 +1,19 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
+interface Slide {
+	name: string;
+	description: string;
+	imgUrl: string;
+}
 
 export default function Hero() {
 	const [activeSlide, setActiveSlide] = useState(0);
+
+	const { t } = useTranslation();
+
+	const slides = t("hero.carusel", { returnObjects: true }) as Slide[];
 
 	const nextSlide = () => {
 		setActiveSlide((prev) => (prev + 1) % slides.length);
@@ -94,35 +105,24 @@ export default function Hero() {
 	);
 }
 
-const slides = [
-	{
-		name: "Абдуллаев Зафар Бобирович",
-		description:
-			"Пластический хирург, детский уролог, детский хирург. Реконструктивная и пластическая хирургия для всей семьи.",
-		offer: "Бесплатная консультация",
-		imgUrl: "/home/hero1.webp",
-	},
-	{
-		name: "Абдуллаев Зафар Бобирович",
-		description:
-			"Пластический и реконструктивный хирург. Индивидуальный подход к лечению детей и взрослых.",
-		offer: "Первая консультация бесплатно",
-		imgUrl: "/home/hero2.webp",
-	},
-	{
-		name: "Абдуллаев Зафар Бобирович",
-		description:
-			"Детский уролог-хирург и пластический хирург. Современные методы восстановления и коррекции.",
-		offer: "Бесплатная первичная диагностика",
-		imgUrl:
-			"https://47lokb.ru/upload/medialibrary/85a/l5v1qk60igxr3tpjzxqsx8iek4yr7ja8/hirurg_1.jpg",
-	},
-	{
-		name: "Абдуллаев Зафар Бобирович",
-		description:
-			"Специалист по реконструктивной хирургии. Безопасные операции для пациентов всех возрастов.",
-		offer: "Приём без оплаты в будние дни",
-		imgUrl:
-			"https://www.pourquoidocteur.fr/media/article/COPY_istock-1248264356-1683799521.jpg",
-	},
-];
+// const slides = [
+// 	{
+// 		name: "Абдуллаев Зафар Бобирович",
+// 		description:
+// 			"Пластический хирург, детский уролог, детский хирург. Реконструктивная и пластическая хирургия для всей семьи.",
+// 		imgUrl: "/home/hero1.webp",
+// 	},
+// 	{
+// 		name: "Абдуллаев Зафар Бобирович",
+// 		description:
+// 			"Пластический и реконструктивный хирург. Индивидуальный подход к лечению детей и взрослых.",
+// 		imgUrl: "/home/hero2.webp",
+// 	},
+// 	{
+// 		name: "Абдуллаев Зафар Бобирович",
+// 		description:
+// 			"Детский уролог-хирург и пластический хирург. Современные методы восстановления и коррекции.",
+// 		imgUrl:
+// 			"https://47lokb.ru/upload/medialibrary/85a/l5v1qk60igxr3tpjzxqsx8iek4yr7ja8/hirurg_1.jpg",
+// 	},
+// ];

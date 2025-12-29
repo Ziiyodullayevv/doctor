@@ -1,35 +1,17 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const reviews = [
-	{
-		id: 1,
-		text: "Хочу выразить огромную благодарность Роману Викторовичу! Он наш герой и спаситель, в сентябре 2022 года сын травмировался на турниках и получил разрыв уретры. В нашем родном городе никто не делает операцию по пластике уретры. Мы нашли по отзывам Романа Викторовича, написали ему. Он ответил очень быстро и пригласил нас в Москву. Операция прошла успешно, ребенок у меня снова ожил, вернулся к прежней жизни.",
-		author: "Мария Петрова",
-		date: "Сентябрь 2022",
-	},
-	{
-		id: 2,
-		text: "Роман Викторович - настоящий профессионал своего дела! Операция прошла успешно, все прошло гладко. Врач уделил достаточно времени на консультации, объяснил все детально и ответил на все вопросы. Реабилитация прошла быстро и без осложнений. Огромное спасибо за заботу и внимание к пациентам!",
-		author: "Андрей Соколов",
-		date: "Март 2023",
-	},
-	{
-		id: 3,
-		text: "Выражаю огромную благодарность доктору Сурову! Обратились с очень сложным случаем, другие врачи отказывались браться. Роман Викторович провел блестящую операцию, результат превзошел все ожидания. Профессионализм, опыт и человеческое отношение - это то, что отличает настоящего врача. Рекомендую от всей души!",
-		author: "Екатерина Иванова",
-		date: "Июнь 2023",
-	},
-	{
-		id: 4,
-		text: "Очень благодарна Роману Викторовичу за его работу! Операция была проведена на высшем уровне, все прошло отлично. Доктор всегда на связи, отвечает на все вопросы, поддерживает морально. Это именно тот врач, которому можно доверить самое дорогое - здоровье своих близких. Спасибо за ваш профессионализм!",
-		author: "Ольга Смирнова",
-		date: "Октябрь 2023",
-	},
-];
+interface Reviews {
+	fullName: string;
+	date: string;
+	description: string;
+}
 
 export default function ReviewsCarousel() {
 	const [activeSlide, setActiveSlide] = useState(0);
+	const { t } = useTranslation();
+	const reviews = t("reviews.data", { returnObjects: true }) as Reviews[];
 
 	const nextSlide = () => {
 		setActiveSlide((prev) => (prev + 1) % reviews.length);
@@ -60,7 +42,7 @@ export default function ReviewsCarousel() {
 				{/* Header */}
 				<div className="text-center mb-8 md:mb-12">
 					<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
-						Отзывы
+						{t("reviews.title")}
 					</h2>
 					<div className="w-16 md:w-20 h-1 bg-white mx-auto mb-3 md:mb-4"></div>
 				</div>
@@ -70,7 +52,7 @@ export default function ReviewsCarousel() {
 					<div className="relative min-h-[450px] md:min-h-[400px] flex items-center">
 						{reviews.map((review, index) => (
 							<div
-								key={review.id}
+								key={index}
 								className={`absolute inset-0 transition-opacity duration-500 ${
 									index === activeSlide ? "opacity-100" : "opacity-0"
 								}`}
@@ -81,14 +63,14 @@ export default function ReviewsCarousel() {
 
 									{/* Review Text */}
 									<p className="text-white text-base md:text-lg lg:text-xl leading-relaxed mb-6 md:mb-8 max-h-[240px] md:max-h-none overflow-y-auto">
-										{review.text}
+										{review.description}
 									</p>
 
 									{/* Author Info */}
 									<div className="flex items-center justify-between flex-wrap gap-3 md:gap-4">
 										<div>
 											<p className="text-white font-semibold text-base md:text-lg">
-												{review.author}
+												{review.fullName}
 											</p>
 											<p className="text-white/70 text-xs md:text-sm">
 												{review.date}
