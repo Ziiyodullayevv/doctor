@@ -6,11 +6,13 @@ import {
 	YoutubeFilled,
 } from "@ant-design/icons";
 import { FloatButton } from "antd";
+import "./Share.css";
 
 const FloatingShareButton = () => (
 	<>
 		<FloatButton.Group
-			trigger="hover"
+			className="ai-button"
+			trigger="click"
 			type="primary"
 			icon={<ShareAltOutlined />}
 		>
