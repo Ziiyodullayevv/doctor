@@ -1,4 +1,5 @@
 import Appointment from "@/components/Appointment";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import SubHeader from "@/components/SubHeader";
 import { Award, GraduationCap, Stethoscope, Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -23,7 +24,7 @@ interface Experience {
 import { CONFIG } from "../../../../global-config";
 
 export default function AboutPage() {
-	const { t } = useTranslation(["about", "navigation"]);
+	const { t, i18n } = useTranslation(["about", "navigation"]);
 
 	const memberships = t("memberships.items", {
 		returnObjects: true,
@@ -44,6 +45,15 @@ export default function AboutPage() {
 	return (
 		<>
 			<title>{metaData.title}</title>
+			<BreadcrumbJsonLd
+				pagePath="/about"
+				pageName={t("header.title")}
+				language={i18n.resolvedLanguage}
+				items={[
+					{ name: t("navigation:menu.home"), path: "/" },
+					{ name: t("header.supTitle"), path: "/about" },
+				]}
+			/>
 
 			<div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
 				{/* Hero Section */}

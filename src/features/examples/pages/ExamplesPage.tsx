@@ -1,4 +1,5 @@
 import SubHeader from "@/components/SubHeader";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import SlideList from "../components/SlideList";
 import { getUrologiyaData } from "./data";
 import { CONFIG } from "../../../../global-config";
@@ -18,6 +19,15 @@ export default function ExamplesPage() {
 	return (
 		<div>
 			<title>{metaData.title}</title>
+			<BreadcrumbJsonLd
+				pagePath="/cases"
+				pageName={t("menu.cases")}
+				language={i18n.resolvedLanguage}
+				items={[
+					{ name: t("menu.home"), path: "/" },
+					{ name: t("menu.cases"), path: "/cases" },
+				]}
+			/>
 
 			<SubHeader
 				title={t("menu.cases")}

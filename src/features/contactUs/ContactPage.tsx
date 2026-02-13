@@ -1,4 +1,5 @@
 import SubHeader from "@/components/SubHeader";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -256,6 +257,15 @@ export default function ContactPage() {
 	return (
 		<>
 			<title>{metaData.title}</title>
+			<BreadcrumbJsonLd
+				pagePath="/contact"
+				pageName={t("navigation:menu.contacts")}
+				language={i18n.resolvedLanguage}
+				items={[
+					{ name: t("navigation:menu.home"), path: "/" },
+					{ name: t("navigation:menu.contacts"), path: "/contact" },
+				]}
+			/>
 
 			<div>
 				<SubHeader

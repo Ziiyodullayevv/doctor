@@ -1,6 +1,7 @@
 import SubHeader from "@/components/SubHeader";
 import MedicalProcedures from "../components/OperationList";
 import Appointment from "@/components/Appointment";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { useTranslation } from "react-i18next";
 import { CONFIG } from "../../../../global-config";
 
@@ -10,7 +11,7 @@ interface Urology {
 }
 
 export default function UrologyPage() {
-	const { t } = useTranslation(["operations", "navigation"]); // operations va navigation namespace-larini ishlatish
+	const { t, i18n } = useTranslation(["operations", "navigation"]); // operations va navigation namespace-larini ishlatish
 	const data = t("urology.data", { returnObjects: true }) as Urology[];
 	const metaData = {
 		title: `${t("urology.header")} - ${CONFIG.appName}`,
@@ -19,6 +20,15 @@ export default function UrologyPage() {
 	return (
 		<div>
 			<title>{metaData.title}</title>
+			<BreadcrumbJsonLd
+				pagePath="/operations/urology"
+				pageName={t("urology.header")}
+				language={i18n.resolvedLanguage}
+				items={[
+					{ name: t("navigation:menu.home"), path: "/" },
+					{ name: t("urology.header"), path: "/operations/urology" },
+				]}
+			/>
 			<SubHeader
 				title={t("urology.header")}
 				data={[

@@ -1,6 +1,7 @@
 import SubHeader from "@/components/SubHeader";
 import MedicalProcedures from "../components/OperationList";
 import Appointment from "@/components/Appointment";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { useTranslation } from "react-i18next";
 import { CONFIG } from "../../../../global-config";
 
@@ -10,7 +11,7 @@ interface Plastic {
 }
 
 export default function PlasticPage() {
-	const { t } = useTranslation(["operations", "navigation"]);
+	const { t, i18n } = useTranslation(["operations", "navigation"]);
 	const data = t("plastic.data", { returnObjects: true }) as Plastic[];
 	const metaData = {
 		title: `${t("plastic.header")} - ${CONFIG.appName}`,
@@ -19,6 +20,15 @@ export default function PlasticPage() {
 	return (
 		<div>
 			<title>{metaData.title}</title>
+			<BreadcrumbJsonLd
+				pagePath="/operations/plastic"
+				pageName={t("plastic.header")}
+				language={i18n.resolvedLanguage}
+				items={[
+					{ name: t("navigation:menu.home"), path: "/" },
+					{ name: t("plastic.header"), path: "/operations/plastic" },
+				]}
+			/>
 			<SubHeader
 				title={t("plastic.header")}
 				data={[
