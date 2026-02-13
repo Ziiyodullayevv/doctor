@@ -256,185 +256,188 @@ export default function ContactPage() {
 	return (
 		<>
 			<title>{metaData.title}</title>
-			<SubHeader
-				title={t("navigation:menu.contacts")}
-				data={[
-					{ label: t("navigation:menu.home"), path: "/" },
-					{ label: t("navigation:menu.contacts"), path: "/contact" },
-				]}
-			/>
 
-			<div className="container mx-auto px-5 md:px-10">
-				{/* --- Konsultatsiya bo‘limi --- */}
-				<div className="flex flex-col lg:flex-row items-start my-10 gap-10">
-					{/* Left */}
-					<div className="flex flex-col gap-5 text-foreground/70 flex-1">
-						<h2 className="text-xl md:text-2xl font-medium leading-snug">
-							{t("consultation_note")}
-						</h2>
+			<div>
+				<SubHeader
+					title={t("navigation:menu.contacts")}
+					data={[
+						{ label: t("navigation:menu.home"), path: "/" },
+						{ label: t("navigation:menu.contacts"), path: "/contact" },
+					]}
+				/>
 
-						<p>{t("clinic_title")}</p>
+				<div className="container mx-auto px-5 md:px-10">
+					{/* --- Konsultatsiya bo‘limi --- */}
+					<div className="flex flex-col lg:flex-row items-start my-10 gap-10">
+						{/* Left */}
+						<div className="flex flex-col gap-5 text-foreground/70 flex-1">
+							<h2 className="text-xl md:text-2xl font-medium leading-snug">
+								{t("consultation_note")}
+							</h2>
 
-						<p>{t("clinic_address")}</p>
+							<p>{t("clinic_title")}</p>
 
-						{/* <p>
+							<p>{t("clinic_address")}</p>
+
+							{/* <p>
 							Для записи через WhatsApp нажмите{" "}
 							<strong className="font-normal ">СЮДА!!!</strong>
 						</p> */}
 
-						{/* <p>
+							{/* <p>
 							<strong className="font-normal">Пластическая хирургия</strong> в
 							Морозовской больнице, записаться просто! Нажмите сюда.
 						</p> */}
-					</div>
+						</div>
 
-					{/* Right */}
-					<div className="text-foreground/70 flex-1 w-full">
-						<ul className="list-disc flex flex-col gap-3">
-							<li>
-								<a href="https://wa.me/message/H7D2WIZWC3H7N1">
-									WhatsApp:{" "}
-									<span className="text-foreground">(95) 004 77 77</span>
-								</a>
-							</li>
+						{/* Right */}
+						<div className="text-foreground/70 flex-1 w-full">
+							<ul className="list-disc flex flex-col gap-3">
+								<li>
+									<a href="https://wa.me/message/H7D2WIZWC3H7N1">
+										WhatsApp:{" "}
+										<span className="text-foreground">(95) 004 77 77</span>
+									</a>
+								</li>
 
-							<li>
-								Telegram (детская урология):{" "}
-								<a
-									className="text-foreground"
-									href="https://t.me/Pediatric_urology"
-								>
-									Pediatric Urology
-								</a>
-							</li>
-							<li>
-								Instagram:{" "}
-								<a
-									className="text-foreground"
-									href="https://www.instagram.com/doc.abdullaevzafar?igsh=MTE4OG9kNHhycDF2bw=="
-								>
-									@doc.abdullaevzafar
-								</a>
-							</li>
-						</ul>
+								<li>
+									Telegram (детская урология):{" "}
+									<a
+										className="text-foreground"
+										href="https://t.me/Pediatric_urology"
+									>
+										Pediatric Urology
+									</a>
+								</li>
+								<li>
+									Instagram:{" "}
+									<a
+										className="text-foreground"
+										href="https://www.instagram.com/doc.abdullaevzafar?igsh=MTE4OG9kNHhycDF2bw=="
+									>
+										@doc.abdullaevzafar
+									</a>
+								</li>
+							</ul>
 
-						<div className="flex flex-wrap gap-5 mt-7">
-							<img
-								className="w-28 md:w-32"
-								src="/contacts/qr-whatsapp.png"
-								alt=""
-								loading="lazy"
-								decoding="async"
-							/>
-							<img
-								className="w-28 md:w-32"
-								src="/contacts/qr-instagram.png"
-								alt=""
-								loading="lazy"
-								decoding="async"
-							/>
-							<img
-								className="w-28 md:w-32"
-								src="/contacts/qr-telegram.png"
-								alt=""
-								loading="lazy"
-								decoding="async"
-							/>
+							<div className="flex flex-wrap gap-5 mt-7">
+								<img
+									className="w-28 md:w-32"
+									src="/contacts/qr-whatsapp.png"
+									alt=""
+									loading="lazy"
+									decoding="async"
+								/>
+								<img
+									className="w-28 md:w-32"
+									src="/contacts/qr-instagram.png"
+									alt=""
+									loading="lazy"
+									decoding="async"
+								/>
+								<img
+									className="w-28 md:w-32"
+									src="/contacts/qr-telegram.png"
+									alt=""
+									loading="lazy"
+									decoding="async"
+								/>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				{/* --- Savol berish bo‘limi --- */}
-				<div className="flex flex-col lg:flex-row items-start my-10 gap-10">
-					{/* Map */}
-					<div className="flex-1 rounded-2xl overflow-hidden w-full">
-						<a
-							href="https://yandex.uz/maps/org/158209277121/?utm_medium=mapframe&utm_source=maps"
-							className="text-white text-[12px] absolute top-14"
+					{/* --- Savol berish bo‘limi --- */}
+					<div className="flex relative flex-col lg:flex-row items-start my-10 gap-10">
+						{/* Map */}
+						<div className="flex-1 rounded-2xl overflow-hidden w-full">
+							<a
+								href="https://yandex.uz/maps/org/158209277121/?utm_medium=mapframe&utm_source=maps"
+								className="text-white text-[12px] absolute top-14"
+							>
+								Bolalar Milliy Tibbiyot Markazi
+							</a>
+							<a
+								href="https://yandex.uz/maps/10335/tashkent/category/children_hospital/184105958/?utm_medium=mapframe&utm_source=maps"
+								className="text-white text-[12px] absolute top-14"
+							>
+								Bolalar shifoxonasi Toshkentda
+							</a>
+							<a
+								href="https://yandex.uz/maps/10335/tashkent/category/diagnostic_center/184106106/?utm_medium=mapframe&utm_source=maps"
+								className="text-white text-[12px] absolute top-28"
+							>
+								Diagnostika markazi Toshkentda
+							</a>
+							<iframe
+								src="https://yandex.uz/map-widget/v1/?ll=69.339825%2C41.304195&mode=search&oid=158209277121&ol=biz&sctx=ZAAAAAgBEAAaKAoSCcueBDbnUVFAERGPxMvTp0RAEhIJWyIXnMHf1D8R%2Fz7jwoGQxj8iBgABAgMEBSgKOABApZ8GSAFqAnV6nQHNzMw9oAEAqAEAvQHmqEUBwgEGwfmHsM0EggIiTmF0aW9uYWwgQ2hpbGRyZW4ncyBNZWRpY2FsIENlbnRlcooCAJICAJoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=69.339825%2C41.304195&sspn=0.007846%2C0.006199&text=National%20Children%27s%20Medical%20Center&z=16.83"
+								width="100%"
+								height="400"
+							></iframe>
+						</div>
+
+						{/* Form */}
+						<form
+							onSubmit={handleSubmit}
+							className="flex-1 flex flex-col items-start gap-5 w-full"
 						>
-							Bolalar Milliy Tibbiyot Markazi
-						</a>
-						<a
-							href="https://yandex.uz/maps/10335/tashkent/category/children_hospital/184105958/?utm_medium=mapframe&utm_source=maps"
-							className="text-white text-[12px] absolute top-14"
-						>
-							Bolalar shifoxonasi Toshkentda
-						</a>
-						<a
-							href="https://yandex.uz/maps/10335/tashkent/category/diagnostic_center/184106106/?utm_medium=mapframe&utm_source=maps"
-							className="text-white text-[12px] absolute top-28"
-						>
-							Diagnostika markazi Toshkentda
-						</a>
-						<iframe
-							src="https://yandex.uz/map-widget/v1/?ll=69.339825%2C41.304195&mode=search&oid=158209277121&ol=biz&sctx=ZAAAAAgBEAAaKAoSCcueBDbnUVFAERGPxMvTp0RAEhIJWyIXnMHf1D8R%2Fz7jwoGQxj8iBgABAgMEBSgKOABApZ8GSAFqAnV6nQHNzMw9oAEAqAEAvQHmqEUBwgEGwfmHsM0EggIiTmF0aW9uYWwgQ2hpbGRyZW4ncyBNZWRpY2FsIENlbnRlcooCAJICAJoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=69.339825%2C41.304195&sspn=0.007846%2C0.006199&text=National%20Children%27s%20Medical%20Center&z=16.83"
-							width="100%"
-							height="400"
-						></iframe>
-					</div>
+							<h2 className="text-xl md:text-2xl">{t("ask_doctor")}</h2>
 
-					{/* Form */}
-					<form
-						onSubmit={handleSubmit}
-						className="flex-1 flex flex-col items-start gap-5 w-full"
-					>
-						<h2 className="text-xl md:text-2xl">{t("ask_doctor")}</h2>
-
-						<Input
-							value={formData.name}
-							onChange={handleChange("name")}
-							className="p-5 border rounded-full"
-							placeholder={t("form_name")}
-							name="name"
-							autoComplete="name"
-						/>
-
-						<div className="flex flex-col md:flex-row w-full gap-4">
 							<Input
-								value={formData.email}
-								onChange={handleChange("email")}
-								type="email"
-								name="email"
-								autoComplete="email"
-								className="p-5 border rounded-full md:flex-1"
-								placeholder={t("form_email")}
+								value={formData.name}
+								onChange={handleChange("name")}
+								className="p-5 border rounded-full"
+								placeholder={t("form_name")}
+								name="name"
+								autoComplete="name"
 							/>
-							<Input
-								value={formData.phone}
-								onChange={handleChange("phone")}
-								type="tel"
-								name="phone"
-								autoComplete="tel"
-								className="p-5 border rounded-full md:flex-1"
-								placeholder={t("form_phone")}
+
+							<div className="flex flex-col md:flex-row w-full gap-4">
+								<Input
+									value={formData.email}
+									onChange={handleChange("email")}
+									type="email"
+									name="email"
+									autoComplete="email"
+									className="p-5 border rounded-full md:flex-1"
+									placeholder={t("form_email")}
+								/>
+								<Input
+									value={formData.phone}
+									onChange={handleChange("phone")}
+									type="tel"
+									name="phone"
+									autoComplete="tel"
+									className="p-5 border rounded-full md:flex-1"
+									placeholder={t("form_phone")}
+								/>
+							</div>
+
+							<Textarea
+								value={formData.message}
+								onChange={handleChange("message")}
+								name="message"
+								className="min-h-[180px] rounded-[20px]"
+								placeholder={t("form_message")}
 							/>
-						</div>
 
-						<Textarea
-							value={formData.message}
-							onChange={handleChange("message")}
-							name="message"
-							className="min-h-[180px] rounded-[20px]"
-							placeholder={t("form_message")}
-						/>
+							<div className="flex items-center gap-3">
+								<Checkbox
+									id="terms"
+									checked={isAgreed}
+									onCheckedChange={(checked) => setIsAgreed(checked === true)}
+								/>
+								<Label htmlFor="terms">{t("form_privacy")}</Label>
+							</div>
 
-						<div className="flex items-center gap-3">
-							<Checkbox
-								id="terms"
-								checked={isAgreed}
-								onCheckedChange={(checked) => setIsAgreed(checked === true)}
-							/>
-							<Label htmlFor="terms">{t("form_privacy")}</Label>
-						</div>
-
-						<Button
-							type="submit"
-							disabled={isSubmitting}
-							className="rounded-full px-10 py-5 disabled:opacity-70"
-						>
-							{isSubmitting ? t("toast.sending") : t("form_submit")}
-						</Button>
-					</form>
+							<Button
+								type="submit"
+								disabled={isSubmitting}
+								className="rounded-full px-10 py-5 disabled:opacity-70"
+							>
+								{isSubmitting ? t("toast.sending") : t("form_submit")}
+							</Button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</>
