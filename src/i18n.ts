@@ -21,7 +21,14 @@ i18n
 		load: "languageOnly",
 		debug: false,
 
-		ns: ["home", "about", "navigation", "operations", "consultation"],
+		ns: [
+			"home",
+			"about",
+			"navigation",
+			"operations",
+			"consultation",
+			"contacts",
+		],
 		defaultNS: "home",
 
 		backend: {

@@ -1,11 +1,10 @@
 import { Link } from "react-router";
-import { Stethoscope, Activity, Heart } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const directions = [
-	{ url: "/operations/genital", icon: Stethoscope },
-	{ url: "/operations/urology", icon: Activity },
-	{ url: "/operations/plastic", icon: Heart },
+	{ url: "/operations/genital", image: "/home/experts/1.png" },
+	{ url: "/operations/urology", image: "/home/experts/2.png" },
+	{ url: "/operations/plastic", image: "/home/experts/3.png" },
 ];
 
 interface Expert {
@@ -32,7 +31,7 @@ export default function Napravleniya() {
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-25 md:gap-8 lg:gap-10">
 					{data.map((dir, index) => {
-						const Icon = directions[index].icon;
+						const image = directions[index].image;
 						return (
 							<div
 								key={index}
@@ -41,9 +40,9 @@ export default function Napravleniya() {
 								{/* Icon */}
 								<div className="absolute -top-10 left-1/2 -translate-x-1/2">
 									<div
-										className={`relative w-20 h-20 rounded-2xl bg-gradient-to-br shadow-xl border bg-background group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}
+										className={`relative w-20 h-20 bg-blue-500 rounded-2xl bg-gradient-to-br shadow-xl border group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}
 									>
-										<Icon className="w-10 h-10 text-primary" />
+										<img src={image} alt={dir.title} />
 									</div>
 								</div>
 

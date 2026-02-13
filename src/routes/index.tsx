@@ -8,31 +8,24 @@ import LoadingFallback from "@/components/LoadingFallback";
 const HomePage = lazy(() => import("../features/home/pages/HomePage"));
 const AboutPage = lazy(() => import("../features/about/pages/AboutPage"));
 const GenetalSurgeryPage = lazy(
-	() => import("../features/genetalSurgery/pages/GenetalSurgeryPage")
+	() => import("../features/genetalSurgery/pages/GenetalSurgeryPage"),
 );
 const PlasticSurgery = lazy(
-	() => import("../features/plasticSurgery/pages/PlasticSurgery")
+	() => import("../features/plasticSurgery/pages/PlasticSurgery"),
 );
-const BlogPage = lazy(() => import("../features/blog/pages/BlogPage"));
 const NewsPage = lazy(() => import("../features/news/pages/NewsPage"));
-const ArticlesPage = lazy(
-	() => import("../features/articles/pages/ArticlesPage")
-);
-const DetailedSurgery = lazy(
-	() => import("../features/detailedSurgery/pages/DetailedSurgery")
-);
 const ContactPage = lazy(() => import("../features/contactUs/ContactPage"));
 const ExamplesPage = lazy(
-	() => import("@/features/examples/pages/ExamplesPage")
+	() => import("@/features/examples/pages/ExamplesPage"),
 );
 const GenitalPage = lazy(
-	() => import("@/features/operations/pages/GenitalPage")
+	() => import("@/features/operations/pages/GenitalPage"),
 );
 const PlasticPage = lazy(
-	() => import("@/features/operations/pages/PlasticPage")
+	() => import("@/features/operations/pages/PlasticPage"),
 );
 const UrologyPage = lazy(
-	() => import("@/features/operations/pages/UrologyPage")
+	() => import("@/features/operations/pages/UrologyPage"),
 );
 
 export const routes = createBrowserRouter([
@@ -80,14 +73,7 @@ export const routes = createBrowserRouter([
 					</Suspense>
 				),
 			},
-			{
-				path: "blog",
-				element: (
-					<Suspense fallback={<LoadingFallback />}>
-						<BlogPage />
-					</Suspense>
-				),
-			},
+
 			{
 				path: "news",
 				element: (
@@ -96,22 +82,7 @@ export const routes = createBrowserRouter([
 					</Suspense>
 				),
 			},
-			{
-				path: "articles",
-				element: (
-					<Suspense fallback={<LoadingFallback />}>
-						<ArticlesPage />
-					</Suspense>
-				),
-			},
-			{
-				path: "detailed-surgery",
-				element: (
-					<Suspense fallback={<LoadingFallback />}>
-						<DetailedSurgery />
-					</Suspense>
-				),
-			},
+
 			{
 				path: "contact",
 				element: (

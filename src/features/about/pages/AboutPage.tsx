@@ -7,6 +7,7 @@ interface Memberships {
 	period: string;
 	organization: string;
 	abbreviation: string;
+	position?: string;
 }
 
 interface Internships {
@@ -18,6 +19,8 @@ interface Experience {
 	year: string;
 	description: string;
 }
+
+import { CONFIG } from "../../../../global-config";
 
 export default function AboutPage() {
 	const { t } = useTranslation(["about", "navigation"]);
@@ -34,8 +37,14 @@ export default function AboutPage() {
 		returnObjects: true,
 	}) as Experience[];
 
+	const metaData = {
+		title: `${t("header.title")} - ${CONFIG.appName}`,
+	};
+
 	return (
 		<>
+			<title>{metaData.title}</title>
+
 			<div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
 				{/* Hero Section */}
 				<SubHeader
@@ -50,7 +59,7 @@ export default function AboutPage() {
 					<div className="container mx-auto px-4 md:px-10 relative z-10">
 						<div className="max-w-4xl mx-auto text-center text-white">
 							<p className="text-sm md:text-base uppercase tracking-wider mb-3 opacity-90">
-								{t("")}
+								{t("header.supTitle")}
 							</p>
 							<h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
 								{t("header.fullName")}
@@ -142,6 +151,7 @@ export default function AboutPage() {
 														</p>
 														<p className="text-sm text-gray-600 dark:text-gray-400">
 															{item.organization} ({item.abbreviation})
+															{item.position ? ` — ${item.position}` : ""}
 														</p>
 													</div>
 												</li>
@@ -180,7 +190,7 @@ export default function AboutPage() {
 										<hr className="my-10" />
 
 										<h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-											{t("internships.title")}
+											{t("experience.title")}
 										</h3>
 										<div className="space-y-4">
 											{experience.map(({ year, description }: Experience) => (
@@ -208,11 +218,11 @@ export default function AboutPage() {
 										<img
 											className="w-full h-80 object-cover"
 											src="/about/about1.jpg"
-											alt="Доктор Абдуллаев Зафар Бобирович"
+											alt={t("sidebar.doctor_photo_alt")}
 										/>
 										<div className="p-4">
 											<p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-												Доктор Абдуллаев Зафар Бобирович
+												{t("sidebar.doctor_photo_caption")}
 											</p>
 										</div>
 									</div>
@@ -221,11 +231,11 @@ export default function AboutPage() {
 										<img
 											className="w-full h-80 object-cover"
 											src="/about/about2.jpg"
-											alt="Доктор Абдуллаев Зафар Бобирович"
+											alt={t("sidebar.consultation_photo_alt")}
 										/>
 										<div className="p-4">
 											<p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-												Во время консультации
+												{t("sidebar.consultation_photo_caption")}
 											</p>
 										</div>
 									</div>

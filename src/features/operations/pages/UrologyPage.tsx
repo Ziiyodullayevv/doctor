@@ -2,6 +2,7 @@ import SubHeader from "@/components/SubHeader";
 import MedicalProcedures from "../components/OperationList";
 import Appointment from "@/components/Appointment";
 import { useTranslation } from "react-i18next";
+import { CONFIG } from "../../../../global-config";
 
 interface Urology {
 	title: string;
@@ -11,8 +12,13 @@ interface Urology {
 export default function UrologyPage() {
 	const { t } = useTranslation(["operations", "navigation"]); // operations va navigation namespace-larini ishlatish
 	const data = t("urology.data", { returnObjects: true }) as Urology[];
+	const metaData = {
+		title: `${t("urology.header")} - ${CONFIG.appName}`,
+	};
+
 	return (
 		<div>
+			<title>{metaData.title}</title>
 			<SubHeader
 				title={t("urology.header")}
 				data={[

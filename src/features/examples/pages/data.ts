@@ -1,240 +1,260 @@
-export const gipospadiyaData = [
-	{
-		id: "1",
-		title: "Гипоспадия — Диагностика",
-		description: "Первичный осмотр, УЗИ и планирование лечения.",
-		urlList: [
-			"https://picsum.photos/id/301/1200/800",
-			"https://picsum.photos/id/302/1200/800",
-			"https://picsum.photos/id/303/1200/800",
-			"https://picsum.photos/id/304/1200/800",
-		],
-	},
-	{
-		id: "2",
-		title: "Уретропластика — Восстановление уретры",
-		description: "Современные методики пластики уретры при гипоспадии.",
-		urlList: [
-			"https://picsum.photos/id/305/1200/800",
-			"https://picsum.photos/id/306/1200/800",
-			"https://picsum.photos/id/307/1200/800",
-			"https://picsum.photos/id/308/1200/800",
-		],
-	},
-	{
-		id: "3",
-		title: "Дистальная форма — Лёгкие случаи",
-		description: "Минимально инвазивные вмешательства.",
-		urlList: [
-			"https://picsum.photos/id/309/1200/800",
-			"https://picsum.photos/id/310/1200/800",
-			"https://picsum.photos/id/311/1200/800",
-			"https://picsum.photos/id/312/1200/800",
-		],
-	},
-	{
-		id: "4",
-		title: "Проксимальная форма — Сложные реконструкции",
-		description: "Использование собственных тканей.",
-		urlList: [
-			"https://picsum.photos/id/313/1200/800",
-			"https://picsum.photos/id/314/1200/800",
-			"https://picsum.photos/id/315/1200/800",
-			"https://picsum.photos/id/316/1200/800",
-		],
-	},
-	{
-		id: "5",
-		title: "Ревизионные операции",
-		description: "Исправление осложнений после предыдущих операций.",
-		urlList: [
-			"https://picsum.photos/id/317/1200/800",
-			"https://picsum.photos/id/318/1200/800",
-			"https://picsum.photos/id/319/1200/800",
-			"https://picsum.photos/id/320/1200/800",
-		],
-	},
-	{
-		id: "6",
-		title: "Наблюдение и реабилитация",
-		description: "Контроль состояния после операции.",
-		urlList: [
-			"https://picsum.photos/id/321/1200/800",
-			"https://picsum.photos/id/322/1200/800",
-			"https://picsum.photos/id/323/1200/800",
-			"https://picsum.photos/id/324/1200/800",
-		],
-	},
-	{
-		id: "7",
-		title: "Консультации по гипоспадии",
-		description: "Рекомендации, осмотры, анализы, диагностика.",
-		urlList: [
-			"https://picsum.photos/id/325/1200/800",
-			"https://picsum.photos/id/326/1200/800",
-			"https://picsum.photos/id/327/1200/800",
-			"https://picsum.photos/id/328/1200/800",
-		],
-	},
-];
+type LocaleCode = "ru" | "uz" | "en";
 
-export const urologiyaData = [
-	{
-		id: "1",
-		title: "Детская урология — Осмотр",
-		description: "Первичная диагностика заболеваний мочеполовой системы.",
-		urlList: [
-			"https://picsum.photos/id/401/1200/800",
-			"https://picsum.photos/id/402/1200/800",
-			"https://picsum.photos/id/403/1200/800",
-			"https://picsum.photos/id/404/1200/800",
-		],
-	},
-	{
-		id: "2",
-		title: "Лечение фимоза",
-		description: "Современные методы коррекции фимоза у детей.",
-		urlList: [
-			"https://picsum.photos/id/405/1200/800",
-			"https://picsum.photos/id/406/1200/800",
-			"https://picsum.photos/id/407/1200/800",
-			"https://picsum.photos/id/408/1200/800",
-		],
-	},
-	{
-		id: "3",
-		title: "Водянка яичка",
-		description:
-			"Минимально инвазивное лечение водянки у новорождённых и детей.",
-		urlList: [
-			"https://picsum.photos/id/409/1200/800",
-			"https://picsum.photos/id/410/1200/800",
-			"https://picsum.photos/id/411/1200/800",
-			"https://picsum.photos/id/412/1200/800",
-		],
-	},
-	{
-		id: "4",
-		title: "Крипторхизм",
-		description: "Операции по опущению яичек. Золотой стандарт лечения.",
-		urlList: [
-			"https://picsum.photos/id/413/1200/800",
-			"https://picsum.photos/id/414/1200/800",
-			"https://picsum.photos/id/415/1200/800",
-			"https://picsum.photos/id/416/1200/800",
-		],
-	},
-	{
-		id: "5",
-		title: "Врожденные аномалии",
-		description: "Комплексная диагностика и хирургическое лечение.",
-		urlList: [
-			"https://picsum.photos/id/417/1200/800",
-			"https://picsum.photos/id/418/1200/800",
-			"https://picsum.photos/id/419/1200/800",
-			"https://picsum.photos/id/420/1200/800",
-		],
-	},
-	{
-		id: "6",
-		title: "Инфекции мочевых путей",
-		description: "Диагностика, анализы и лечение.",
-		urlList: [
-			"https://picsum.photos/id/421/1200/800",
-			"https://picsum.photos/id/422/1200/800",
-			"https://picsum.photos/id/423/1200/800",
-			"https://picsum.photos/id/424/1200/800",
-		],
-	},
-	{
-		id: "7",
-		title: "УЗИ органов мочеполовой системы",
-		description: "Точная визуальная диагностика для корректного лечения.",
-		urlList: [
-			"https://picsum.photos/id/425/1200/800",
-			"https://picsum.photos/id/426/1200/800",
-			"https://picsum.photos/id/427/1200/800",
-			"https://picsum.photos/id/428/1200/800",
-		],
-	},
-];
+const normalizeLocale = (language: string | undefined): LocaleCode => {
+	if (language?.startsWith("uz")) return "uz";
+	if (language?.startsWith("en")) return "en";
+	return "ru";
+};
 
-export const plasticData = [
-	{
-		id: "1",
-		title: "Эстетическая хирургия лица",
-		description: "Коррекция формы носа, ушей, век и других особенностей.",
-		urlList: [
-			"https://picsum.photos/id/501/1200/800",
-			"https://picsum.photos/id/502/1200/800",
-			"https://picsum.photos/id/503/1200/800",
-			"https://picsum.photos/id/504/1200/800",
-		],
+const urologyMeta: Record<number, { title: Record<LocaleCode, string> }> = {
+	1: {
+		title: {
+			ru: "Дистальная гипоспадия, вид до и после коррекции",
+			uz: "Distal gipospadiya, korreksiyadan oldin va keyin",
+			en: "Distal hypospadias, before and after correction",
+		},
 	},
-	{
-		id: "2",
-		title: "Реконструктивная хирургия",
-		description: "Восстановление после травм, ожогов и врождённых дефектов.",
-		urlList: [
-			"https://picsum.photos/id/505/1200/800",
-			"https://picsum.photos/id/506/1200/800",
-			"https://picsum.photos/id/507/1200/800",
-			"https://picsum.photos/id/508/1200/800",
-		],
+	2: {
+		title: {
+			ru: "Дистальная гипоспадия, вид до и после коррекции",
+			uz: "Distal gipospadiya, korreksiyadan oldin va keyin",
+			en: "Distal hypospadias, before and after correction",
+		},
 	},
-	{
-		id: "3",
-		title: "Коррекция мягких тканей",
-		description: "Пластика кожи, удаление рубцов и косметические операции.",
-		urlList: [
-			"https://picsum.photos/id/509/1200/800",
-			"https://picsum.photos/id/510/1200/800",
-			"https://picsum.photos/id/511/1200/800",
-			"https://picsum.photos/id/512/1200/800",
-		],
+	3: {
+		title: {
+			ru: "Дистальная гипоспадия, вид до и после коррекции",
+			uz: "Distal gipospadiya, korreksiyadan oldin va keyin",
+			en: "Distal hypospadias, before and after correction",
+		},
 	},
-	{
-		id: "4",
-		title: "Пластика грудной клетки",
-		description: "Эстетические и реконструктивные вмешательства.",
-		urlList: [
-			"https://picsum.photos/id/513/1200/800",
-			"https://picsum.photos/id/514/1200/800",
-			"https://picsum.photos/id/515/1200/800",
-			"https://picsum.photos/id/516/1200/800",
-		],
+	4: {
+		title: {
+			ru: "Проксимальная гипоспадия до и после операции",
+			uz: "Proksimal gipospadiya, operatsiyadan oldin va keyin",
+			en: "Proximal hypospadias before and after surgery",
+		},
 	},
-	{
-		id: "5",
-		title: "Послеоперационная коррекция",
-		description: "Исправление последствий неудачных операций.",
-		urlList: [
-			"https://picsum.photos/id/517/1200/800",
-			"https://picsum.photos/id/518/1200/800",
-			"https://picsum.photos/id/519/1200/800",
-			"https://picsum.photos/id/520/1200/800",
-		],
+	5: {
+		title: {
+			ru: "Проксимальная гипоспадия до и после операции",
+			uz: "Proksimal gipospadiya, operatsiyadan oldin va keyin",
+			en: "Proximal hypospadias before and after surgery",
+		},
 	},
-	{
-		id: "6",
-		title: "Минимально инвазивные процедуры",
-		description: "Безопасные методы коррекции внешности.",
-		urlList: [
-			"https://picsum.photos/id/521/1200/800",
-			"https://picsum.photos/id/522/1200/800",
-			"https://picsum.photos/id/523/1200/800",
-			"https://picsum.photos/id/524/1200/800",
-		],
+	6: {
+		title: {
+			ru: "Пеноскротальная гипоспадия до и после операции",
+			uz: "Penoskrotal gipospadiya, operatsiyadan oldin va keyin",
+			en: "Penoscrotal hypospadias before and after surgery",
+		},
 	},
-	{
-		id: "7",
-		title: "Консультации пластического хирурга",
-		description: "Индивидуальный подход к каждому пациенту.",
-		urlList: [
-			"https://picsum.photos/id/525/1200/800",
-			"https://picsum.photos/id/526/1200/800",
-			"https://picsum.photos/id/527/1200/800",
-			"https://picsum.photos/id/528/1200/800",
-		],
+	7: {
+		title: {
+			ru: "Осложненная гипоспадия до и после операции",
+			uz: "Asoratlangan gipospadiya, operatsiyadan oldin va keyin",
+			en: "Complicated hypospadias before and after surgery",
+		},
 	},
-];
+	8: {
+		title: {
+			ru: "Изолированная эписпадия у мальчиков (осложненная форма)",
+			uz: "O‘g‘il bolalarda izolyatsiyalangan epispadiya (murakkab shakl)",
+			en: "Isolated epispadias in boys (complicated form)",
+		},
+	},
+	9: {
+		title: {
+			ru: "Изолированная эписпадия у мальчиков (тотальная форма)",
+			uz: "O‘g‘il bolalarda izolyatsiyalangan epispadiya (to‘liq shakl)",
+			en: "Isolated epispadias in boys (total form)",
+		},
+	},
+	10: {
+		title: {
+			ru: "Изолированная эписпадия у мальчиков (головчатая форма)",
+			uz: "O‘g‘il bolalarda izolyatsiyalangan epispadiya (boshcha shakli)",
+			en: "Isolated epispadias in boys (glanular form)",
+		},
+	},
+	11: {
+		title: {
+			ru: "Женская эписпадия до и после операции",
+			uz: "Qizlarda epispadiya, operatsiyadan oldin va keyin",
+			en: "Female epispadias before and after surgery",
+		},
+	},
+	12: {
+		title: {
+			ru: "Скрытый половой член (СПЧ) до и после операции",
+			uz: "Yashirin jinsiy a’zo (SPCh), operatsiyadan oldin va keyin",
+			en: "Concealed penis before and after surgery",
+		},
+	},
+	13: {
+		title: {
+			ru: "Скрытый половой член (СПЧ) до и после операции",
+			uz: "Yashirin jinsiy a’zo (SPCh), operatsiyadan oldin va keyin",
+			en: "Concealed penis before and after surgery",
+		},
+	},
+	14: {
+		title: {
+			ru: "Скрытый половой член (СПЧ) до и после операции",
+			uz: "Yashirin jinsiy a’zo (SPCh), operatsiyadan oldin va keyin",
+			en: "Concealed penis before and after surgery",
+		},
+	},
+	15: {
+		title: {
+			ru: "Врожденная дисфункция коры надпочечников (ВДКН)",
+			uz: "Buyrak usti bezi tug‘ma disfunktsiyasi (VDKN)",
+			en: "Congenital adrenal hyperplasia (CAH)",
+		},
+	},
+	16: {
+		title: {
+			ru: "Врожденная дисфункция коры надпочечников (ВДКН)",
+			uz: "Buyrak usti bezi tug‘ma disfunktsiyasi (VDKN)",
+			en: "Congenital adrenal hyperplasia (CAH)",
+		},
+	},
+	17: {
+		title: {
+			ru: "Экстрофия мочевого пузыря после первого этапа",
+			uz: "Siydik pufagi ekstrofiyasi, birinchi bosqichdan keyin",
+			en: "Bladder exstrophy after the first stage",
+		},
+	},
+	18: {
+		title: {
+			ru: "Экстрофия мочевого пузыря, осложнённая форма (девочка)",
+			uz: "Siydik pufagi ekstrofiyasi, murakkab shakl (qiz bola)",
+			en: "Bladder exstrophy, complicated form (girl)",
+		},
+	},
+	19: {
+		title: {
+			ru: "Экстрофия мочевого пузыря после второго этапа",
+			uz: "Siydik pufagi ekstrofiyasi, ikkinchi bosqichdan keyin",
+			en: "Bladder exstrophy after the second stage",
+		},
+	},
+	20: {
+		title: {
+			ru: "Экстрофия мочевого пузыря (девочка)",
+			uz: "Siydik pufagi ekstrofiyasi (qiz bola)",
+			en: "Bladder exstrophy (girl)",
+		},
+	},
+	21: {
+		title: {
+			ru: "Экстрофия мочевого пузыря после первого этапа",
+			uz: "Siydik pufagi ekstrofiyasi, birinchi bosqichdan keyin",
+			en: "Bladder exstrophy after the first stage",
+		},
+	},
+	22: {
+		title: {
+			ru: "Фаллопластика",
+			uz: "Falloplastika",
+			en: "Phalloplasty",
+		},
+	},
+	23: {
+		title: {
+			ru: "Пенопластика",
+			uz: "Penoplastika",
+			en: "Penoplasty",
+		},
+	},
+	24: {
+		title: {
+			ru: "Лапароскопическая пиелопластика (восстановление оттока мочи из почки)",
+			uz: "Laparoskopik pieloplastika (buyrakdan siydik chiqishini tiklash)",
+			en: "Laparoscopic pyeloplasty (restoring urine outflow from the kidney)",
+		},
+	},
+	25: {
+		title: {
+			ru: "Клапан задней уретры до и после рассечения",
+			uz: "Orqa uretra klapani, kesishdan oldin va keyin",
+			en: "Posterior urethral valve before and after incision",
+		},
+	},
+	26: {
+		title: {
+			ru: "Пузырно-мочеточниковый рефлюкс до и после эндокоррекции",
+			uz: "Pufak-siydik nayi reflyuksi, endokorreksiyadan oldin va keyin",
+			en: "Vesicoureteral reflux before and after endoscopic correction",
+		},
+	},
+	27: {
+		title: {
+			ru: "Пузырно-мочеточниковый рефлюкс до и после реимплантации мочеточника",
+			uz: "Pufak-siydik nayi reflyuksi, ureter reimplantatsiyasidan oldin va keyin",
+			en: "Vesicoureteral reflux before and after ureter reimplantation",
+		},
+	},
+};
+
+const urologyImageMap: Record<number, string[]> = {
+	1: ["/image-carusel/carusel-1.1.png", "/image-carusel/carusel-1.2.png"],
+	2: ["/image-carusel/carusel-2.1.png"],
+	3: [
+		"/image-carusel/carusel-3.1.png",
+		"/image-carusel/carusel-3.2.png",
+		"/image-carusel/carusel-3.3.png",
+	],
+	4: ["/image-carusel/carusel-4.1.png"],
+	5: ["/image-carusel/carusel-5.1.png"],
+	6: ["/image-carusel/carusel-6.1.png"],
+	7: ["/image-carusel/carusel-7.1.png"],
+	8: ["/image-carusel/carusel-8.1.png"],
+	9: ["/image-carusel/carusel-9.1.png", "/image-carusel/carusel-9.2.png"],
+	10: ["/image-carusel/carusel-10.1.png"],
+	11: [
+		"/image-carusel/carusel-11.1.png",
+		"/image-carusel/carusel-11.2.png",
+		"/image-carusel/carusel-11.3.png",
+	],
+	12: ["/image-carusel/carusel-12.1.png"],
+	13: ["/image-carusel/carusel-13.1.png"],
+	14: ["/image-carusel/carusel-14.1.png"],
+	15: ["/image-carusel/carusel-15.1.png"],
+	16: ["/image-carusel/carusel-16.1.png"],
+	17: ["/image-carusel/carusel-17.1.png"],
+	18: ["/image-carusel/carusel-18.1.png"],
+	19: ["/image-carusel/carusel-19.1.png"],
+	20: ["/image-carusel/carusel-20.1.png", "/image-carusel/carusel-20.2.png"],
+	21: ["/image-carusel/carusel-21.1.png", "/image-carusel/carusel-21.2.png"],
+	22: ["/image-carusel/carusel-22.1.png", "/image-carusel/carusel-22.2.png"],
+	23: ["/image-carusel/carusel-23.1.png", "/image-carusel/carusel-23.2.png"],
+	24: ["/image-carusel/carusel-24.1.png", "/image-carusel/carusel-24.2.png"],
+	25: ["/image-carusel/carusel-25.1.png", "/image-carusel/carusel-25.2.png"],
+	26: ["/image-carusel/carusel-26.1.png", "/image-carusel/carusel-26.2.png"],
+	27: ["/image-carusel/carusel-27.1.png", "/image-carusel/carusel-27.2.png"],
+};
+
+export const getUrologiyaData = (language: string | undefined) => {
+	const locale = normalizeLocale(language);
+
+	return Array.from({ length: 27 }, (_, index) => {
+		const id = index + 1;
+		const meta = urologyMeta[id] ?? {
+			title: {
+				ru: `Клинический случай №${id}`,
+				uz: `Klinik holat №${id}`,
+				en: `Clinical case #${id}`,
+			},
+		};
+
+		return {
+			id: String(id),
+			title: meta.title[locale],
+			urlList: urologyImageMap[id] ?? [`/image-carusel/carusel-${id}.1.png`],
+		};
+	});
+};
+
+export const urologiyaData = getUrologiyaData("ru");

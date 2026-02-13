@@ -13,9 +13,13 @@ export default function Appointment() {
 					<p className="text-base md:text-lg mb-8 max-w-xl mx-auto leading-relaxed opacity-90">
 						{t("consultation.description")}
 					</p>
-					<button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+					<a
+						target="_blank"
+						href="https://wa.me/message/H7D2WIZWC3H7N1"
+						className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+					>
 						{t("consultation.appointment")}
-					</button>
+					</a>
 				</div>
 			</div>
 		</section>

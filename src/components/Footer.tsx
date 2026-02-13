@@ -1,4 +1,10 @@
-import { Instagram, MessageCircle, Send } from "lucide-react";
+import {
+	FacebookFilled,
+	InstagramFilled,
+	SendOutlined,
+	WhatsAppOutlined,
+	YoutubeFilled,
+} from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import Logo from "./Logo";
 
@@ -6,6 +12,35 @@ export default function Footer() {
 	const currentYear = new Date().getFullYear();
 
 	const { t } = useTranslation("navigation");
+
+	const socialLinks = [
+		{
+			label: "YouTube",
+			href: "https://youtube.com/@dr.zafarabdullayev?si=ostHlCpokE1Og3lP",
+			icon: <YoutubeFilled className="text-lg transition-colors" />,
+		},
+		{
+			label: "Instagram",
+			href: "https://www.instagram.com/doc.abdullaevzafar?igsh=MTE4OG9kNHhycDF2bw==",
+			icon: <InstagramFilled className="text-lg transition-colors" />,
+		},
+		{
+			label: "Telegram",
+			href: "https://t.me/Pediatric_urology",
+			icon: <SendOutlined className="text-lg transition-colors" />,
+		},
+		{
+			label: "Facebook",
+			href: "https://www.facebook.com/share/1AdQQbDAHm/",
+			icon: <FacebookFilled className="text-lg transition-colors" />,
+		},
+		{
+			label: "WhatsApp",
+			href: "https://wa.me/message/H7D2WIZWC3H7N1",
+			icon: <WhatsAppOutlined className="text-lg transition-colors" />,
+		},
+	];
+
 	return (
 		<footer className="bg-gray-900  text-white">
 			{/* Main Footer */}
@@ -45,25 +80,18 @@ export default function Footer() {
 
 				{/* Social Media Icons */}
 				<div className="flex justify-center gap-4 mb-8">
-					<a
-						href="#"
-						className="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-white group"
-					>
-						<Instagram className="w-5 h-5 text-gray-300 group-hover:text-gray-900 transition-colors" />
-					</a>
-					<a
-						href="#"
-						className="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-white group"
-					>
-						<MessageCircle className="w-5 h-5 text-gray-300 group-hover:text-gray-900 transition-colors" />
-					</a>
-
-					<a
-						href="#"
-						className="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-white group"
-					>
-						<Send className="w-5 h-5 text-gray-300 group-hover:text-gray-900 transition-colors" />
-					</a>
+					{socialLinks.map((social) => (
+						<a
+							key={social.label}
+							href={social.href}
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label={social.label}
+							className="w-11 h-11 rounded-full border-2 border-gray-600 text-gray-300 hover:text-gray-900 hover:border-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-white group"
+						>
+							{social.icon}
+						</a>
+					))}
 				</div>
 			</div>
 

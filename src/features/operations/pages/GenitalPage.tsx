@@ -2,6 +2,7 @@ import SubHeader from "@/components/SubHeader";
 import MedicalProcedures from "../components/OperationList";
 import Appointment from "@/components/Appointment";
 import { useTranslation } from "react-i18next";
+import { CONFIG } from "../../../../global-config";
 
 interface Gental {
 	title: string;
@@ -11,8 +12,13 @@ interface Gental {
 export default function GenitalPage() {
 	const { t } = useTranslation(["operations", "navigation"]); // operations va navigation namespace-larini ishlatish
 	const data = t("genetal.data", { returnObjects: true }) as Gental[];
+	const metaData = {
+		title: `${t("genetal.header")} - ${CONFIG.appName}`,
+	};
+
 	return (
 		<div>
+			<title>{metaData.title}</title>
 			<SubHeader
 				title={t("genetal.header")}
 				data={[

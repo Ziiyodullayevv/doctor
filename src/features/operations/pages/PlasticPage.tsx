@@ -2,6 +2,7 @@ import SubHeader from "@/components/SubHeader";
 import MedicalProcedures from "../components/OperationList";
 import Appointment from "@/components/Appointment";
 import { useTranslation } from "react-i18next";
+import { CONFIG } from "../../../../global-config";
 
 interface Plastic {
 	title: string;
@@ -11,8 +12,13 @@ interface Plastic {
 export default function PlasticPage() {
 	const { t } = useTranslation(["operations", "navigation"]);
 	const data = t("plastic.data", { returnObjects: true }) as Plastic[];
+	const metaData = {
+		title: `${t("plastic.header")} - ${CONFIG.appName}`,
+	};
+
 	return (
 		<div>
+			<title>{metaData.title}</title>
 			<SubHeader
 				title={t("plastic.header")}
 				data={[

@@ -5,20 +5,16 @@
 		"fullName": "Abdullaev Zafar Bobirovich",
 		"aboutMe": "Candidate of Medical Sciences (PhD)"
 	},
-
 	"tabs": {
 		"experience": "years of experience",
 		"operations": "surgeries",
-		"internships": "internships",
-		"membership": "memberships"
+		"internships": "international internships",
+		"membership": "prof. associations"
 	},
-
-	"title": "Pediatric Urologist, Head of the Pediatric Urology Department at the National Children’s Medical Center",
-
+	"title": "Pediatric Urologist, Head of the Pediatric Urology Department at the National Children's Medical Center",
 	"education": {
-		"university": "Graduated in 2014 from the Tashkent Pediatric Medical Institute with honors, majoring in Pediatrics. From 2014 to 2016, completed a clinical residency in Pediatric Surgery at the Department of Faculty Pediatric Surgery of TashPMI."
+		"university": "In 2014, he graduated from the Tashkent Pediatric Medical Institute with honors in Pediatrics. From 2014 to 2016, he completed a clinical residency in Pediatric Surgery at the Department of Faculty Pediatric Surgery of TashPMI."
 	},
-
 	"memberships": {
 		"title": "Membership in Professional Associations",
 		"items": [
@@ -50,7 +46,6 @@
 			}
 		]
 	},
-
 	"internships": {
 		"title": "International Internships",
 		"data": [
@@ -76,10 +71,10 @@
 			{
 				"year": "2024",
 				"details": [
-					"Participation in the “Live Surgery for Bladder Exstrophy in Children” course, Ahmedabad, India",
+					"Participation in the ‘Live Surgery for Bladder Exstrophy in Children’ course, Ahmedabad, India",
 					"Participation in a Pediatric Urology workshop, Porto, Portugal",
 					"Participation in a Pediatric Urology workshop, Salzburg, Austria",
-					"Successful defense of PhD dissertation on hypospadias",
+					"Successful defense of a dissertation on hypospadias",
 					"Internship in genital surgery at Sava Memorial Hospital, Belgrade, Serbia"
 				]
 			},
@@ -92,13 +87,12 @@
 			}
 		]
 	},
-
 	"experience": {
 		"title": "Work Experience (10 years)",
 		"positions": [
 			{
 				"year": "2016–2019",
-				"description": "Urologist, Assistant Lecturer at the clinic of the Tashkent Pediatric Medical Institute."
+				"description": "Urologist and Department Assistant at the clinic of the Tashkent Pediatric Medical Institute."
 			},
 			{
 				"year": "2020 — present",
@@ -106,8 +100,14 @@
 			},
 			{
 				"year": "2023 — present",
-				"description": "Reviewer for the «Journal of Pediatric Urologists»."
+				"description": "Reviewer for the Journal of Pediatric Urologists."
 			}
 		]
+	},
+	"sidebar": {
+		"doctor_photo_alt": "Dr. Abdullaev Zafar Bobirovich",
+		"doctor_photo_caption": "Dr. Abdullaev Zafar Bobirovich",
+		"consultation_photo_alt": "During consultation",
+		"consultation_photo_caption": "During consultation"
 	}
 }

@@ -1,48 +1,7 @@
 import { useEffect } from "react";
 import { Fancybox } from "@fancyapps/ui";
 
-export default function ImageGallery() {
-	useEffect(() => {
-		Fancybox.bind("[data-fancybox]", {
-			Carousel: {
-				formatCaption: (carouselRef, slide) => {
-					return `${slide.index + 1} of ${
-						carouselRef.getSlides().length
-					}<br /> ${slide.caption || ""}`;
-				},
-			},
-		});
-
-		return () => Fancybox.destroy();
-	}, []);
-
-	return (
-		<div className="container mx-auto py-10 px-4">
-			<div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
-				{itemData.map((item, i) => (
-					<a
-						key={i}
-						href={item.img}
-						data-fancybox="gallery"
-						className="relative block overflow-hidden aspect-square group"
-					>
-						<img
-							src={item.img}
-							loading="lazy"
-							alt={`Image ${i + 1}`}
-							className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-						/>
-
-						{/* Hover overlay */}
-						<div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition" />
-					</a>
-				))}
-			</div>
-		</div>
-	);
-}
-
-const itemData = [
+const ITEM_DATA = [
 	{ img: "/home/thumbs/image1.webp" },
 	{ img: "/home/thumbs/image2.webp" },
 	{ img: "/home/thumbs/image3.webp" },
@@ -78,3 +37,48 @@ const itemData = [
 	{ img: "/home/thumbs/image33.webp" },
 	{ img: "/home/thumbs/image34.webp" },
 ];
+
+const EAGER_COUNT = 12;
+
+export default function ImageGallery() {
+
+	useEffect(() => {
+		Fancybox.bind("[data-fancybox]", {
+			Carousel: {
+				formatCaption: (carouselRef, slide) => {
+					return `${slide.index + 1} of ${
+						carouselRef.getSlides().length
+					}<br /> ${slide.caption || ""}`;
+				},
+			},
+		});
+
+		return () => Fancybox.destroy();
+	}, []);
+
+	return (
+		<div className="container mx-auto py-10 px-4">
+			<div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
+				{ITEM_DATA.map((item, i) => (
+					<a
+						key={i}
+						href={item.img}
+						data-fancybox="gallery"
+						className="relative block overflow-hidden aspect-square group"
+					>
+						<img
+							src={item.img}
+							loading={i < EAGER_COUNT ? "eager" : "lazy"}
+							decoding="async"
+							alt={`Image ${i + 1}`}
+							className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+						/>
+
+						{/* Hover overlay */}
+						<div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition" />
+					</a>
+				))}
+			</div>
+		</div>
+	);
+}

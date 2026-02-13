@@ -5,94 +5,88 @@
 		"fullName": "Abdullayev Zafar Bobirovich",
 		"aboutMe": "Tibbiyot fanlari nomzodi"
 	},
-
 	"tabs": {
-		"experience": "yillik tajriba",
-		"operations": "operatsiyalar",
-		"internships": "stajirovkalar",
-		"membership": "a’zolik"
+		"experience": "yil tajriba",
+		"operations": "operatsiya",
+		"internships": "xalqaro stajirovka",
+		"membership": "prof. uyushma"
 	},
-
 	"title": "Bolalar urologi, Milliy bolalar tibbiyot markazi bolalar urologiyasi bo‘limi mudiri",
-
 	"education": {
 		"university": "2014 yilda Toshkent pediatriya tibbiyot institutini «Pediatriya» mutaxassisligi bo‘yicha imtiyozli diplom bilan tamomlagan. 2014–2016 yillarda ToshPMI fakultet bolalar jarrohligi kafedrasida «Bolalar jarrohligi» yo‘nalishi bo‘yicha klinik ordinaturada tahsil olgan."
 	},
-
 	"memberships": {
-		"title": "Professional uyushmalardagi a’zolik",
+		"title": "Professional assotsiatsiyalardagi a’zolik",
 		"items": [
 			{
-				"period": "2019 — hozirgi vaqtgacha",
+				"period": "2019 — hozirgacha",
 				"organization": "Yevropa bolalar urologlari assotsiatsiyasi",
 				"abbreviation": "ESPU"
 			},
 			{
-				"period": "2019 — hozirgi vaqtgacha",
+				"period": "2019 — hozirgacha",
 				"organization": "Koreya urologlar assotsiatsiyasi",
 				"abbreviation": "KUA"
 			},
 			{
-				"period": "2019 — hozirgi vaqtgacha",
+				"period": "2019 — hozirgacha",
 				"organization": "Koreya bolalar urologlari assotsiatsiyasi",
 				"abbreviation": "KSPU"
 			},
 			{
-				"period": "2021 — hozirgi vaqtgacha",
+				"period": "2021 — hozirgacha",
 				"organization": "Gipospadiya bo‘yicha xalqaro jamiyat",
 				"abbreviation": "HIS"
 			},
 			{
-				"period": "2023 — hozirgi vaqtgacha",
+				"period": "2023 — hozirgacha",
 				"organization": "O‘zbekiston bolalar urologlari assotsiatsiyasi",
 				"abbreviation": "USPU",
 				"position": "a’zo va kotib"
 			}
 		]
 	},
-
 	"internships": {
 		"title": "Xalqaro stajirovkalar",
 		"data": [
 			{
 				"year": "2017",
 				"details": [
-					"Rossiya, Volgograd shahri, 7-sonli shahar shifoxonasida bolalar laparoskopik urologiyasi bo‘yicha kurs"
+					"Rossiya, Volgograd shahri 7-sonli shahar shifoxonasining bolalar urologiyasi bo‘limida bolalar laparoskopik urologiyasi bo‘yicha kurs"
 				]
 			},
 			{
 				"year": "2018–2019",
 				"details": [
-					"Janubiy Koreya, Pusan sh., Pusan milliy universitetining Yansan klinikasida bolalar urologiyasi bo‘yicha bir yillik stajirovka",
-					"Janubiy Koreya, Seul sh., Yonsei universiteti Sinchon Severance klinikasida bolalar urologiyasi bo‘yicha kurs"
+					"Janubiy Koreya, Pusan shahri, Pusan milliy universitetining Yansan klinikasida bolalar urologiyasi bo‘yicha bir yillik stajirovka",
+					"Janubiy Koreya, Seul shahri, Yonsei universiteti Sinchon Severance klinikasida bolalar urologiyasi bo‘yicha kurs"
 				]
 			},
 			{
 				"year": "2023",
 				"details": [
-					"Janubiy Koreya, Seul sh., Seul milliy universiteti klinikasida bolalar urologiyasi bo‘yicha kurs"
+					"Janubiy Koreya, Seul shahri, Seul milliy universiteti klinikasida bolalar urologiyasi bo‘yicha kurs"
 				]
 			},
 			{
 				"year": "2024",
 				"details": [
-					"Hindiston, Ahmadobod sh., bolalarda siydik pufagi ekstrofiya bo‘yicha «Jonli jarrohlik» kursida ishtirok",
-					"Portugaliya, Portu sh., bolalar urologiyasi bo‘yicha workshop",
-					"Avstriya, Zaltsburg sh., bolalar urologiyasi bo‘yicha workshop",
+					"Hindiston, Ahmadobod shahrida bolalarda siydik pufagi ekstrofiyasi bo‘yicha «Jonli jarrohlik» kursida ishtirok",
+					"Portugaliya, Porto shahrida bolalar urologiyasi bo‘yicha workshopda ishtirok",
+					"Avstriya, Zaltsburg shahrida bolalar urologiyasi bo‘yicha workshopda ishtirok",
 					"Gipospadiya mavzusida nomzodlik dissertatsiyasini muvaffaqiyatli himoya qilgan",
-					"Serbiya, Belgrad sh., Sava Memorial klinikasida genital jarrohlik bo‘yicha stajirovka"
+					"Serbiya, Belgrad shahridagi Sava Memorial klinikasida genital jarrohlik bo‘yicha stajirovka"
 				]
 			},
 			{
 				"year": "2025",
 				"details": [
-					"Turkiya, Anqara sh., Hacettepe universiteti klinikasida bolalar urologiyasi bo‘yicha workshop",
-					"AQSh, Sinsinnati sh., Cincinnati Children’s Hospital Medical Center’da bolalar urologiyasi bo‘yicha workshop"
+					"Turkiya, Anqara shahridagi Hacettepe Üniversitesi klinikasida bolalar urologiyasi bo‘yicha workshopda ishtirok",
+					"AQSH, Cincinnati shahridagi Cincinnati Children’s Hospital Medical Centerda bolalar urologiyasi bo‘yicha workshopda ishtirok"
 				]
 			}
 		]
 	},
-
 	"experience": {
 		"title": "Ish tajribasi (10 yil)",
 		"positions": [
@@ -101,13 +95,19 @@
 				"description": "Toshkent pediatriya tibbiyot instituti klinikasida shifokor-urolog, kafedra assistenti."
 			},
 			{
-				"year": "2020 — hozirgi vaqtgacha",
+				"year": "2020 — hozirgacha",
 				"description": "Milliy bolalar tibbiyot markazi bolalar urologiyasi bo‘limi mudiri."
 			},
 			{
-				"year": "2023 — hozirgi vaqtgacha",
-				"description": "«Journal of Pediatric Urologists» jurnalining rasmiy rецензenti."
+				"year": "2023 — hozirgacha",
+				"description": "Journal of Pediatric Urologists jurnalining retsenzenti."
 			}
 		]
+	},
+	"sidebar": {
+		"doctor_photo_alt": "Doktor Abdullayev Zafar Bobirovich",
+		"doctor_photo_caption": "Doktor Abdullayev Zafar Bobirovich",
+		"consultation_photo_alt": "Konsultatsiya vaqtida",
+		"consultation_photo_caption": "Konsultatsiya vaqtida"
 	}
 }

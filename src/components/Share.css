@@ -20,7 +20,28 @@
 	transform: scale(1.08);
 }
 
-/* AI Wave Effect */
+.chat-float-button {
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 18px;
+	font-family: Arial, sans-serif;
+	cursor: pointer;
+	z-index: 2;
+	background-color: rgb(76, 218, 149);
+	box-shadow: 0 0 22px rgba(28, 200, 124, 0.55);
+	transition: transform 0.3s ease;
+}
+
+.chat-float-button:hover {
+	transform: scale(1.08);
+}
+
 .ai-button::before,
 .ai-button::after {
 	content: "";
@@ -32,17 +53,26 @@
 	animation: pulse 2.5s infinite;
 }
 
-.ant-float-btn,
-.ant-float-btn-body {
-	background-color: radial-gradient(
-		circle at top left,
-		#00f6ff,
-		#0044ff
-	) !important  ;
+.chat-float-button::before,
+.chat-float-button::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 2px solid rgba(50, 220, 140, 0.55);
+}
+
+.ai-button .ant-float-btn-body {
+	background: radial-gradient(circle at top left, #00f6ff, #0044ff) !important;
 	box-shadow: none !important;
 }
 
 .ai-button::after {
+	animation-delay: 1.25s;
+}
+
+.chat-float-button::after {
 	animation-delay: 1.25s;
 }
 

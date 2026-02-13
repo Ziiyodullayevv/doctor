@@ -4,17 +4,17 @@
 			{
 				"name": "Abdullaev Zafar Bobirovich",
 				"description": "A healthy future starts here",
-				"imgUrl": "/home/hero1.webp"
+				"imgUrl": "/banner/banner-1.jpeg"
 			},
 			{
 				"name": "Abdullaev Zafar Bobirovich",
 				"description": "Pediatric urology where every step toward health matters",
-				"imgUrl": "/home/hero2.webp"
+				"imgUrl": "/banner/banner-2.jpeg"
 			},
 			{
 				"name": "Abdullaev Zafar Bobirovich",
 				"description": "A reliable solution for delicate pediatric health concerns",
-				"imgUrl": "https://47lokb.ru/upload/medialibrary/85a/l5v1qk60igxr3tpjzxqsx8iek4yr7ja8/hirurg_1.jpg"
+				"imgUrl": "/banner/banner-3.jpeg"
 			}
 		]
 	},
@@ -42,7 +42,7 @@
 
 	"docInfo": {
 		"fullName": "Abdullaev Zafar Bobirovich",
-		"job": "Urologist and Andrologist",
+		"job": "Pediatric Urologist",
 		"description": "I provide consultations and perform surgical procedures at the National Children's Medical Center in Tashkent.",
 		"btn1": "About me",
 		"btn2": "Ask a question"

@@ -1,0 +1,44 @@
+{
+	"consultation_note": "Konsultatsiya yozilish uchun kontaktlar orqali (afzal Telegram orqali xabar!!!)",
+	"clinic_title": "Klinikada qabul: Bolalar milliy tibbiyot markazi",
+	"clinic_address": "Manzil: Yashnobod tumani, Parkent ko'chasi, 294",
+	"ask_doctor": "Shifokorga savol berish",
+	"form_name": "Ismingiz",
+	"form_email": "Emailingiz",
+	"form_phone": "Telefon raqamingiz",
+	"form_message": "Xabaringizni yozing...",
+	"form_cancel": "Bekor qilish",
+	"form_privacy": "Shaxsiy ma'lumotlarni qayta ishlashga roziman",
+	"form_submit": "Yuborish",
+	"share": {
+		"chat_tooltip": "Chat",
+		"modal_title": "Chat orqali bog'lanish",
+		"modal_description": "Ism, telefon raqam va xabar qoldiring. Tez orada aloqaga chiqamiz.",
+		"phone_placeholder": "+998 (90) 123-45-67",
+		"cancel": "Bekor qilish",
+		"chat_id_error": "Telegram chat ID topilmadi (getUpdates xatosi).",
+		"chat_id_missing": "Chat ID topilmadi. Botga avval Telegram ichida kamida bitta xabar yuboring yoki .env ga BOT_CHAT_ID yozing.",
+		"bot_header": "Yangi chat so'rovi (Floating Button)",
+		"bot_page": "Sahifa",
+		"bot_time": "Vaqt"
+	},
+	"toast": {
+		"sending": "Yuborilmoqda...",
+		"success": {
+			"title": "Xabar yuborildi",
+			"description": "Rahmat! Murojaatingiz shifokorga muvaffaqiyatli yuborildi."
+		},
+		"error": {
+			"title": "Yuborishda xatolik",
+			"default_description": "Xabarni yuborib bo'lmadi. Iltimos, qaytadan urinib ko'ring.",
+			"missing_bot": ".env ichida BOT_TOKEN topilmadi. BOT_TOKEN ni qo'shing va serverni qayta ishga tushiring."
+		},
+		"validation": {
+			"title": "Formani tekshiring",
+			"description": "Ism, telefon va xabar maydonlarini to'ldiring.",
+			"phone": "Telefon raqamni to'g'ri formatda kiriting.",
+			"email": "Email manzilni to'g'ri kiriting.",
+			"privacy": "Shaxsiy ma'lumotlarni qayta ishlashga rozilikni belgilang."
+		}
+	}
+}

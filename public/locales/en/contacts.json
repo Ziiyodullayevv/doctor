@@ -1,0 +1,44 @@
+{
+	"consultation_note": "Consultation by appointment via contacts (preferably by message in Telegram!!!)",
+	"clinic_title": "Clinic appointment: National Children's Medical Center",
+	"clinic_address": "Address: Yashnabad district, Parkentskaya street, 294",
+	"ask_doctor": "Ask the doctor a question",
+	"form_name": "Your name",
+	"form_email": "Your email",
+	"form_phone": "Your phone number",
+	"form_message": "Write your message...",
+	"form_cancel": "Cancel",
+	"form_privacy": "I agree to the processing of personal data",
+	"form_submit": "Send",
+	"share": {
+		"chat_tooltip": "Chat",
+		"modal_title": "Contact via chat",
+		"modal_description": "Leave your name, phone number, and message. We will contact you shortly.",
+		"phone_placeholder": "+998 (90) 123-45-67",
+		"cancel": "Cancel",
+		"chat_id_error": "Unable to detect Telegram chat ID (getUpdates error).",
+		"chat_id_missing": "Chat ID was not found. Send at least one message to the bot in Telegram first, or add BOT_CHAT_ID to .env.",
+		"bot_header": "New chat request (Floating Button)",
+		"bot_page": "Page",
+		"bot_time": "Time"
+	},
+	"toast": {
+		"sending": "Sending...",
+		"success": {
+			"title": "Message sent",
+			"description": "Thank you! Your request was sent successfully."
+		},
+		"error": {
+			"title": "Send failed",
+			"default_description": "Could not send your message. Please try again.",
+			"missing_bot": "BOT_TOKEN is missing in .env. Add BOT_TOKEN and restart the dev server."
+		},
+		"validation": {
+			"title": "Check the form",
+			"description": "Please fill in name, phone and message.",
+			"phone": "Please enter a valid phone number.",
+			"email": "Please enter a valid email address.",
+			"privacy": "Please confirm personal data consent."
+		}
+	}
+}

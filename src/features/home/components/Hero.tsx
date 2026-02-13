@@ -1,6 +1,11 @@
-import { useState, useEffect } from "react";
+import { useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { A11y, Autoplay, EffectFade } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
+import "swiper/css";
+import "swiper/css/effect-fade";
 
 interface Slide {
 	name: string;
@@ -9,120 +14,136 @@ interface Slide {
 }
 
 export default function Hero() {
-	const [activeSlide, setActiveSlide] = useState(0);
-
 	const { t } = useTranslation();
+	const rawSlides = t("hero.carusel", { returnObjects: true }) as Slide[];
+	const slides = useMemo(
+		() => (Array.isArray(rawSlides) ? rawSlides : []),
+		[rawSlides],
+	);
+	const [activeSlide, setActiveSlide] = useState(0);
+	const swiperRef = useRef<SwiperType | null>(null);
+	const hasManySlides = slides.length > 1;
 
-	const slides = t("hero.carusel", { returnObjects: true }) as Slide[];
-
-	const nextSlide = () => {
-		setActiveSlide((prev) => (prev + 1) % slides.length);
-	};
-
-	const prevSlide = () => {
-		setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length);
-	};
-
-	const goToSlide = (index: number) => {
-		setActiveSlide(index);
-	};
-
-	// Auto-slide effect
-	useEffect(() => {
-		const interval = setInterval(() => {
-			nextSlide();
-		}, 5000); // Change slide every 5 seconds
-
-		return () => clearInterval(interval); // Cleanup on unmount
-	}, [activeSlide]); // Reset timer when slide changes manually
+	if (slides.length === 0) {
+		return null;
+	}
 
 	return (
 		<div className="w-full md:container md:mx-auto md:mt-25 md:px-3">
-			<div className="relative h-[100vh] md:h-[620px] md:rounded-2xl overflow-hidden">
-				{/* Slides */}
-				<div className="relative h-full">
+			<div className="relative h-[100vh] overflow-hidden md:h-[620px] md:rounded-2xl">
+				<Swiper
+					modules={[Autoplay, A11y, EffectFade]}
+					slidesPerView={1}
+					spaceBetween={0}
+					effect="fade"
+					fadeEffect={{ crossFade: true }}
+					speed={500}
+					loop={hasManySlides}
+					allowTouchMove={hasManySlides}
+					grabCursor={hasManySlides}
+					touchStartPreventDefault={false}
+					touchReleaseOnEdges
+					autoplay={
+						hasManySlides
+							? {
+									delay: 3000,
+									disableOnInteraction: false,
+									pauseOnMouseEnter: false,
+									waitForTransition: true,
+								}
+							: false
+					}
+					onSwiper={(swiper) => {
+						swiperRef.current = swiper;
+						setActiveSlide(swiper.realIndex);
+						if (hasManySlides && swiper.autoplay && !swiper.autoplay.running) {
+							swiper.autoplay.start();
+						}
+					}}
+					onSlideChange={(swiper) => {
+						setActiveSlide(swiper.realIndex);
+					}}
+					className="h-full"
+				>
 					{slides.map((item, index) => (
-						<div
-							key={index}
-							className={`absolute inset-0 transition-opacity duration-500 ${
-								index === activeSlide ? "opacity-100" : "opacity-0"
-							}`}
-						>
-							<img
-								className="w-full h-full object-cover"
-								src={item.imgUrl}
-								alt="Slide"
-							/>
-							<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+						<SwiperSlide key={`${item.name}-${index}`}>
+							<div className="relative h-full">
+								<img
+									className={`h-full w-full object-cover ${
+										index === 1
+											? "object-left md:object-center"
+											: "object-center"
+									}`}
+									src={heroImage[index]}
+									alt={item.name}
+								/>
+								<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-							{/* Content */}
-							<div className="absolute bottom-20 md:bottom-24 lg:bottom-28 left-0 right-0 p-4 md:p-8 lg:p-20 text-white">
-								<h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4">
-									{item.name}
-								</h1>
-								<p className="text-sm md:text-lg lg:text-xl max-w-xl my-3 md:my-6 lg:my-8 text-gray-200">
-									{item.description}
-								</p>
+								<div className="absolute bottom-20 left-0 right-0 p-4 text-white md:bottom-24 md:p-8 lg:bottom-28 lg:p-20">
+									<h1 className="mb-2 text-2xl font-bold md:mb-4 md:text-4xl lg:text-5xl">
+										{item.name}
+									</h1>
+									<p className="my-3 max-w-xl text-sm text-gray-200 md:my-6 md:text-lg lg:my-8 lg:text-xl">
+										{item.description}
+									</p>
+								</div>
 							</div>
-						</div>
+						</SwiperSlide>
 					))}
-				</div>
+				</Swiper>
 
-				{/* Navigation Arrows */}
-				<button
-					onClick={prevSlide}
-					className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-black/20 hover:bg-black/30 backdrop-blur-md p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group"
-				>
-					<ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white transition-colors" />
-				</button>
-				<button
-					onClick={nextSlide}
-					className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-black/20 hover:bg-black/30 backdrop-blur-md p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group"
-				>
-					<ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white transition-colors" />
-				</button>
-
-				{/* Custom Pagination Dots */}
-				<div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-10 flex gap-1.5 md:gap-2">
-					{slides.map((_, index) => (
+				{hasManySlides && (
+					<>
 						<button
-							key={index}
-							onClick={() => goToSlide(index)}
-							className="group relative"
+							type="button"
+							onClick={() => {
+								swiperRef.current?.slidePrev();
+								swiperRef.current?.autoplay?.start();
+							}}
+							className="group absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/20 p-2 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-black/30 md:left-4 md:p-3"
+							aria-label="Previous hero slide"
 						>
-							<div
-								className={`h-1.5 md:h-2 rounded-full transition-all duration-300 ${
-									index === activeSlide
-										? "w-8 md:w-12 bg-white shadow-lg"
-										: "w-1.5 md:w-2 bg-white/50 hover:bg-white/80"
-								}`}
-							></div>
+							<ChevronLeft className="h-5 w-5 text-white transition-colors md:h-6 md:w-6" />
 						</button>
-					))}
-				</div>
+						<button
+							type="button"
+							onClick={() => {
+								swiperRef.current?.slideNext();
+								swiperRef.current?.autoplay?.start();
+							}}
+							className="group absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/20 p-2 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-black/30 md:right-4 md:p-3"
+							aria-label="Next hero slide"
+						>
+							<ChevronRight className="h-5 w-5 text-white transition-colors md:h-6 md:w-6" />
+						</button>
+
+						<div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 md:bottom-6">
+							{slides.map((_, index) => (
+								<button
+									key={`hero-dot-${index}`}
+									type="button"
+									onClick={() => {
+										swiperRef.current?.slideToLoop(index);
+										swiperRef.current?.autoplay?.start();
+									}}
+									aria-label={`Go to slide ${index + 1}`}
+									className={`h-2 rounded-full transition-all duration-300 ${
+										activeSlide === index
+											? "w-10 bg-white shadow-lg md:w-12"
+											: "w-2 bg-white/55 hover:bg-white/85"
+									}`}
+								/>
+							))}
+						</div>
+					</>
+				)}
 			</div>
 		</div>
 	);
 }
 
-// const slides = [
-// 	{
-// 		name: "Абдуллаев Зафар Бобирович",
-// 		description:
-// 			"Пластический хирург, детский уролог, детский хирург. Реконструктивная и пластическая хирургия для всей семьи.",
-// 		imgUrl: "/home/hero1.webp",
-// 	},
-// 	{
-// 		name: "Абдуллаев Зафар Бобирович",
-// 		description:
-// 			"Пластический и реконструктивный хирург. Индивидуальный подход к лечению детей и взрослых.",
-// 		imgUrl: "/home/hero2.webp",
-// 	},
-// 	{
-// 		name: "Абдуллаев Зафар Бобирович",
-// 		description:
-// 			"Детский уролог-хирург и пластический хирург. Современные методы восстановления и коррекции.",
-// 		imgUrl:
-// 			"https://47lokb.ru/upload/medialibrary/85a/l5v1qk60igxr3tpjzxqsx8iek4yr7ja8/hirurg_1.jpg",
-// 	},
-// ];
+const heroImage = [
+	"/banner/banner-1.jpeg",
+	"/banner/banner-2.jpeg",
+	"/banner/banner-3.jpeg",
+];
