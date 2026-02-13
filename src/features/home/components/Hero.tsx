@@ -76,6 +76,9 @@ export default function Hero() {
 									}`}
 									src={heroImage[index]}
 									alt={item.name}
+									loading={index === 0 ? "eager" : "lazy"}
+									decoding="async"
+									fetchPriority={index === 0 ? "high" : "auto"}
 								/>
 								<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 

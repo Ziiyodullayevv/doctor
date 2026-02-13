@@ -15,6 +15,8 @@ export default function DocInfo() {
 							<img
 								src="/home/doc-info/doc-banner.png"
 								alt="Доктор Суров Роман Викторович"
+								loading="lazy"
+								decoding="async"
 								className="h-full w-full object-cover object-top"
 							/>
 						</div>

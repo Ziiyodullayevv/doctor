@@ -1,44 +1,17 @@
 import { useEffect } from "react";
 import { Fancybox } from "@fancyapps/ui";
 
-const ITEM_DATA = [
-	{ img: "/home/thumbs/image1.webp" },
-	{ img: "/home/thumbs/image2.webp" },
-	{ img: "/home/thumbs/image3.webp" },
-	// { img: "/home/thumbs/image4.webp" },
-	{ img: "/home/thumbs/image5.webp" },
-	{ img: "/home/thumbs/image6.webp" },
-	{ img: "/home/thumbs/image7.webp" },
-	{ img: "/home/thumbs/image8.webp" },
-	{ img: "/home/thumbs/image9.webp" },
-	{ img: "/home/thumbs/image10.webp" },
-	{ img: "/home/thumbs/image11.webp" },
-	{ img: "/home/thumbs/image12.webp" },
-	// { img: "/home/thumbs/image13.webp" },
-	{ img: "/home/thumbs/image14.webp" },
-	{ img: "/home/thumbs/image15.webp" },
-	{ img: "/home/thumbs/image16.webp" },
-	{ img: "/home/thumbs/image17.webp" },
-	{ img: "/home/thumbs/image18.webp" },
-	{ img: "/home/thumbs/image19.webp" },
-	{ img: "/home/thumbs/image20.webp" },
-	{ img: "/home/thumbs/image21.webp" },
-	{ img: "/home/thumbs/image22.webp" },
-	{ img: "/home/thumbs/image23.webp" },
-	{ img: "/home/thumbs/image24.webp" },
-	{ img: "/home/thumbs/image25.webp" },
-	{ img: "/home/thumbs/image26.webp" },
-	{ img: "/home/thumbs/image27.webp" },
-	{ img: "/home/thumbs/image28.webp" },
-	{ img: "/home/thumbs/image29.webp" },
-	{ img: "/home/thumbs/image30.webp" },
-	{ img: "/home/thumbs/image31.webp" },
-	{ img: "/home/thumbs/image32.webp" },
-	{ img: "/home/thumbs/image33.webp" },
-	{ img: "/home/thumbs/image34.webp" },
+const GALLERY_IDS = [
+	1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
+	24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
 ];
 
-const EAGER_COUNT = 12;
+const ITEM_DATA = GALLERY_IDS.map((id) => ({
+	preview: `/home/thumbs-small/image${id}.jpg`,
+	full: `/home/${id}.jpg`,
+}));
+
+const EAGER_COUNT = 2;
 
 export default function ImageGallery() {
 
@@ -62,14 +35,15 @@ export default function ImageGallery() {
 				{ITEM_DATA.map((item, i) => (
 					<a
 						key={i}
-						href={item.img}
+						href={item.full}
 						data-fancybox="gallery"
 						className="relative block overflow-hidden aspect-square group"
 					>
 						<img
-							src={item.img}
+							src={item.preview}
 							loading={i < EAGER_COUNT ? "eager" : "lazy"}
 							decoding="async"
+							fetchPriority={i < EAGER_COUNT ? "high" : "low"}
 							alt={`Image ${i + 1}`}
 							className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
 						/>

@@ -65,13 +65,18 @@ export default function ImageCarousel({ caruselData }: CaruselDataProps) {
 										src={src}
 										alt=""
 										aria-hidden="true"
+										loading={index === 0 ? "eager" : "lazy"}
+										decoding="async"
+										fetchPriority={index === 0 ? "high" : "low"}
 										className="pointer-events-none absolute inset-0 h-full w-full scale-110 object-cover blur-2xl"
 									/>
 									<div className="absolute inset-0 bg-black/25" />
 									<img
 										src={src}
 										alt={`slide-${index}`}
-										loading="lazy"
+										loading={index === 0 ? "eager" : "lazy"}
+										decoding="async"
+										fetchPriority={index === 0 ? "high" : "low"}
 										className="relative z-10 h-full w-full rounded-xl object-contain p-2 sm:p-3"
 									/>
 								</div>

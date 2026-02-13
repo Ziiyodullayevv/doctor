@@ -219,6 +219,8 @@ export default function AboutPage() {
 											className="w-full h-80 object-cover"
 											src="/about/about1.jpg"
 											alt={t("sidebar.doctor_photo_alt")}
+											loading="lazy"
+											decoding="async"
 										/>
 										<div className="p-4">
 											<p className="text-sm text-gray-600 dark:text-gray-400 text-center">
@@ -232,6 +234,8 @@ export default function AboutPage() {
 											className="w-full h-80 object-cover"
 											src="/about/about2.jpg"
 											alt={t("sidebar.consultation_photo_alt")}
+											loading="lazy"
+											decoding="async"
 										/>
 										<div className="p-4">
 											<p className="text-sm text-gray-600 dark:text-gray-400 text-center">

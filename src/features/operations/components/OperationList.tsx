@@ -79,6 +79,8 @@ export default function MedicalProcedures({
 									<img
 										src={imageUrl}
 										alt="Medical procedure"
+										loading="lazy"
+										decoding="async"
 										className="w-full h-full object-cover"
 									/>
 								</div>

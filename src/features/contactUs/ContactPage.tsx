@@ -323,16 +323,22 @@ export default function ContactPage() {
 								className="w-28 md:w-32"
 								src="/contacts/qr-whatsapp.png"
 								alt=""
+								loading="lazy"
+								decoding="async"
 							/>
 							<img
 								className="w-28 md:w-32"
 								src="/contacts/qr-instagram.png"
 								alt=""
+								loading="lazy"
+								decoding="async"
 							/>
 							<img
 								className="w-28 md:w-32"
 								src="/contacts/qr-telegram.png"
 								alt=""
+								loading="lazy"
+								decoding="async"
 							/>
 						</div>
 					</div>

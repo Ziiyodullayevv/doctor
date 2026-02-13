@@ -39,11 +39,18 @@ export default function Napravleniya() {
 							>
 								{/* Icon */}
 								<div className="absolute -top-10 left-1/2 -translate-x-1/2">
-									<div
-										className={`relative w-20 h-20 bg-blue-500 rounded-2xl bg-gradient-to-br shadow-xl border group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}
-									>
-										<img src={image} alt={dir.title} />
-									</div>
+										<div
+											className={`relative w-20 h-20 bg-blue-500 rounded-2xl bg-gradient-to-br shadow-xl border group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}
+										>
+											<img
+												src={image}
+												alt={dir.title}
+												loading="lazy"
+												decoding="async"
+												width={80}
+												height={80}
+											/>
+										</div>
 								</div>
 
 								{/* Content */}
