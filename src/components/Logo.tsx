@@ -6,7 +6,7 @@ export default function Logo() {
 			to="/"
 			className="flex overflow-hidden border-1 rounded-lg items-center z-50"
 		>
-			<img className="w-9 h-9" src="/logo.jpg" alt="logo" />
+			<img className="w-9 h-9" src="/apple-touch-icon.png" alt="logo" />
 		</Link>
 	);
 }
