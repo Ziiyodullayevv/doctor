@@ -350,24 +350,6 @@ export default function ContactPage() {
 					<div className="flex relative flex-col lg:flex-row items-start my-10 gap-10">
 						{/* Map */}
 						<div className="flex-1 rounded-2xl overflow-hidden w-full">
-							<a
-								href="https://yandex.uz/maps/org/158209277121/?utm_medium=mapframe&utm_source=maps"
-								className="text-white text-[12px] absolute top-14"
-							>
-								Bolalar Milliy Tibbiyot Markazi
-							</a>
-							<a
-								href="https://yandex.uz/maps/10335/tashkent/category/children_hospital/184105958/?utm_medium=mapframe&utm_source=maps"
-								className="text-white text-[12px] absolute top-14"
-							>
-								Bolalar shifoxonasi Toshkentda
-							</a>
-							<a
-								href="https://yandex.uz/maps/10335/tashkent/category/diagnostic_center/184106106/?utm_medium=mapframe&utm_source=maps"
-								className="text-white text-[12px] absolute top-28"
-							>
-								Diagnostika markazi Toshkentda
-							</a>
 							<iframe
 								src="https://yandex.uz/map-widget/v1/?ll=69.339825%2C41.304195&mode=search&oid=158209277121&ol=biz&sctx=ZAAAAAgBEAAaKAoSCcueBDbnUVFAERGPxMvTp0RAEhIJWyIXnMHf1D8R%2Fz7jwoGQxj8iBgABAgMEBSgKOABApZ8GSAFqAnV6nQHNzMw9oAEAqAEAvQHmqEUBwgEGwfmHsM0EggIiTmF0aW9uYWwgQ2hpbGRyZW4ncyBNZWRpY2FsIENlbnRlcooCAJICAJoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=69.339825%2C41.304195&sspn=0.007846%2C0.006199&text=National%20Children%27s%20Medical%20Center&z=16.83"
 								width="100%"
