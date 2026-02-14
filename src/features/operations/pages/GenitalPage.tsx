@@ -40,7 +40,7 @@ export default function GenitalPage() {
 				title={t("genetal.title")}
 				description={t("genetal.description")}
 				procedures={data}
-				imageUrl="/public/operations/1.jpg"
+				imageUrl="/operations/1.jpg"
 			/>
 			<Appointment />
 		</div>
