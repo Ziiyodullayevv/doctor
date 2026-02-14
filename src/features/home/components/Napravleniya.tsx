@@ -20,9 +20,6 @@ export default function Napravleniya() {
 		<section className="py-16">
 			<div className="container mx-auto px-4 md:px-10">
 				<div className="text-center mb-16">
-					<h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
-						{t("ekspert.title")}
-					</h1>
 					<span className="w-16 inline-block h-1 bg-primary rounded-full mb-3"></span>
 					<h2 className="text-lg text-gray-600 dark:text-gray-400">
 						{t("ekspert.description")}
@@ -39,18 +36,18 @@ export default function Napravleniya() {
 							>
 								{/* Icon */}
 								<div className="absolute -top-10 left-1/2 -translate-x-1/2">
-										<div
-											className={`relative w-20 h-20 bg-blue-500 rounded-2xl bg-gradient-to-br shadow-xl border group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}
-										>
-											<img
-												src={image}
-												alt={dir.title}
-												loading="lazy"
-												decoding="async"
-												width={80}
-												height={80}
-											/>
-										</div>
+									<div
+										className={`relative w-20 h-20 bg-blue-500 rounded-2xl bg-gradient-to-br shadow-xl border group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}
+									>
+										<img
+											src={image}
+											alt={dir.title}
+											loading="lazy"
+											decoding="async"
+											width={80}
+											height={80}
+										/>
+									</div>
 								</div>
 
 								{/* Content */}

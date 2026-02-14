@@ -228,7 +228,7 @@ const urologyImageMap: Record<number, string[]> = {
 	19: ["/image-carusel/carusel-19.1.png"],
 	20: ["/image-carusel/carusel-20.1.png", "/image-carusel/carusel-20.2.png"],
 	21: ["/image-carusel/carusel-21.1.png", "/image-carusel/carusel-21.2.png"],
-	22: ["/image-carusel/carusel-22.1.png", "/image-carusel/carusel-22.2.png"],
+	22: ["/image-carusel/carusel-22.2.png", "/image-carusel/carusel-22.1.png"],
 	23: ["/image-carusel/carusel-23.1.png", "/image-carusel/carusel-23.2.png"],
 	24: ["/image-carusel/carusel-24.1.png", "/image-carusel/carusel-24.2.png"],
 	25: ["/image-carusel/carusel-25.1.png", "/image-carusel/carusel-25.2.png"],

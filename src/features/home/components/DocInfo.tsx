@@ -29,9 +29,14 @@ export default function DocInfo() {
 								{t("docInfo.fullName")}
 							</h1>
 							<span className="mb-3 inline-block h-[2px] w-[40px] bg-primary"></span>
-							<h2 className="mb-4 text-lg font-semibold text-gray-700 dark:text-gray-300 sm:text-xl md:text-2xl">
-								{t("docInfo.job")}
-							</h2>
+							<div className="mb-4 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
+								<h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300 sm:text-xl md:text-2xl">
+									{t("docInfo.job")}
+								</h2>
+								<span className="rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-xs font-semibold tracking-wide text-primary">
+									PhD
+								</span>
+							</div>
 						</div>
 
 						<p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 sm:text-base">
