@@ -77,7 +77,8 @@ export default function ReviewsCarousel() {
 	}, [remoteReviews, locale]);
 
 	useEffect(() => {
-		if (!supabase) {
+		const client = supabase;
+		if (!client) {
 			return;
 		}
 
@@ -86,7 +87,7 @@ export default function ReviewsCarousel() {
 		const loadReviews = async () => {
 			setIsLoading(true);
 			setLoadError(false);
-			const { data, error } = await supabase
+			const { data, error } = await client
 				.from("reviews")
 				.select("id, full_name, message, created_at")
 				.order("created_at", { ascending: false });
@@ -131,7 +132,8 @@ export default function ReviewsCarousel() {
 
 	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		if (!supabase) {
+		const client = supabase;
+		if (!client) {
 			toast({
 				title: t("reviews.form.error_title"),
 				description: t("reviews.form.config_missing"),
@@ -159,7 +161,7 @@ export default function ReviewsCarousel() {
 		setIsSubmitting(true);
 
 		try {
-			const { data, error } = await supabase
+			const { data, error } = await client
 				.from("reviews")
 				.insert({
 					full_name: fullName,
