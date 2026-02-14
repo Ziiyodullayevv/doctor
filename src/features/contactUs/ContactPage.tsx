@@ -27,6 +27,8 @@ type EnvWithBot = ImportMetaEnv & {
 	VITE_CHAT_ID?: string;
 };
 
+const TELEGRAM_CHAT_ID_KEY = "telegramChatId";
+
 const escapeHtml = (value: string) =>
 	value
 		.replaceAll("&", "&amp;")
@@ -35,9 +37,10 @@ const escapeHtml = (value: string) =>
 		.replaceAll('"', "&quot;")
 		.replaceAll("'", "&#39;");
 
-const extractChatIdFromUpdates = (updates: TelegramUpdate[]) => {
-	for (let idx = updates.length - 1; idx >= 0; idx -= 1) {
-		const update = updates[idx];
+const extractChatIdsFromUpdates = (updates: TelegramUpdate[]) => {
+	const ids = new Set<string>();
+
+	for (const update of updates) {
 		const chatId =
 			update.message?.chat?.id ??
 			update.edited_message?.chat?.id ??
@@ -46,43 +49,92 @@ const extractChatIdFromUpdates = (updates: TelegramUpdate[]) => {
 			update.my_chat_member?.chat?.id;
 
 		if (chatId !== undefined && chatId !== null) {
-			return chatId;
+			ids.add(String(chatId));
 		}
 	}
-	return null;
+
+	return Array.from(ids);
 };
 
-const resolveTelegramChatId = async (
+const readStoredChatIds = () => {
+	if (typeof window === "undefined") {
+		return [];
+	}
+	const raw = window.localStorage.getItem(TELEGRAM_CHAT_ID_KEY);
+	if (!raw) {
+		return [];
+	}
+	try {
+		const parsed = JSON.parse(raw);
+		if (Array.isArray(parsed)) {
+			return parsed.map((value) => String(value)).filter(Boolean);
+		}
+	} catch {
+		// fallback to comma-separated format
+	}
+	return raw
+		.split(",")
+		.map((value) => value.trim())
+		.filter(Boolean);
+};
+
+const storeChatIds = (ids: string[]) => {
+	if (typeof window === "undefined") {
+		return;
+	}
+	window.localStorage.setItem(TELEGRAM_CHAT_ID_KEY, JSON.stringify(ids));
+};
+
+const resolveTelegramChatIds = async (
 	token: string,
 	explicitChatId?: string,
 ) => {
+	const ids = new Set<string>();
+
 	if (explicitChatId && explicitChatId.trim().length > 0) {
-		return explicitChatId.trim();
+		ids.add(explicitChatId.trim());
 	}
 
-	const updatesResponse = await fetch(
-		`https://api.telegram.org/bot${token}/getUpdates?limit=30`,
-	);
-	const updatesData = await updatesResponse.json();
+	for (const storedId of readStoredChatIds()) {
+		ids.add(storedId);
+	}
 
-	if (!updatesResponse.ok || !updatesData?.ok) {
-		throw new Error(
-			updatesData?.description ||
-				"Telegram chat ID topilmadi (getUpdates xatosi).",
+	let updatesError: Error | null = null;
+	try {
+		const updatesResponse = await fetch(
+			`https://api.telegram.org/bot${token}/getUpdates?limit=100`,
+		);
+		const updatesData = await updatesResponse.json();
+
+		if (!updatesResponse.ok || !updatesData?.ok) {
+			throw new Error(
+				updatesData?.description ||
+					"Telegram chat ID topilmadi (getUpdates xatosi).",
+			);
+		}
+
+		const detectedChatIds = extractChatIdsFromUpdates(
+			(updatesData.result ?? []) as TelegramUpdate[],
+		);
+		for (const id of detectedChatIds) {
+			ids.add(id);
+		}
+	} catch (error) {
+		updatesError = error instanceof Error ? error : null;
+	}
+
+	if (ids.size === 0) {
+		throw (
+			updatesError ??
+			new Error(
+				"Chat ID topilmadi. Botga avval Telegram ichida kamida bitta xabar yuboring yoki .env ga BOT_CHAT_ID yozing.",
+			)
 		);
 	}
 
-	const detectedChatId = extractChatIdFromUpdates(
-		(updatesData.result ?? []) as TelegramUpdate[],
-	);
+	storeChatIds(Array.from(ids));
 
-	if (detectedChatId === null) {
-		throw new Error(
-			"Chat ID topilmadi. Botga avval Telegram ichida kamida bitta xabar yuboring yoki .env ga BOT_CHAT_ID yozing.",
-		);
-	}
-
-	return detectedChatId;
+	return Array.from(ids);
 };
 
 export default function ContactPage() {
@@ -201,30 +253,50 @@ export default function ContactPage() {
 		setIsSubmitting(true);
 
 		try {
-			const chatId = await resolveTelegramChatId(botToken, explicitChatId);
+			const chatIds = await resolveTelegramChatIds(botToken, explicitChatId);
 			const message = buildTelegramMessage();
 
-			const response = await fetch(
-				`https://api.telegram.org/bot${botToken}/sendMessage`,
-				{
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
+			const sendToChatId = async (chatId: string) => {
+				const response = await fetch(
+					`https://api.telegram.org/bot${botToken}/sendMessage`,
+					{
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({
+							chat_id: chatId,
+							text: message,
+							parse_mode: "HTML",
+							disable_web_page_preview: true,
+						}),
 					},
-					body: JSON.stringify({
-						chat_id: chatId,
-						text: message,
-						parse_mode: "HTML",
-						disable_web_page_preview: true,
-					}),
-				},
-			);
-
-			const result = await response.json();
-			if (!response.ok || !result?.ok) {
-				throw new Error(
-					result?.description || t("toast.error.default_description"),
 				);
+
+				const result = await response.json();
+				if (!response.ok || !result?.ok) {
+					throw new Error(
+						result?.description || t("toast.error.default_description"),
+					);
+				}
+			};
+
+			const sendResults = await Promise.allSettled(
+				chatIds.map((chatId) => sendToChatId(chatId)),
+			);
+			const successCount = sendResults.filter(
+				(result) => result.status === "fulfilled",
+			).length;
+
+			if (successCount === 0) {
+				const firstError = sendResults.find(
+					(
+						result,
+					): result is PromiseRejectedResult => result.status === "rejected",
+				);
+				throw firstError?.reason instanceof Error
+					? firstError.reason
+					: new Error(t("toast.error.default_description"));
 			}
 
 			toast({

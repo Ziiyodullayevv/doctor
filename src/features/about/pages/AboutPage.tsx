@@ -1,7 +1,7 @@
 import Appointment from "@/components/Appointment";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import SubHeader from "@/components/SubHeader";
-import { Award, GraduationCap, Stethoscope, Globe } from "lucide-react";
+import { Award, GraduationCap, Stethoscope, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 interface Memberships {
@@ -121,13 +121,13 @@ export default function AboutPage() {
 							</div>
 							<div className="text-center">
 								<div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full mb-4">
-									<Globe className="w-8 h-8 text-orange-600 dark:text-orange-400" />
+									<BookOpen className="w-8 h-8 text-orange-600 dark:text-orange-400" />
 								</div>
 								<p className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
-									ESPU
+									30+
 								</p>
 								<p className="text-sm capitalize text-gray-600 dark:text-gray-400">
-									{t("tabs.membership")}
+									{t("tabs.publications")}
 								</p>
 							</div>
 						</div>

@@ -6,6 +6,7 @@ import {
 	YoutubeFilled,
 } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -52,30 +53,30 @@ export default function Footer() {
 
 				{/* Navigation */}
 				<nav className="flex justify-center gap-8 md:gap-12 mb-8 flex-wrap">
-					<a
-						href="#"
+					<Link
+						to="/"
 						className="text-gray-300 hover:text-white transition-colors duration-300 font-medium"
 					>
 						{t("menu.home")}
-					</a>
-					<a
-						href="#"
+					</Link>
+					<Link
+						to="/about"
 						className="text-gray-300 hover:text-white transition-colors duration-300 font-medium"
 					>
 						{t("menu.about")}
-					</a>
-					<a
-						href="#"
+					</Link>
+					<Link
+						to="/operations/genital"
 						className="text-gray-300 hover:text-white transition-colors duration-300 font-medium"
 					>
 						{t("menu.operations")}
-					</a>
-					<a
-						href="#"
+					</Link>
+					<Link
+						to="/contact"
 						className="text-gray-300 hover:text-white transition-colors duration-300 font-medium"
 					>
 						{t("menu.contacts")}
-					</a>
+					</Link>
 				</nav>
 
 				{/* Social Media Icons */}

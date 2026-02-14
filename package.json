@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "telegram:chat-ids": "node scripts/get-telegram-chat-ids.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
