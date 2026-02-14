@@ -109,9 +109,7 @@ export default function ReviewsCarousel() {
 					message: String(row.message ?? "").trim(),
 					createdAt: String(row.created_at ?? "").trim(),
 				}))
-				.filter(
-					(row) => row.fullName.length > 0 && row.message.length > 0,
-				);
+				.filter((row) => row.fullName.length > 0 && row.message.length > 0);
 
 			setRemoteReviews(mapped);
 			setIsLoading(false);
@@ -327,7 +325,8 @@ export default function ReviewsCarousel() {
 					<Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
 						<DialogTrigger asChild>
 							<Button
-								variant="secondary"
+								className="bg-blue-500 px-8 py-7 text-xl cursor-pointer"
+								variant="ghost"
 								size="lg"
 								disabled={!supabase}
 							>
@@ -378,10 +377,7 @@ export default function ReviewsCarousel() {
 								</div>
 
 								<DialogFooter>
-									<Button
-										type="submit"
-										disabled={isSubmitting}
-									>
+									<Button type="submit" disabled={isSubmitting}>
 										{isSubmitting
 											? t("reviews.form.submitting")
 											: t("reviews.form.submit")}
@@ -404,9 +400,7 @@ export default function ReviewsCarousel() {
 					)}
 
 					{isLoading && (
-						<p className="text-sm text-white/70">
-							{t("reviews.form.loading")}
-						</p>
+						<p className="text-sm text-white/70">{t("reviews.form.loading")}</p>
 					)}
 				</div>
 			</div>
