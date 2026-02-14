@@ -33,9 +33,6 @@ export default function DocInfo() {
 								<h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300 sm:text-xl md:text-2xl">
 									{t("docInfo.job")}
 								</h2>
-								<span className="rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-xs font-semibold tracking-wide text-primary">
-									PhD
-								</span>
 							</div>
 						</div>
 
