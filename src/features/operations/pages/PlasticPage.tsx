@@ -18,8 +18,9 @@ export default function PlasticPage() {
 	};
 
 	return (
-		<div>
+		<>
 			<title>{metaData.title}</title>
+
 			<BreadcrumbJsonLd
 				pagePath="/operations/plastic"
 				pageName={t("plastic.header")}
@@ -41,10 +42,10 @@ export default function PlasticPage() {
 				title={t("plastic.title")}
 				description={t("plastic.description")}
 				procedures={data}
-				imageUrl="https://cevrehastanesi.com.tr/upload/galeri/general_surgery_in_turkey_doctors_20250120142930.jpg"
+				imageUrl="/operations/2.jpg"
 			/>
 
 			<Appointment />
-		</div>
+		</>
 	);
 }

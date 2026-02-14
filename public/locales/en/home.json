@@ -49,6 +49,24 @@
 	},
 	"reviews": {
 		"title": "Reviews",
+		"add_button": "Leave a review",
+		"empty": "No reviews yet. Be the first to leave one.",
+		"form": {
+			"title": "Leave a review",
+			"description": "Share a short feedback.",
+			"name": "Name",
+			"message": "Review",
+			"submit": "Send",
+			"submitting": "Sending...",
+			"loading": "Loading...",
+			"required": "Name and review are required.",
+			"success_title": "Thank you!",
+			"success_desc": "Your review has been submitted.",
+			"error_title": "Error",
+			"error_desc": "Failed to submit. Please try again later.",
+			"config_missing": "Reviews are not configured yet.",
+			"load_error": "Couldn't load reviews."
+		},
 		"data": [
 			{
 				"fullName": "Maria Petrova",

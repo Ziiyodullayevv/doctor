@@ -51,6 +51,24 @@
 
 	"reviews": {
 		"title": "Sharhlar",
+		"add_button": "Fikr bildirish",
+		"empty": "Hozircha sharhlar yo‘q. Birinchi bo‘lib yozing.",
+		"form": {
+			"title": "Fikr qoldirish",
+			"description": "Qisqacha fikringizni yozib qoldiring.",
+			"name": "Ism",
+			"message": "Fikr",
+			"submit": "Yuborish",
+			"submitting": "Yuborilmoqda...",
+			"loading": "Yuklanmoqda...",
+			"required": "Ism va fikr majburiy.",
+			"success_title": "Rahmat!",
+			"success_desc": "Fikringiz yuborildi.",
+			"error_title": "Xatolik",
+			"error_desc": "Yuborishda xatolik yuz berdi. Keyinroq urinib ko‘ring.",
+			"config_missing": "Sharh yuborish hozircha sozlanmagan.",
+			"load_error": "Sharhlarni yuklab bo‘lmadi."
+		},
 		"data": [
 			{
 				"fullName": "Maria Petrova",

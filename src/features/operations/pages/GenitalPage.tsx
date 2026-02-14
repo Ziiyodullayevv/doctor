@@ -40,7 +40,7 @@ export default function GenitalPage() {
 				title={t("genetal.title")}
 				description={t("genetal.description")}
 				procedures={data}
-				imageUrl="https://img.freepik.com/premium-photo/group-doctors-surgery-medicine-surgical-procedure-start-with-ppe-team-theatre-hospital-medical-operation-health-insurance-safety-gear-with-surgeon-people-healthcare_590464-184655.jpg"
+				imageUrl="/public/operations/1.jpg"
 			/>
 			<Appointment />
 		</div>

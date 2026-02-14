@@ -18,8 +18,9 @@ export default function UrologyPage() {
 	};
 
 	return (
-		<div>
+		<>
 			<title>{metaData.title}</title>
+
 			<BreadcrumbJsonLd
 				pagePath="/operations/urology"
 				pageName={t("urology.header")}
@@ -41,10 +42,10 @@ export default function UrologyPage() {
 				title={t("urology.title")}
 				description={t("urology.description")}
 				procedures={data}
-				imageUrl="https://classroomclipart.com/image/static7/preview2/photo-medical-doctor-performing-surgery-63417.jpg"
+				imageUrl="/operations/3.jpg"
 			/>
 
 			<Appointment />
-		</div>
+		</>
 	);
 }
