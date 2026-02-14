@@ -59,6 +59,8 @@ export default function Navigation() {
 	}) as OperationsItem[];
 
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [scrollOffset, setScrollOffset] = useState(0);
+	const [isScrollingUp, setIsScrollingUp] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [openDropdowns, setOpenDropdowns] = useState<{
 		operations?: boolean;
@@ -85,11 +87,21 @@ export default function Navigation() {
 
 	// Scroll holatini kuzatish
 	useEffect(() => {
+		let lastScrollY = window.scrollY;
+
 		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 10);
+			const currentScroll = window.scrollY;
+			setIsScrolled(currentScroll > 10);
+			setScrollOffset(currentScroll);
+			setIsScrollingUp(currentScroll < lastScrollY);
+			lastScrollY = currentScroll;
 		};
+
+		handleScroll();
 		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
 	}, []);
 
 	// Header balandligini yangilash (scroll, resize, theme o'zgarishi)
@@ -135,15 +147,30 @@ export default function Navigation() {
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 
+	const isDocked = scrollOffset >= headerHeight;
+	const translateY = isDocked
+		? 0
+		: -Math.min(scrollOffset, headerHeight);
+	const effectiveTranslateY = isMobileMenuOpen ? 0 : translateY;
+	const enableTransition = isMobileMenuOpen || isDocked || isScrollingUp;
+
 	return (
 		<>
+			{/** Scroll bo'lganda vaqtincha yashirish uchun */}
+			{/** Mobil menyu ochiq bo'lsa header yashirilmaydi */}
+			{/** Header balandligi o'zgarmaydi */}
 			{/* Header */}
 			<header
 				ref={headerRef}
-				className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+				style={{ transform: `translateY(${effectiveTranslateY}px)` }}
+				className={`fixed top-0 left-0 right-0 z-50 will-change-[transform] ${
+					enableTransition
+						? "transition-[background-color,box-shadow,backdrop-filter,transform] duration-700 ease-out"
+						: "transition-none"
+				} after:content-[''] after:absolute after:inset-x-4 after:bottom-0 after:h-px after:bg-gradient-to-r after:from-transparent after:via-foreground/20 after:to-transparent after:transition-opacity after:duration-500 ${
 					isScrolled
-						? "bg-background/95 backdrop-blur-md border-b shadow-md py-3 md:py-4"
-						: "bg-background py-5 md:py-7"
+						? "bg-background/80 backdrop-blur-xl border-b border-black/5 dark:border-white/10 shadow-[0_12px_30px_rgba(0,0,0,0.12)] py-5 md:py-7 after:opacity-100"
+						: "bg-background py-5 md:py-7 after:opacity-0"
 				}`}
 			>
 				<div className="container mx-auto px-4">
