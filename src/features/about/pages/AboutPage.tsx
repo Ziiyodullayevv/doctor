@@ -232,11 +232,6 @@ export default function AboutPage() {
 											loading="lazy"
 											decoding="async"
 										/>
-										<div className="p-4">
-											<p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-												{t("sidebar.doctor_photo_caption")}
-											</p>
-										</div>
 									</div>
 
 									<div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
@@ -247,11 +242,6 @@ export default function AboutPage() {
 											loading="lazy"
 											decoding="async"
 										/>
-										<div className="p-4">
-											<p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-												{t("sidebar.consultation_photo_caption")}
-											</p>
-										</div>
 									</div>
 								</div>
 							</div>
