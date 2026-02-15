@@ -145,10 +145,7 @@ const resolveTelegramChatIds = async (
 	}
 
 	if (ids.size === 0) {
-		throw (
-			updatesError ??
-			new Error(messages?.noChatId || "Chat ID not found.")
-		);
+		throw updatesError ?? new Error(messages?.noChatId || "Chat ID not found.");
 	}
 
 	storeChatIds(Array.from(ids));
@@ -292,9 +289,8 @@ export default function FloatingShareButton() {
 
 			if (successCount === 0) {
 				const firstError = sendResults.find(
-					(
-						result,
-					): result is PromiseRejectedResult => result.status === "rejected",
+					(result): result is PromiseRejectedResult =>
+						result.status === "rejected",
 				);
 				throw firstError?.reason instanceof Error
 					? firstError.reason
@@ -337,7 +333,7 @@ export default function FloatingShareButton() {
 				trigger="click"
 				type="primary"
 				icon={<ShareAltOutlined />}
-				style={{ zIndex: 999999, right: 24, bottom: 24 }}
+				style={{ zIndex: 9, right: 24, bottom: 24 }}
 			>
 				{socialLinks.map((item) => (
 					<FloatButton

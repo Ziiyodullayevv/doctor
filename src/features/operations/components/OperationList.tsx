@@ -75,7 +75,7 @@ export default function MedicalProcedures({
 					<div className="lg:col-span-1">
 						<div className="border-none rounded-2xl shadow-xl bg-white/80 backdrop-blur overflow-hidden sticky top-8">
 							{imageUrl ? (
-								<div className="h-[500px]">
+								<div className="">
 									<img
 										src={imageUrl}
 										alt="Medical procedure"

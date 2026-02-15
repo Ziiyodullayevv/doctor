@@ -226,7 +226,7 @@ export default function AboutPage() {
 								<div className="sticky top-24 space-y-6">
 									<div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
 										<img
-											className="w-full h-80 object-cover"
+											className="w-full object-cover"
 											src="/about/about1.jpg"
 											alt={t("sidebar.doctor_photo_alt")}
 											loading="lazy"
@@ -236,7 +236,7 @@ export default function AboutPage() {
 
 									<div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
 										<img
-											className="w-full h-80 object-cover"
+											className="w-full object-cover"
 											src="/about/about2.jpg"
 											alt={t("sidebar.consultation_photo_alt")}
 											loading="lazy"

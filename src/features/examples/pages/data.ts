@@ -179,21 +179,21 @@ const urologyMeta: Record<number, { title: Record<LocaleCode, string> }> = {
 		title: {
 			ru: "Клапан задней уретры до и после рассечения",
 			uz: "Orqa uretra klapani, kesishdan oldin va keyin",
-			en: "Posterior urethral valve before and after incision",
+			en: "Posterior urethral valve before and after ablation",
 		},
 	},
 	26: {
 		title: {
-			ru: "Пузырно-мочеточниковый рефлюкс до и после эндокоррекции",
-			uz: "Pufak-siydik nayi reflyuksi, endokorreksiyadan oldin va keyin",
-			en: "Vesicoureteral reflux before and after endoscopic correction",
+			ru: "Пузырно-мочеточниковый рефлюкс до и после реимплантации мочеточника",
+			uz: "Pufak-siydik nayi reflyuksi, ureter reimplantatsiyasidan oldin va keyin",
+			en: "Vesicoureteral reflux before and after ureter reimplantation",
 		},
 	},
 	27: {
 		title: {
-			ru: "Пузырно-мочеточниковый рефлюкс до и после реимплантации мочеточника",
-			uz: "Pufak-siydik nayi reflyuksi, ureter reimplantatsiyasidan oldin va keyin",
-			en: "Vesicoureteral reflux before and after ureter reimplantation",
+			ru: "Пузырно-мочеточниковый рефлюкс до и после эндокоррекции",
+			uz: "Pufak-siydik nayi reflyuksi, endokorreksiyadan oldin va keyin",
+			en: "Vesicoureteral reflux before and after endoscopic correction",
 		},
 	},
 };
