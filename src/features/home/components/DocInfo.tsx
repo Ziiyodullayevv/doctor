@@ -14,7 +14,7 @@ export default function DocInfo() {
 						<div className="mx-auto aspect-square w-full overflow-hidden rounded-full">
 							<img
 								src="/home/doc-info/doc-banner.png"
-								alt="Доктор Суров Роман Викторович"
+								alt={t("docInfo.fullName")}
 								loading="lazy"
 								decoding="async"
 								className="h-full w-full object-cover object-top"
