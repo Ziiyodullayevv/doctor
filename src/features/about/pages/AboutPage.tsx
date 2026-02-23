@@ -224,7 +224,7 @@ export default function AboutPage() {
 							{/* Sidebar with Images */}
 							<div className="lg:col-span-1 space-y-6">
 								<div className="sticky top-24 space-y-6">
-									<div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+									<figure className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
 										<img
 											className="w-full object-cover"
 											src="/about/about1.jpg"
@@ -232,9 +232,12 @@ export default function AboutPage() {
 											loading="lazy"
 											decoding="async"
 										/>
-									</div>
+										<figcaption className="px-4 py-3 text-sm text-center font-medium text-gray-700 dark:text-gray-300">
+											{t("header.fullName")}
+										</figcaption>
+									</figure>
 
-									<div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+									<figure className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
 										<img
 											className="w-full object-cover"
 											src="/about/about2.jpg"
@@ -242,7 +245,10 @@ export default function AboutPage() {
 											loading="lazy"
 											decoding="async"
 										/>
-									</div>
+										<figcaption className="px-4 py-3 text-sm text-center font-medium text-gray-700 dark:text-gray-300">
+											{t("header.fullName")}
+										</figcaption>
+									</figure>
 								</div>
 							</div>
 						</div>

@@ -33,7 +33,7 @@ export default function GenitalPage() {
 				title={t("genetal.header")}
 				data={[
 					{ label: t("navigation:menu.home"), path: "/" },
-					{ label: t("genetal.header"), path: "/genital" },
+					{ label: t("genetal.header"), path: "/operations/genital" },
 				]}
 			/>
 			<MedicalProcedures

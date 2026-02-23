@@ -34,7 +34,7 @@ export default function PlasticPage() {
 				title={t("plastic.header")}
 				data={[
 					{ label: t("navigation:menu.home"), path: "/" },
-					{ label: t("plastic.header"), path: "/plastic" },
+					{ label: t("plastic.header"), path: "/operations/plastic" },
 				]}
 			/>
 

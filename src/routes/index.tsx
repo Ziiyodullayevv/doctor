@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { Navigate, createBrowserRouter } from "react-router";
 import { lazy, Suspense } from "react";
 import RootLayout from "../layouts/RootLayout";
 import NotFoundPage from "@/components/Notfound";
@@ -7,12 +7,6 @@ import LoadingFallback from "@/components/LoadingFallback";
 // Lazy load barcha sahifalarni (tezlik uchun tavsiya etiladi)
 const HomePage = lazy(() => import("../features/home/pages/HomePage"));
 const AboutPage = lazy(() => import("../features/about/pages/AboutPage"));
-const GenetalSurgeryPage = lazy(
-	() => import("../features/genetalSurgery/pages/GenetalSurgeryPage"),
-);
-const PlasticSurgery = lazy(
-	() => import("../features/plasticSurgery/pages/PlasticSurgery"),
-);
 const NewsPage = lazy(() => import("../features/news/pages/NewsPage"));
 const ContactPage = lazy(() => import("../features/contactUs/ContactPage"));
 const ExamplesPage = lazy(
@@ -51,27 +45,15 @@ export const routes = createBrowserRouter([
 			},
 			{
 				path: "genetal-surgery",
-				element: (
-					<Suspense fallback={<LoadingFallback />}>
-						<GenetalSurgeryPage />
-					</Suspense>
-				),
+				element: <Navigate to="/operations/genital" replace />,
 			},
 			{
 				path: "urology",
-				element: (
-					<Suspense fallback={<LoadingFallback />}>
-						<UrologyPage />
-					</Suspense>
-				),
+				element: <Navigate to="/operations/urology" replace />,
 			},
 			{
 				path: "plastic-surgery",
-				element: (
-					<Suspense fallback={<LoadingFallback />}>
-						<PlasticSurgery />
-					</Suspense>
-				),
+				element: <Navigate to="/operations/plastic" replace />,
 			},
 
 			{
@@ -122,6 +104,14 @@ export const routes = createBrowserRouter([
 						<PlasticPage />
 					</Suspense>
 				),
+			},
+			{
+				path: "genital",
+				element: <Navigate to="/operations/genital" replace />,
+			},
+			{
+				path: "plastic",
+				element: <Navigate to="/operations/plastic" replace />,
 			},
 
 			// 404 sahifasi

@@ -1,4 +1,36 @@
 {
+	"redirects": [
+		{
+			"source": "/index.html",
+			"destination": "/",
+			"permanent": true
+		},
+		{
+			"source": "/urology",
+			"destination": "/operations/urology",
+			"permanent": true
+		},
+		{
+			"source": "/genetal-surgery",
+			"destination": "/operations/genital",
+			"permanent": true
+		},
+		{
+			"source": "/plastic-surgery",
+			"destination": "/operations/plastic",
+			"permanent": true
+		},
+		{
+			"source": "/genital",
+			"destination": "/operations/genital",
+			"permanent": true
+		},
+		{
+			"source": "/plastic",
+			"destination": "/operations/plastic",
+			"permanent": true
+		}
+	],
 	"rewrites": [
 		{
 			"source": "/(.*)",

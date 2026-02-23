@@ -34,7 +34,7 @@ export default function UrologyPage() {
 				title={t("urology.header")}
 				data={[
 					{ label: t("navigation:menu.home"), path: "/" },
-					{ label: t("urology.header"), path: "/urology" },
+					{ label: t("urology.header"), path: "/operations/urology" },
 				]}
 			/>
 
