@@ -14,7 +14,7 @@ export default function UrologyPage() {
 	const { t, i18n } = useTranslation(["operations", "navigation"]); // operations va navigation namespace-larini ishlatish
 	const data = t("urology.data", { returnObjects: true }) as Urology[];
 	const metaData = {
-		title: `${t("urology.header")} - ${CONFIG.appName}`,
+		title: `Urokids - ${t("urology.header")} | ${CONFIG.appName}`,
 	};
 
 	return (

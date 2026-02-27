@@ -3,20 +3,38 @@
 		"carusel": [
 			{
 				"name": "Абдуллаев Зафар Бобирович",
-				"description": "Здоровое будущее начинается здесь",
-				"imgUrl": "/home/hero1.webp"
+				"description": "С Urokids здоровое будущее начинается здесь",
+				"imgUrl": "/home/hero1.webp",
+				"alt": "Urokids детский уролог, консультация в Ташкенте"
 			},
 			{
 				"name": "Абдуллаев Зафар Бобирович",
-				"description": "Детская урология, где каждый шаг ведёт к здоровью",
-				"imgUrl": "/home/hero2.webp"
+				"description": "Urokids: детская урология, где каждый шаг ведёт к здоровью",
+				"imgUrl": "/home/hero2.webp",
+				"alt": "Urokids детская урология, безопасная диагностика и лечение"
 			},
 			{
 				"name": "Абдуллаев Зафар Бобирович",
-				"description": "Надёжное решение деликатных вопросов детского здоровья",
-				"imgUrl": "https://47lokb.ru/upload/medialibrary/85a/l5v1qk60igxr3tpjzxqsx8iek4yr7ja8/hirurg_1.jpg"
+				"description": "Urokids — надёжное решение деликатных вопросов детского здоровья",
+				"imgUrl": "https://47lokb.ru/upload/medialibrary/85a/l5v1qk60igxr3tpjzxqsx8iek4yr7ja8/hirurg_1.jpg",
+				"alt": "Urokids лечение урологических заболеваний у детей в Ташкенте"
 			}
-		]
+		],
+		"seoCarousel": [
+			{
+				"lang": "UZ",
+				"text": "Urokids — Toshkent, O'zbekistonda bolalar urologi: bolalarda uchraydigan urologik kasalliklarni xavfsiz, zamonaviy diagnostika usullari asosida aniqlash va ilmiy asoslangan samarali davolash."
+			},
+			{
+				"lang": "EN",
+				"text": "Urokids — pediatric urologist in Tashkent, Uzbekistan: provision of safe, evidence-based diagnostic assessment and effective clinical management of pediatric urological conditions."
+			},
+			{
+				"lang": "RU",
+				"text": "Urokids — детский уролог в Ташкенте, Узбекистан: безопасная диагностика и эффективное лечение урологических заболеваний у детей."
+			}
+		],
+		"cornerText": "Детский уролог в Ташкенте, Узбекистан — безопасная диагностика и эффективное лечение урологических заболеваний у детей"
 	},
 	"ekspert": {
 		"title": "Эксперты",
@@ -46,7 +64,6 @@
 		"btn1": "Подробнее обо мне",
 		"btn2": "Задать вопрос"
 	},
-
 	"reviews": {
 		"title": "Отзывы",
 		"add_button": "Оставить отзыв",

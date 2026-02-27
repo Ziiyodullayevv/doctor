@@ -149,7 +149,7 @@ export default function ContactPage() {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const metaData = {
-		title: `${t("navigation:menu.contacts")} - ${CONFIG.appName}`,
+		title: `Urokids - ${t("navigation:menu.contacts")} | ${CONFIG.appName}`,
 	};
 
 	const handleChange =
@@ -406,21 +406,21 @@ export default function ContactPage() {
 								<img
 									className="w-28 md:w-32"
 									src="/contacts/qr-whatsapp.png"
-									alt=""
+									alt="Urokids WhatsApp contact QR code"
 									loading="lazy"
 									decoding="async"
 								/>
 								<img
 									className="w-28 md:w-32"
 									src="/contacts/qr-instagram.png"
-									alt=""
+									alt="Urokids Instagram QR code"
 									loading="lazy"
 									decoding="async"
 								/>
 								<img
 									className="w-28 md:w-32"
 									src="/contacts/qr-telegram.png"
-									alt=""
+									alt="Urokids Telegram pediatric urology QR code"
 									loading="lazy"
 									decoding="async"
 								/>

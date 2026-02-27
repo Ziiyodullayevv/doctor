@@ -3,20 +3,38 @@
 		"carusel": [
 			{
 				"name": "Abdullaev Zafar Bobirovich",
-				"description": "A healthy future starts here",
-				"imgUrl": "/banner/banner-1.jpeg"
+				"description": "A healthy future starts here with Urokids",
+				"imgUrl": "/banner/banner-1.jpeg",
+				"alt": "Urokids pediatric urologist consultation in Tashkent"
 			},
 			{
 				"name": "Abdullaev Zafar Bobirovich",
-				"description": "Pediatric urology where every step toward health matters",
-				"imgUrl": "/banner/banner-2.jpeg"
+				"description": "Urokids pediatric urology where every step toward health matters",
+				"imgUrl": "/banner/banner-2.jpeg",
+				"alt": "Urokids evidence-based pediatric urology diagnostics and care"
 			},
 			{
 				"name": "Abdullaev Zafar Bobirovich",
-				"description": "A reliable solution for delicate pediatric health concerns",
-				"imgUrl": "/banner/banner-3.jpeg"
+				"description": "Urokids offers a reliable solution for delicate pediatric health concerns",
+				"imgUrl": "/banner/banner-3.jpeg",
+				"alt": "Urokids pediatric urological treatment in Tashkent Uzbekistan"
 			}
-		]
+		],
+		"seoCarousel": [
+			{
+				"lang": "UZ",
+				"text": "Urokids — Toshkent, O'zbekistonda bolalar urologi: bolalarda uchraydigan urologik kasalliklarni xavfsiz, zamonaviy diagnostika usullari asosida aniqlash va ilmiy asoslangan samarali davolash."
+			},
+			{
+				"lang": "EN",
+				"text": "Urokids — pediatric urologist in Tashkent, Uzbekistan: provision of safe, evidence-based diagnostic assessment and effective clinical management of pediatric urological conditions."
+			},
+			{
+				"lang": "RU",
+				"text": "Urokids — детский уролог в Ташкенте, Узбекистан: безопасная диагностика и эффективное лечение урологических заболеваний у детей."
+			}
+		],
+		"cornerText": "Pediatric urologist in Tashkent, Uzbekistan — provision of safe, evidence-based diagnostic assessment and effective clinical management of pediatric urological conditions."
 	},
 	"ekspert": {
 		"title": "Experts",
@@ -39,7 +57,6 @@
 			}
 		]
 	},
-
 	"docInfo": {
 		"fullName": "Abdullaev Zafar Bobirovich",
 		"job": "Pediatric Urologist",

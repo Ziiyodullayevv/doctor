@@ -3,22 +3,39 @@
 		"carusel": [
 			{
 				"name": "Abdullaev Zafar Bobirovich",
-				"description": "Sog‘lom kelajak shu yerdan boshlanadi",
-				"imgUrl": "/home/hero1.webp"
+				"description": "Urokids bilan sog‘lom kelajak shu yerdan boshlanadi",
+				"imgUrl": "/home/hero1.webp",
+				"alt": "Urokids bolalar urologi Toshkentda qabul jarayoni"
 			},
 			{
 				"name": "Abdullaev Zafar Bobirovich",
-				"description": "Bolalar urologiyasi — sog‘liq sari har bir qadam muhim",
-				"imgUrl": "/home/hero2.webp"
+				"description": "Urokids bolalar urologiyasi — sog‘liq sari har bir qadam muhim",
+				"imgUrl": "/home/hero2.webp",
+				"alt": "Urokids bolalar urologiyasi zamonaviy diagnostika va davolash"
 			},
 			{
 				"name": "Abdullaev Zafar Bobirovich",
-				"description": "Bolalar salomatligiga oid nozik masalalar uchun ishonchli yechim",
-				"imgUrl": "https://47lokb.ru/upload/medialibrary/85a/l5v1qk60igxr3tpjzxqsx8iek4yr7ja8/hirurg_1.jpg"
+				"description": "Urokids bolalar salomatligiga oid nozik masalalar uchun ishonchli yechim",
+				"imgUrl": "https://47lokb.ru/upload/medialibrary/85a/l5v1qk60igxr3tpjzxqsx8iek4yr7ja8/hirurg_1.jpg",
+				"alt": "Urokids Toshkent bolalar urologi xavfsiz va samarali yondashuv"
 			}
-		]
+		],
+		"seoCarousel": [
+			{
+				"lang": "UZ",
+				"text": "Urokids — Toshkent, O'zbekistonda bolalar urologi: bolalarda uchraydigan urologik kasalliklarni xavfsiz, zamonaviy diagnostika usullari asosida aniqlash va ilmiy asoslangan samarali davolash."
+			},
+			{
+				"lang": "EN",
+				"text": "Urokids — pediatric urologist in Tashkent, Uzbekistan: provision of safe, evidence-based diagnostic assessment and effective clinical management of pediatric urological conditions."
+			},
+			{
+				"lang": "RU",
+				"text": "Urokids — детский уролог в Ташкенте, Узбекистан: безопасная диагностика и эффективное лечение урологических заболеваний у детей."
+			}
+		],
+		"cornerText": "Toshkent, O'zbekistonda bolalar urologi — bolalarda uchraydigan urologik kasalliklarni xavfsiz, zamonaviy diagnostika usullari asosida aniqlash va ilmiy asoslangan samarali davolash."
 	},
-
 	"ekspert": {
 		"title": "Mutaxassislar",
 		"description": "Har bir yo‘nalishda professional yondashuv",
@@ -40,7 +57,6 @@
 			}
 		]
 	},
-
 	"docInfo": {
 		"fullName": "Abdullaev Zafar Bobirovich",
 		"job": "Bolalar urologi",
@@ -48,7 +64,6 @@
 		"btn1": "Men haqimda",
 		"btn2": "Savol berish"
 	},
-
 	"reviews": {
 		"title": "Sharhlar",
 		"add_button": "Fikr bildirish",

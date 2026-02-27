@@ -13,7 +13,7 @@ export default function ExamplesPage() {
 		[i18n.resolvedLanguage],
 	);
 	const metaData = {
-		title: `${t("menu.cases")} - ${CONFIG.appName}`,
+		title: `Urokids - ${t("menu.cases")} | ${CONFIG.appName}`,
 	};
 
 	return (

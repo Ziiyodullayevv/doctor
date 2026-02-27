@@ -56,7 +56,7 @@ export default function NotFoundPage() {
 	const localized = getLocaleCopy(i18n.resolvedLanguage);
 
 	const metaData = {
-		title: `404 - ${CONFIG.appName}`,
+		title: `Urokids - 404 | ${CONFIG.appName}`,
 	};
 
 	return (

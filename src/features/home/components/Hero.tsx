@@ -11,11 +11,13 @@ interface Slide {
 	name: string;
 	description: string;
 	imgUrl: string;
+	alt?: string;
 }
 
 export default function Hero() {
 	const { t } = useTranslation();
 	const rawSlides = t("hero.carusel", { returnObjects: true }) as Slide[];
+	const cornerText = t("hero.cornerText");
 	const slides = useMemo(
 		() => (Array.isArray(rawSlides) ? rawSlides : []),
 		[rawSlides],
@@ -75,7 +77,10 @@ export default function Hero() {
 											: "object-center"
 									}`}
 									src={heroImage[index]}
-									alt={item.name}
+									alt={
+										item.alt ||
+										`${item.name} | Urokids pediatric urologist in Tashkent`
+									}
 									loading={index === 0 ? "eager" : "lazy"}
 									decoding="async"
 									fetchPriority={index === 0 ? "high" : "auto"}
@@ -83,12 +88,19 @@ export default function Hero() {
 								<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
 								<div className="absolute bottom-20 left-0 right-0 p-4 text-white md:bottom-24 md:p-8 lg:bottom-28 lg:p-20">
-									<h1 className="mb-2 text-2xl font-bold md:mb-4 md:text-4xl lg:text-5xl">
-										{item.name}
-									</h1>
-									<p className="my-3 max-w-xl text-sm text-gray-200 md:my-6 md:text-lg lg:my-8 lg:text-xl">
-										{item.description}
-									</p>
+									<div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_minmax(0,420px)] md:items-end">
+										<div className="max-w-xl">
+											<h2 className="mb-2 text-2xl font-bold md:mb-4 md:text-4xl lg:text-5xl">
+												{item.name}
+											</h2>
+											<p className="my-3 text-sm text-gray-200 md:my-6 md:text-lg lg:my-8 lg:text-xl">
+												{item.description}
+											</p>
+										</div>
+										<h1 className="text-sm leading-relaxed text-gray-200 md:text-right md:text-sm md:translate-y-20">
+											{cornerText}
+										</h1>
+									</div>
 								</div>
 							</div>
 						</SwiperSlide>

@@ -78,7 +78,7 @@ export default function MedicalProcedures({
 								<div className="">
 									<img
 										src={imageUrl}
-										alt="Medical procedure"
+										alt={`${title} | Urokids pediatric urology`}
 										loading="lazy"
 										decoding="async"
 										className="w-full h-full object-cover"

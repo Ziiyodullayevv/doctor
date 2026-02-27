@@ -14,7 +14,7 @@ export default function PlasticPage() {
 	const { t, i18n } = useTranslation(["operations", "navigation"]);
 	const data = t("plastic.data", { returnObjects: true }) as Plastic[];
 	const metaData = {
-		title: `${t("plastic.header")} - ${CONFIG.appName}`,
+		title: `Urokids - ${t("plastic.header")} | ${CONFIG.appName}`,
 	};
 
 	return (

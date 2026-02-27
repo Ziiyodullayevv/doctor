@@ -47,7 +47,7 @@ export default function ImageGallery() {
 							onError={(event) => {
 								event.currentTarget.src = item.full;
 							}}
-							alt={`Image ${i + 1}`}
+							alt={`Urokids pediatric urology clinical case image ${i + 1}`}
 							className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
 						/>
 

@@ -39,7 +39,7 @@ export default function AboutPage() {
 	}) as Experience[];
 
 	const metaData = {
-		title: `${t("header.title")} - ${CONFIG.appName}`,
+		title: `Urokids - ${t("header.title")} | ${CONFIG.appName}`,
 	};
 
 	return (

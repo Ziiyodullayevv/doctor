@@ -14,7 +14,7 @@ export default function GenitalPage() {
 	const { t, i18n } = useTranslation(["operations", "navigation"]); // operations va navigation namespace-larini ishlatish
 	const data = t("genetal.data", { returnObjects: true }) as Gental[];
 	const metaData = {
-		title: `${t("genetal.header")} - ${CONFIG.appName}`,
+		title: `Urokids - ${t("genetal.header")} | ${CONFIG.appName}`,
 	};
 
 	return (

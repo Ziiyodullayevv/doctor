@@ -73,7 +73,7 @@ export default function ImageCarousel({ caruselData }: CaruselDataProps) {
 									<div className="absolute inset-0 bg-black/25" />
 									<img
 										src={src}
-										alt={`slide-${index}`}
+										alt={`${caruselData.title} - Urokids clinical case ${index + 1}`}
 										loading={index === 0 ? "eager" : "lazy"}
 										decoding="async"
 										fetchPriority={index === 0 ? "high" : "low"}

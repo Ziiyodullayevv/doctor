@@ -41,7 +41,7 @@ export default function Napravleniya() {
 									>
 										<img
 											src={image}
-											alt={dir.title}
+											alt={`${dir.title} - Urokids pediatric surgery`}
 											loading="lazy"
 											decoding="async"
 											width={80}
