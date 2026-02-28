@@ -98,13 +98,13 @@ export default function Navigation() {
 		};
 
 		handleScroll();
-		window.addEventListener("scroll", handleScroll);
+		window.addEventListener("scroll", handleScroll, { passive: true });
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
 
-	// Header balandligini yangilash (scroll, resize, theme o'zgarishi)
+	// Header balandligini yangilash (resize va theme o'zgarishi)
 	useEffect(() => {
 		const updateHeight = () => {
 			if (headerRef.current) {
@@ -115,14 +115,10 @@ export default function Navigation() {
 		updateHeight();
 		window.addEventListener("resize", updateHeight);
 
-		// Scroll va theme o'zgarishi ham balandlikni o'zgartirishi mumkin
-		window.addEventListener("scroll", updateHeight);
-
 		return () => {
 			window.removeEventListener("resize", updateHeight);
-			window.removeEventListener("scroll", updateHeight);
 		};
-	}, [isScrolled, theme]);
+	}, [theme]);
 
 	// Mobil menyu ochiq bo'lganda body scroll ni bloklash
 	useEffect(() => {

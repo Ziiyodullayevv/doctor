@@ -4,19 +4,19 @@
 			{
 				"name": "Абдуллаев Зафар Бобирович",
 				"description": "С Urokids здоровое будущее начинается здесь",
-				"imgUrl": "/home/hero1.webp",
+				"imgUrl": "/banner/optimized/banner-1-1280.jpg",
 				"alt": "Urokids детский уролог, консультация в Ташкенте"
 			},
 			{
 				"name": "Абдуллаев Зафар Бобирович",
 				"description": "Urokids: детская урология, где каждый шаг ведёт к здоровью",
-				"imgUrl": "/home/hero2.webp",
+				"imgUrl": "/banner/optimized/banner-2-1280.jpg",
 				"alt": "Urokids детская урология, безопасная диагностика и лечение"
 			},
 			{
 				"name": "Абдуллаев Зафар Бобирович",
 				"description": "Urokids — надёжное решение деликатных вопросов детского здоровья",
-				"imgUrl": "https://47lokb.ru/upload/medialibrary/85a/l5v1qk60igxr3tpjzxqsx8iek4yr7ja8/hirurg_1.jpg",
+				"imgUrl": "/banner/optimized/banner-3-1280.jpg",
 				"alt": "Urokids лечение урологических заболеваний у детей в Ташкенте"
 			}
 		],
@@ -61,7 +61,7 @@
 		"fullName": "Абдуллаев Зафар Бобирович",
 		"job": "Детский уролог",
 		"description": "Консультации и операции провожу в Национальном детском медицинском центре, Ташкент.",
-		"btn1": "Подробнее обо мне",
+		"btn1": "Записаться",
 		"btn2": "Задать вопрос"
 	},
 	"reviews": {

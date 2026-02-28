@@ -4,19 +4,19 @@
 			{
 				"name": "Abdullaev Zafar Bobirovich",
 				"description": "A healthy future starts here with Urokids",
-				"imgUrl": "/banner/banner-1.jpeg",
+				"imgUrl": "/banner/optimized/banner-1-1280.jpg",
 				"alt": "Urokids pediatric urologist consultation in Tashkent"
 			},
 			{
 				"name": "Abdullaev Zafar Bobirovich",
 				"description": "Urokids pediatric urology where every step toward health matters",
-				"imgUrl": "/banner/banner-2.jpeg",
+				"imgUrl": "/banner/optimized/banner-2-1280.jpg",
 				"alt": "Urokids evidence-based pediatric urology diagnostics and care"
 			},
 			{
 				"name": "Abdullaev Zafar Bobirovich",
 				"description": "Urokids offers a reliable solution for delicate pediatric health concerns",
-				"imgUrl": "/banner/banner-3.jpeg",
+				"imgUrl": "/banner/optimized/banner-3-1280.jpg",
 				"alt": "Urokids pediatric urological treatment in Tashkent Uzbekistan"
 			}
 		],
@@ -61,7 +61,7 @@
 		"fullName": "Abdullaev Zafar Bobirovich",
 		"job": "Pediatric Urologist",
 		"description": "I provide consultations and perform surgical procedures at the National Children's Medical Center in Tashkent.",
-		"btn1": "About me",
+		"btn1": "Book an appointment",
 		"btn2": "Ask a question"
 	},
 	"reviews": {

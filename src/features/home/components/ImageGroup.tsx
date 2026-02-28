@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 const GALLERY_IDS = [
 	1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
@@ -11,22 +11,38 @@ const ITEM_DATA = GALLERY_IDS.map((id) => ({
 	full: `/home/thumbs/image${id}.webp`,
 }));
 
-const EAGER_COUNT = 2;
+const EAGER_COUNT = 0;
 
 export default function ImageGallery() {
-
 	useEffect(() => {
-		Fancybox.bind("[data-fancybox]", {
-			Carousel: {
-				formatCaption: (carouselRef, slide) => {
-					return `${slide.index + 1} of ${
-						carouselRef.getSlides().length
-					}<br /> ${slide.caption || ""}`;
-				},
-			},
-		});
+		let isActive = true;
+		let destroyFancybox: (() => void) | undefined;
 
-		return () => Fancybox.destroy();
+		const initFancybox = async () => {
+			const { Fancybox } = await import("@fancyapps/ui");
+			if (!isActive) {
+				return;
+			}
+
+			Fancybox.bind("[data-fancybox]", {
+				Carousel: {
+					formatCaption: (carouselRef, slide) => {
+						return `${slide.index + 1} of ${
+							carouselRef.getSlides().length
+						}<br /> ${slide.caption || ""}`;
+					},
+				},
+			});
+
+			destroyFancybox = () => Fancybox.destroy();
+		};
+
+		void initFancybox();
+
+		return () => {
+			isActive = false;
+			destroyFancybox?.();
+		};
 	}, []);
 
 	return (
@@ -44,6 +60,8 @@ export default function ImageGallery() {
 							loading={i < EAGER_COUNT ? "eager" : "lazy"}
 							decoding="async"
 							fetchPriority={i < EAGER_COUNT ? "high" : "low"}
+							width={320}
+							height={320}
 							onError={(event) => {
 								event.currentTarget.src = item.full;
 							}}

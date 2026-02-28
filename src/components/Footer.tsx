@@ -1,10 +1,10 @@
 import {
-	FacebookFilled,
-	InstagramFilled,
-	SendOutlined,
-	WhatsAppOutlined,
-	YoutubeFilled,
-} from "@ant-design/icons";
+	Facebook,
+	Instagram,
+	MessageCircle,
+	Send,
+	Youtube,
+} from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import Logo from "./Logo";
@@ -18,27 +18,27 @@ export default function Footer() {
 		{
 			label: "YouTube",
 			href: "https://youtube.com/@dr.zafarabdullayev?si=ostHlCpokE1Og3lP",
-			icon: <YoutubeFilled className="text-lg transition-colors" />,
+			icon: Youtube,
 		},
 		{
 			label: "Instagram",
 			href: "https://www.instagram.com/doc.abdullaevzafar?igsh=MTE4OG9kNHhycDF2bw==",
-			icon: <InstagramFilled className="text-lg transition-colors" />,
+			icon: Instagram,
 		},
 		{
 			label: "Telegram",
 			href: "https://t.me/Pediatric_urology",
-			icon: <SendOutlined className="text-lg transition-colors" />,
+			icon: Send,
 		},
 		{
 			label: "Facebook",
 			href: "https://www.facebook.com/share/1AdQQbDAHm/",
-			icon: <FacebookFilled className="text-lg transition-colors" />,
+			icon: Facebook,
 		},
 		{
 			label: "WhatsApp",
 			href: "https://wa.me/message/H7D2WIZWC3H7N1",
-			icon: <WhatsAppOutlined className="text-lg transition-colors" />,
+			icon: MessageCircle,
 		},
 	];
 
@@ -90,7 +90,7 @@ export default function Footer() {
 							aria-label={social.label}
 							className="w-11 h-11 rounded-full border-2 border-gray-600 text-gray-300 hover:text-gray-900 hover:border-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-white group"
 						>
-							{social.icon}
+							<social.icon className="h-5 w-5 transition-colors" />
 						</a>
 					))}
 				</div>

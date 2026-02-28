@@ -1,26 +1,27 @@
 import { ArrowRight, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
 
 export default function DocInfo() {
 	const { t } = useTranslation();
-	const navigate = useNavigate();
+	const whatsappUrl = "https://wa.me/message/H7D2WIZWC3H7N1";
 	return (
 		<section className="py-8 md:py-10">
 			<div className="container mx-auto px-4 md:px-10">
 				<div className="flex flex-col items-center gap-8 text-center sm:text-left lg:flex-row lg:items-center lg:gap-12">
-					{/* Left - Image */}
-					<div className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px]">
-						<div className="mx-auto aspect-square w-full overflow-hidden rounded-full">
-							<img
-								src="/home/doc-info/doc-banner.png"
-								alt={`${t("docInfo.fullName")} — Urokids ${t("docInfo.job")} Tashkent`}
-								loading="lazy"
-								decoding="async"
-								className="h-full w-full object-cover object-top"
-							/>
+						{/* Left - Image */}
+						<div className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px]">
+							<div className="mx-auto aspect-square w-full overflow-hidden rounded-full">
+								<img
+									src="/home/doc-info/doc-banner.jpg"
+									alt={`${t("docInfo.fullName")} — Urokids ${t("docInfo.job")} Tashkent`}
+									loading="lazy"
+									decoding="async"
+									width={566}
+									height={706}
+									className="h-full w-full object-cover object-top"
+								/>
+							</div>
 						</div>
-					</div>
 
 					{/* Right - Content */}
 					<div className="w-full space-y-4 md:space-y-5">
@@ -42,17 +43,20 @@ export default function DocInfo() {
 
 						{/* Buttons */}
 						<div className="flex w-full flex-col gap-3 pt-2 sm:flex-row sm:gap-4">
-							<button
-								onClick={() => navigate("/about")}
+							<a
+								target="_blank"
+								rel="noreferrer"
+								href={whatsappUrl}
 								className="group flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-primary/90 hover:shadow-lg sm:w-auto sm:px-6 sm:text-base"
 							>
 								<span>{t("docInfo.btn1")}</span>
 								<ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-							</button>
+							</a>
 
 							<a
 								target="_blank"
-								href="https://wa.me/message/H7D2WIZWC3H7N1"
+								rel="noreferrer"
+								href={whatsappUrl}
 								className="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-3 text-sm font-medium text-gray-900 transition-all duration-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 sm:w-auto sm:px-6 sm:text-base"
 							>
 								<Mail className="w-5 h-5" />

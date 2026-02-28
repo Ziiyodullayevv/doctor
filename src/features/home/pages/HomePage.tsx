@@ -1,10 +1,18 @@
-import ReviewsCarousel from "../components/Carusel";
 import DocInfo from "../components/DocInfo";
 import Hero from "../components/Hero";
-import ImageGroup from "../components/ImageGroup";
 import Napravleniya from "../components/Napravleniya";
 import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
+import {
+	lazy,
+	Suspense,
+	useEffect,
+	useRef,
+	useState,
+	type ReactNode,
+} from "react";
+
+const ReviewsCarousel = lazy(() => import("../components/Carusel"));
+const ImageGroup = lazy(() => import("../components/ImageGroup"));
 
 const upsertMeta = (
 	query: string,
@@ -74,8 +82,69 @@ export default function HomePage() {
 			<Hero />
 			<Napravleniya />
 			<DocInfo />
-			<ImageGroup />
-			<ReviewsCarousel />
+			<DeferredSection minHeight={520}>
+				<Suspense fallback={<div className="h-[520px]" aria-hidden="true" />}>
+					<ImageGroup />
+				</Suspense>
+			</DeferredSection>
+			<DeferredSection minHeight={680}>
+				<Suspense fallback={<div className="h-[680px]" aria-hidden="true" />}>
+					<ReviewsCarousel />
+				</Suspense>
+			</DeferredSection>
 		</>
+	);
+}
+
+function DeferredSection({
+	children,
+	minHeight = 0,
+	rootMargin = "300px 0px",
+}: {
+	children: ReactNode;
+	minHeight?: number;
+	rootMargin?: string;
+}) {
+	const triggerRef = useRef<HTMLDivElement | null>(null);
+	const [isVisible, setIsVisible] = useState(false);
+
+	useEffect(() => {
+		if (isVisible) {
+			return;
+		}
+
+		const node = triggerRef.current;
+		if (!node) {
+			return;
+		}
+
+		if (typeof window === "undefined" || typeof IntersectionObserver === "undefined") {
+			setIsVisible(true);
+			return;
+		}
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				const visible = entries.some((entry) => entry.isIntersecting);
+				if (visible) {
+					setIsVisible(true);
+					observer.disconnect();
+				}
+			},
+			{ rootMargin },
+		);
+
+		observer.observe(node);
+		return () => observer.disconnect();
+	}, [isVisible, rootMargin]);
+
+	return (
+		<div ref={triggerRef}>
+			{isVisible ? (
+				children
+			) : (
+				<div style={minHeight > 0 ? { minHeight: `${minHeight}px` } : undefined} />
+			)}
+		</div>
 	);
 }
