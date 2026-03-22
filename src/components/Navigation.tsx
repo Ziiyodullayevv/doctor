@@ -85,22 +85,28 @@ export default function Navigation() {
 		}));
 	};
 
-	// Scroll holatini kuzatish
+	// Scroll holatini kuzatish (RAF bilan optimizatsiya qilingan)
 	useEffect(() => {
 		let lastScrollY = window.scrollY;
+		let rafId = 0;
 
 		const handleScroll = () => {
-			const currentScroll = window.scrollY;
-			setIsScrolled(currentScroll > 10);
-			setScrollOffset(currentScroll);
-			setIsScrollingUp(currentScroll < lastScrollY);
-			lastScrollY = currentScroll;
+			if (rafId) return;
+			rafId = requestAnimationFrame(() => {
+				const currentScroll = window.scrollY;
+				setIsScrolled(currentScroll > 10);
+				setScrollOffset(currentScroll);
+				setIsScrollingUp(currentScroll < lastScrollY);
+				lastScrollY = currentScroll;
+				rafId = 0;
+			});
 		};
 
 		handleScroll();
 		window.addEventListener("scroll", handleScroll, { passive: true });
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
+			if (rafId) cancelAnimationFrame(rafId);
 		};
 	}, []);
 
@@ -120,15 +126,18 @@ export default function Navigation() {
 		};
 	}, [theme]);
 
-	// Mobil menyu ochiq bo'lganda body scroll ni bloklash
+	// Mobil menyu ochiq bo'lganda body scroll ni bloklash va float buttonlarni yashirish
 	useEffect(() => {
 		if (isMobileMenuOpen) {
 			document.body.style.overflow = "hidden";
+			document.body.setAttribute("data-mobile-menu-open", "true");
 		} else {
 			document.body.style.overflow = "unset";
+			document.body.removeAttribute("data-mobile-menu-open");
 		}
 		return () => {
 			document.body.style.overflow = "unset";
+			document.body.removeAttribute("data-mobile-menu-open");
 		};
 	}, [isMobileMenuOpen]);
 
@@ -159,7 +168,7 @@ export default function Navigation() {
 			<header
 				ref={headerRef}
 				style={{ transform: `translateY(${effectiveTranslateY}px)` }}
-				className={`fixed top-0 left-0 right-0 z-50 will-change-[transform] ${
+				className={`fixed top-0 left-0 right-0 z-[1000002] will-change-[transform] ${
 					enableTransition
 						? "transition-[background-color,box-shadow,backdrop-filter,transform] duration-700 ease-out"
 						: "transition-none"
@@ -275,25 +284,27 @@ export default function Navigation() {
 			{/* Mobile Menu Overlay (fonni qoraytirish) */}
 			{isMobileMenuOpen && (
 				<div
-					className="fixed inset-0 bg-black/50 z-[99998] lg:hidden"
+					className="fixed inset-0 bg-black/50 z-[1000000] lg:hidden"
 					onClick={() => setIsMobileMenuOpen(false)}
 				/>
 			)}
 
 			{/* Mobile Menu - dinamik top va height */}
 			<div
-				className={`fixed inset-x-0 bg-background z-[99999] transition-all duration-300 ease-in-out lg:hidden overflow-y-auto ${
+				className={`fixed inset-x-0 bg-background z-[1000001] transition-all duration-300 ease-in-out lg:hidden ${
 					isMobileMenuOpen
-						? "translate-y-0 opacity-100"
-						: "translate-y-full opacity-0"
+						? "translate-y-0 opacity-100 pointer-events-auto"
+						: "translate-y-full opacity-0 pointer-events-none"
 				}`}
 				style={{
 					top: `${headerHeight}px`,
 					height: `calc(100vh - ${headerHeight}px)`,
+					overflowY: "auto",
+					WebkitOverflowScrolling: "touch",
 				}}
 			>
-				<nav className="h-full">
-					<div className="container mx-auto px-4 py-8">
+				<nav>
+					<div className="container mx-auto px-4 py-8 pb-24">
 						<ul className="space-y-2">
 							<li>
 								<Link
@@ -471,6 +482,10 @@ export default function Navigation() {
 													<img
 														src={lang.flag}
 														alt={lang.label}
+														width={24}
+														height={24}
+														loading="lazy"
+														decoding="async"
 														className="w-full h-full object-cover"
 													/>
 												</div>

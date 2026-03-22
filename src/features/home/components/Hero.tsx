@@ -93,33 +93,12 @@ export default function Hero() {
 	}, [rawSlides]);
 
 	useEffect(() => {
+		// Activate slider quickly — preload is handled in index.html
 		const timerId = window.setTimeout(() => {
 			setActivateSlider(true);
-		}, 1200);
+		}, 100);
 		return () => window.clearTimeout(timerId);
 	}, []);
-
-	useEffect(() => {
-		if (slides.length === 0) {
-			return;
-		}
-
-		const firstSlide = slides[0];
-		const preloadLink = document.createElement("link");
-		preloadLink.rel = "preload";
-		preloadLink.as = "image";
-		preloadLink.href = firstSlide.imgUrl;
-		preloadLink.setAttribute("data-hero-preload", "true");
-		if (firstSlide.srcSet) {
-			preloadLink.setAttribute("imagesrcset", firstSlide.srcSet);
-			preloadLink.setAttribute("imagesizes", firstSlide.sizes);
-		}
-
-		document.head.appendChild(preloadLink);
-		return () => {
-			preloadLink.remove();
-		};
-	}, [slides]);
 
 	if (slides.length === 0) {
 		return null;

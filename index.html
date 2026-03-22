@@ -70,6 +70,16 @@
 		<!-- Webmanifest -->
 		<link rel="manifest" href="/site.webmanifest" />
 
+		<!-- Preload LCP hero image -->
+		<link
+			rel="preload"
+			as="image"
+			href="/banner/optimized/banner-1-1280.jpg"
+			imagesrcset="/banner/optimized/banner-1-768.jpg 768w, /banner/optimized/banner-1-1280.jpg 1280w, /banner/banner-1.jpeg 1920w"
+			imagesizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1280px"
+			fetchpriority="high"
+		/>
+
 		<!-- google meta-tag  -->
 		<meta
 			name="google-site-verification"

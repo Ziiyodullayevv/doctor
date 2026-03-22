@@ -1,5 +1,9 @@
 .ai-button {
 	position: fixed;
+	z-index: 2;
+}
+
+.ai-button-trigger {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
@@ -8,16 +12,59 @@
 	justify-content: center;
 	align-items: center;
 	color: white;
-	font-size: 18px;
-	font-family: Arial, sans-serif;
 	cursor: pointer;
-	z-index: 2;
+	border: none;
 	box-shadow: 0 0 25px rgba(0, 170, 255, 0.6);
 	transition: transform 0.3s ease;
+	position: relative;
 }
 
-.ai-button:hover {
+.ai-button-trigger:hover {
 	transform: scale(1.08);
+}
+
+.ai-button-trigger::before,
+.ai-button-trigger::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 2px solid rgba(0, 200, 255, 0.6);
+	animation: pulse 2.5s infinite;
+}
+
+.ai-button-trigger::after {
+	animation-delay: 1.25s;
+}
+
+.ai-button-menu {
+	position: absolute;
+	bottom: 60px;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	animation: fadeInUp 0.2s ease-out;
+}
+
+.ai-button-item {
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #333;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	text-decoration: none;
+}
+
+.ai-button-item:hover {
+	transform: scale(1.12);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .chat-float-button {
@@ -29,9 +76,8 @@
 	justify-content: center;
 	align-items: center;
 	color: white;
-	font-size: 18px;
-	font-family: Arial, sans-serif;
 	cursor: pointer;
+	border: none;
 	z-index: 2;
 	background-color: rgb(76, 218, 149);
 	box-shadow: 0 0 22px rgba(28, 200, 124, 0.55);
@@ -42,17 +88,6 @@
 	transform: scale(1.08);
 }
 
-.ai-button::before,
-.ai-button::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	border: 2px solid rgba(0, 200, 255, 0.6);
-	animation: pulse 2.5s infinite;
-}
-
 .chat-float-button::before,
 .chat-float-button::after {
 	content: "";
@@ -61,15 +96,6 @@
 	height: 100%;
 	border-radius: 50%;
 	border: 2px solid rgba(50, 220, 140, 0.55);
-}
-
-.ai-button .ant-float-btn-body {
-	background: radial-gradient(circle at top left, #00f6ff, #0044ff) !important;
-	box-shadow: none !important;
-}
-
-.ai-button::after {
-	animation-delay: 1.25s;
 }
 
 .chat-float-button::after {
@@ -85,4 +111,21 @@
 		transform: scale(1.8);
 		opacity: 0;
 	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Mobile menu ochiq bo'lganda float buttonlarni yashirish */
+body[data-mobile-menu-open="true"] .ai-button,
+body[data-mobile-menu-open="true"] .chat-float-button {
+	display: none !important;
 }

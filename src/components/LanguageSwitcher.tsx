@@ -40,6 +40,10 @@ export function LanguageToggle() {
 					<img
 						src={currentLang.flag}
 						alt={currentLang.label}
+						width={34}
+						height={34}
+						loading="lazy"
+						decoding="async"
 						className="w-full h-full object-cover"
 					/>
 				</Button>
@@ -56,6 +60,10 @@ export function LanguageToggle() {
 							<img
 								src={lang.flag}
 								alt={lang.label}
+								width={28}
+								height={28}
+								loading="lazy"
+								decoding="async"
 								className="w-full h-full object-cover"
 							/>
 						</div>
