@@ -56,18 +56,6 @@ create policy "Public insert reviews"
 create index reviews_created_at_idx on public.reviews (created_at desc);
 ```
 
-## Narx Taklifi (To‘liq Sayt)
-Quyidagi diapazonlar O‘zbekiston bozorida bajarilgan ishlar uchun tavsiya etiladi:
-- Umumiy frontend (UI, responsive, sahifalar, routing): 12–20 mln so‘m
-- I18n (3 til), content integratsiya: 3–6 mln so‘m
-- Sharhlar moduli + Supabase integratsiya: 3–6 mln so‘m
-- Contact form + Telegram integratsiya: 2–4 mln so‘m
-- SEO (Breadcrumb JSON‑LD), yakuniy polishing: 1–2 mln so‘m
-
-Umumiy: 21–38 mln so‘m
-
-Eslatma: Yakuniy narx muddat, qo‘shimcha talablar, kontent tayyorligi va deploy shartlariga qarab kelishiladi.
-
 ## Ishga Tushirish
 ```
 npm install
